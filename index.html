@@ -405,7 +405,8 @@ body{
 
 
 /* =========================
-   GIRASOLES SIN TALLO
+   GIRASOLES
+   SIN TALLO
 ========================= */
 
 .field-flower{
@@ -431,6 +432,24 @@ body{
 
 .field-flower:hover{
     filter:brightness(1.08);
+}
+
+.field-flower.special{
+    cursor:pointer;
+}
+
+.field-flower.special::after{
+    content:"";
+    position:absolute;
+    width:75px;
+    height:75px;
+    left:50%;
+    top:var(--head-offset);
+    transform:translate(-50%,-8%);
+    border-radius:50%;
+    background:rgba(255,221,91,0);
+    transition:background .3s ease;
+    pointer-events:none;
 }
 
 
@@ -488,6 +507,74 @@ body{
     background:
         radial-gradient(circle,#2f1b0d 1px,transparent 1.5px);
     background-size:5px 5px;
+}
+
+
+/* =========================
+   VENTANA DE FRASE
+========================= */
+
+.flower-message{
+    position:fixed;
+    inset:0;
+    z-index:400;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:rgba(71,55,38,.28);
+    backdrop-filter:blur(3px);
+    opacity:0;
+    visibility:hidden;
+    transition:
+        opacity .45s ease,
+        visibility .45s ease;
+}
+
+.flower-message.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.flower-card{
+    width:min(520px,90vw);
+    background:#fffaf0;
+    border-radius:22px;
+    padding:35px 30px 28px;
+    text-align:center;
+    box-shadow:
+        0 15px 50px rgba(70,50,30,.25);
+    transform:translateY(25px) scale(.92);
+    transition:transform .45s ease;
+}
+
+.flower-message.show .flower-card{
+    transform:translateY(0) scale(1);
+}
+
+.card-flower{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.flower-card p{
+    color:#6e5b45;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(20px,3.5vw,29px);
+    line-height:1.5;
+    font-style:italic;
+}
+
+.close-message{
+    margin-top:25px;
+    border:none;
+    background:#d89b32;
+    color:white;
+    padding:10px 25px;
+    border-radius:20px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:16px;
+    cursor:pointer;
 }
 
 
@@ -618,7 +705,10 @@ body{
 
 <body>
 
-<!-- GIRAR TELÉFONO -->
+
+<!-- =========================
+     GIRAR TELÉFONO
+========================= -->
 
 <div class="rotate-screen">
 
@@ -631,7 +721,9 @@ body{
 </div>
 
 
-<!-- INTRO -->
+<!-- =========================
+     INTRO
+========================= -->
 
 <section id="intro">
 
@@ -657,7 +749,9 @@ body{
 </section>
 
 
-<!-- MENSAJES -->
+<!-- =========================
+     MENSAJES
+========================= -->
 
 <section id="messages">
 
@@ -676,7 +770,9 @@ body{
 </section>
 
 
-<!-- JARDÍN -->
+<!-- =========================
+     JARDÍN
+========================= -->
 
 <section id="garden">
 
@@ -721,26 +817,73 @@ body{
 </section>
 
 
+<!-- =========================
+     VENTANA DE FRASE
+========================= -->
+
+<div class="flower-message" id="flowerMessage">
+
+    <div class="flower-card">
+
+        <div class="card-flower">
+            🌻
+        </div>
+
+        <p id="flowerMessageText"></p>
+
+        <button class="close-message" id="closeMessage">
+            Seguir explorando 🌻
+        </button>
+
+    </div>
+
+</div>
+
+
 <div class="seed" id="seed"></div>
 
 
 <script>
 
-const intro = document.getElementById("intro");
-const introFlower = document.getElementById("introFlower");
+/* =========================
+   ELEMENTOS
+========================= */
 
-const messages = document.getElementById("messages");
+const intro =
+    document.getElementById("intro");
 
-const message1 = document.getElementById("message1");
-const message2 = document.getElementById("message2");
-const message3 = document.getElementById("message3");
+const introFlower =
+    document.getElementById("introFlower");
 
-const garden = document.getElementById("garden");
+const messages =
+    document.getElementById("messages");
 
-const seed = document.getElementById("seed");
+const message1 =
+    document.getElementById("message1");
+
+const message2 =
+    document.getElementById("message2");
+
+const message3 =
+    document.getElementById("message3");
+
+const garden =
+    document.getElementById("garden");
+
+const seed =
+    document.getElementById("seed");
 
 const sunflowerField =
     document.getElementById("sunflowerField");
+
+const flowerMessage =
+    document.getElementById("flowerMessage");
+
+const flowerMessageText =
+    document.getElementById("flowerMessageText");
+
+const closeMessage =
+    document.getElementById("closeMessage");
 
 
 /* =========================
@@ -751,7 +894,6 @@ const flowers = [
 
     /* =====================
        ZONA SUPERIOR
-       MÁS CABEZAS
     ===================== */
 
     {
@@ -856,7 +998,7 @@ const flowers = [
 
 
     /* =====================
-       CABEZAS INTERMEDIAS
+       ZONA MEDIA
     ===================== */
 
     {
@@ -1041,7 +1183,7 @@ const flowers = [
    CREAR GIRASOLES
 ========================= */
 
-flowers.forEach((flower)=>{
+flowers.forEach((flower,index)=>{
 
     const flowerElement =
         document.createElement("div");
@@ -1085,6 +1227,23 @@ flowers.forEach((flower)=>{
     );
 
 
+    /* =========================
+       DOS FLORES ESPECIALES
+    ========================= */
+
+    if(index === 4 || index === 15){
+
+        flowerElement.classList.add("special");
+
+        flowerElement.dataset.message =
+            index === 4
+            ?
+            "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
+            :
+            "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado";
+    }
+
+
     flowerElement.innerHTML = `
 
         <div class="field-head">
@@ -1109,89 +1268,146 @@ flowers.forEach((flower)=>{
         flowerElement
     );
 
+
+    /* =========================
+       CLICK EN GIRASOL ESPECIAL
+    ========================= */
+
+    if(flowerElement.classList.contains("special")){
+
+        flowerElement.addEventListener(
+            "click",
+            (event)=>{
+
+                event.stopPropagation();
+
+                flowerMessageText.textContent =
+                    flowerElement.dataset.message;
+
+                flowerMessage.classList.add("show");
+
+            }
+        );
+
+    }
+
 });
+
+
+/* =========================
+   CERRAR FRASE
+========================= */
+
+closeMessage.addEventListener(
+    "click",
+    ()=>{
+
+        flowerMessage.classList.remove("show");
+
+    }
+);
+
+
+/* También cerrar tocando fuera */
+
+flowerMessage.addEventListener(
+    "click",
+    (event)=>{
+
+        if(event.target === flowerMessage){
+
+            flowerMessage.classList.remove("show");
+
+        }
+
+    }
+);
 
 
 /* =========================
    TOCAR GIRASOL INICIAL
 ========================= */
 
-introFlower.addEventListener("click",(event)=>{
+introFlower.addEventListener(
+    "click",
+    (event)=>{
 
-    const ripple =
-        document.createElement("div");
+        const ripple =
+            document.createElement("div");
 
-    ripple.className="ripple";
+        ripple.className="ripple";
 
-    ripple.style.left =
-        event.clientX+"px";
+        ripple.style.left =
+            event.clientX+"px";
 
-    ripple.style.top =
-        event.clientY+"px";
+        ripple.style.top =
+            event.clientY+"px";
 
-    document.body.appendChild(ripple);
-
-    setTimeout(()=>{
-        ripple.remove();
-    },1000);
+        document.body.appendChild(ripple);
 
 
-    seed.classList.add("fall");
-
-    intro.style.opacity="0";
-
-
-    setTimeout(()=>{
-
-        intro.style.display="none";
-
-        messages.style.opacity="1";
-
-    },1500);
+        setTimeout(()=>{
+            ripple.remove();
+        },1000);
 
 
-    /* =========================
-       FRASES
-    ========================= */
+        seed.classList.add("fall");
 
-    setTimeout(()=>{
-        message1.style.opacity="1";
-    },4700);
-
-    setTimeout(()=>{
-        message1.style.opacity="0";
-    },8500);
-
-    setTimeout(()=>{
-        message2.style.opacity="1";
-    },9300);
-
-    setTimeout(()=>{
-        message2.style.opacity="0";
-    },12800);
-
-    setTimeout(()=>{
-        message3.style.opacity="1";
-    },13600);
-
-    setTimeout(()=>{
-        message3.style.opacity="0";
-    },18100);
+        intro.style.opacity="0";
 
 
-    /* =========================
-       JARDÍN
-    ========================= */
+        setTimeout(()=>{
 
-    setTimeout(()=>{
+            intro.style.display="none";
 
-        messages.style.opacity="0";
+            messages.style.opacity="1";
 
-        garden.style.opacity="1";
+        },1500);
 
-    },18800);
 
-});
+        /* =========================
+           FRASES
+        ========================= */
+
+        setTimeout(()=>{
+            message1.style.opacity="1";
+        },4700);
+
+        setTimeout(()=>{
+            message1.style.opacity="0";
+        },8500);
+
+        setTimeout(()=>{
+            message2.style.opacity="1";
+        },9300);
+
+        setTimeout(()=>{
+            message2.style.opacity="0";
+        },12800);
+
+        setTimeout(()=>{
+            message3.style.opacity="1";
+        },13600);
+
+        setTimeout(()=>{
+            message3.style.opacity="0";
+        },18100);
+
+
+        /* =========================
+           JARDÍN
+        ========================= */
+
+        setTimeout(()=>{
+
+            messages.style.opacity="0";
+
+            garden.style.opacity="1";
+
+        },18800);
+
+    }
+);
 
 </script>
 
