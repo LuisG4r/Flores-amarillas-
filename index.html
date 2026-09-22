@@ -183,6 +183,7 @@ body{
     justify-content:center;
     text-align:center;
     opacity:0;
+    pointer-events:none;
     transition:opacity 1.2s ease;
 }
 
@@ -434,6 +435,12 @@ body{
     filter:brightness(1.08);
 }
 
+
+/* =========================
+   GIRASOLES ESPECIALES
+   BRILLITO SUTIL
+========================= */
+
 .field-flower.special{
     cursor:pointer;
 }
@@ -441,15 +448,46 @@ body{
 .field-flower.special::after{
     content:"";
     position:absolute;
-    width:75px;
-    height:75px;
+
+    width:72px;
+    height:72px;
+
     left:50%;
     top:var(--head-offset);
+
     transform:translate(-50%,-8%);
+
     border-radius:50%;
-    background:rgba(255,221,91,0);
-    transition:background .3s ease;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,221,91,.30) 0%,
+        rgba(255,221,91,.12) 35%,
+        rgba(255,221,91,0) 70%
+    );
+
+    opacity:.25;
+
+    animation:
+        subtleGlow 3.2s ease-in-out infinite;
+
     pointer-events:none;
+
+    z-index:10;
+}
+
+@keyframes subtleGlow{
+
+    0%,100%{
+        opacity:.12;
+        transform:translate(-50%,-8%) scale(.88);
+    }
+
+    50%{
+        opacity:.45;
+        transform:translate(-50%,-8%) scale(1.08);
+    }
+
 }
 
 
@@ -518,14 +556,20 @@ body{
     position:fixed;
     inset:0;
     z-index:400;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding:25px;
+
     background:rgba(71,55,38,.28);
+
     backdrop-filter:blur(3px);
+
     opacity:0;
     visibility:hidden;
+
     transition:
         opacity .45s ease,
         visibility .45s ease;
@@ -538,18 +582,30 @@ body{
 
 .flower-card{
     width:min(520px,90vw);
+
     background:#fffaf0;
+
     border-radius:22px;
+
     padding:35px 30px 28px;
+
     text-align:center;
+
     box-shadow:
         0 15px 50px rgba(70,50,30,.25);
-    transform:translateY(25px) scale(.92);
-    transition:transform .45s ease;
+
+    transform:
+        translateY(25px)
+        scale(.92);
+
+    transition:
+        transform .45s ease;
 }
 
 .flower-message.show .flower-card{
-    transform:translateY(0) scale(1);
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 .card-flower{
@@ -559,21 +615,40 @@ body{
 
 .flower-card p{
     color:#6e5b45;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:clamp(20px,3.5vw,29px);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(20px,3.5vw,29px);
+
     line-height:1.5;
+
     font-style:italic;
 }
 
 .close-message{
     margin-top:25px;
+
     border:none;
+
     background:#d89b32;
+
     color:white;
+
     padding:10px 25px;
+
     border-radius:20px;
-    font-family:Georgia,"Times New Roman",serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size:16px;
+
     cursor:pointer;
 }
 
@@ -589,16 +664,29 @@ body{
     border-radius:50%;
     border:2px solid rgba(255,190,40,.8);
     pointer-events:none;
-    transform:translate(-50%,-50%) scale(0);
-    animation:rippleEffect 1s ease-out forwards;
+
+    transform:
+        translate(-50%,-50%)
+        scale(0);
+
+    animation:
+        rippleEffect 1s ease-out forwards;
+
     z-index:500;
 }
 
 @keyframes rippleEffect{
+
     to{
-        transform:translate(-50%,-50%) scale(12);
+
+        transform:
+            translate(-50%,-50%)
+            scale(12);
+
         opacity:0;
+
     }
+
 }
 
 
@@ -616,23 +704,32 @@ body{
     top:50%;
     z-index:300;
     opacity:0;
-    transform:translate(-50%,-50%);
+
+    transform:
+        translate(-50%,-50%);
 }
 
 .seed.fall{
-    animation:seedFall 2.5s ease-in forwards;
+    animation:
+        seedFall 2.5s ease-in forwards;
 }
 
 @keyframes seedFall{
+
     0%{
         opacity:1;
-        transform:translate(-50%,-50%) rotate(0deg);
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
     }
 
     100%{
         opacity:0;
-        transform:translate(-50%,300px) rotate(180deg);
+        transform:
+            translate(-50%,300px)
+            rotate(180deg);
     }
+
 }
 
 
@@ -680,6 +777,7 @@ body{
         width:25px;
         height:25px;
     }
+
 }
 
 
@@ -698,10 +796,12 @@ body{
     .rotate-screen{
         display:flex;
     }
+
 }
 
 </style>
 </head>
+
 
 <body>
 
@@ -781,6 +881,7 @@ body{
     <div class="cloud one"></div>
     <div class="cloud two"></div>
 
+
     <div class="grass">
 
         <div class="grass-blade"></div>
@@ -812,7 +913,10 @@ body{
 
     <!-- GIRASOLES -->
 
-    <div class="sunflower-field" id="sunflowerField"></div>
+    <div
+        class="sunflower-field"
+        id="sunflowerField">
+    </div>
 
 </section>
 
@@ -821,7 +925,9 @@ body{
      VENTANA DE FRASE
 ========================= -->
 
-<div class="flower-message" id="flowerMessage">
+<div
+    class="flower-message"
+    id="flowerMessage">
 
     <div class="flower-card">
 
@@ -831,8 +937,12 @@ body{
 
         <p id="flowerMessageText"></p>
 
-        <button class="close-message" id="closeMessage">
+        <button
+            class="close-message"
+            id="closeMessage">
+
             Seguir explorando 🌻
+
         </button>
 
     </div>
@@ -840,7 +950,10 @@ body{
 </div>
 
 
-<div class="seed" id="seed"></div>
+<div
+    class="seed"
+    id="seed">
+</div>
 
 
 <script>
@@ -1191,6 +1304,7 @@ flowers.forEach((flower,index)=>{
     flowerElement.className =
         "field-flower";
 
+
     flowerElement.style.setProperty(
         "--left",
         flower.left
@@ -1228,12 +1342,14 @@ flowers.forEach((flower,index)=>{
 
 
     /* =========================
-       DOS FLORES ESPECIALES
+       FLORES ESPECIALES
     ========================= */
 
     if(index === 4 || index === 15){
 
-        flowerElement.classList.add("special");
+        flowerElement.classList.add(
+            "special"
+        );
 
         flowerElement.dataset.message =
             index === 4
@@ -1241,6 +1357,7 @@ flowers.forEach((flower,index)=>{
             "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
             :
             "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado";
+
     }
 
 
@@ -1270,10 +1387,14 @@ flowers.forEach((flower,index)=>{
 
 
     /* =========================
-       CLICK EN GIRASOL ESPECIAL
+       CLICK
     ========================= */
 
-    if(flowerElement.classList.contains("special")){
+    if(
+        flowerElement.classList.contains(
+            "special"
+        )
+    ){
 
         flowerElement.addEventListener(
             "click",
@@ -1284,7 +1405,9 @@ flowers.forEach((flower,index)=>{
                 flowerMessageText.textContent =
                     flowerElement.dataset.message;
 
-                flowerMessage.classList.add("show");
+                flowerMessage.classList.add(
+                    "show"
+                );
 
             }
         );
@@ -1302,21 +1425,29 @@ closeMessage.addEventListener(
     "click",
     ()=>{
 
-        flowerMessage.classList.remove("show");
+        flowerMessage.classList.remove(
+            "show"
+        );
 
     }
 );
 
 
-/* También cerrar tocando fuera */
+/* =========================
+   CERRAR TOCANDO AFUERA
+========================= */
 
 flowerMessage.addEventListener(
     "click",
     (event)=>{
 
-        if(event.target === flowerMessage){
+        if(
+            event.target === flowerMessage
+        ){
 
-            flowerMessage.classList.remove("show");
+            flowerMessage.classList.remove(
+                "show"
+            );
 
         }
 
@@ -1325,7 +1456,7 @@ flowerMessage.addEventListener(
 
 
 /* =========================
-   TOCAR GIRASOL INICIAL
+   GIRASOL INICIAL
 ========================= */
 
 introFlower.addEventListener(
@@ -1335,7 +1466,8 @@ introFlower.addEventListener(
         const ripple =
             document.createElement("div");
 
-        ripple.className="ripple";
+        ripple.className =
+            "ripple";
 
         ripple.style.left =
             event.clientX+"px";
@@ -1343,7 +1475,9 @@ introFlower.addEventListener(
         ripple.style.top =
             event.clientY+"px";
 
-        document.body.appendChild(ripple);
+        document.body.appendChild(
+            ripple
+        );
 
 
         setTimeout(()=>{
@@ -1351,16 +1485,25 @@ introFlower.addEventListener(
         },1000);
 
 
-        seed.classList.add("fall");
+        seed.classList.add(
+            "fall"
+        );
 
-        intro.style.opacity="0";
+
+        intro.style.opacity =
+            "0";
 
 
         setTimeout(()=>{
 
-            intro.style.display="none";
+            intro.style.display =
+                "none";
 
-            messages.style.opacity="1";
+            messages.style.opacity =
+                "1";
+
+            messages.style.pointerEvents =
+                "auto";
 
         },1500);
 
@@ -1400,9 +1543,14 @@ introFlower.addEventListener(
 
         setTimeout(()=>{
 
-            messages.style.opacity="0";
+            messages.style.opacity =
+                "0";
 
-            garden.style.opacity="1";
+            messages.style.pointerEvents =
+                "none";
+
+            garden.style.opacity =
+                "1";
 
         },18800);
 
