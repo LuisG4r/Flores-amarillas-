@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
 
 <title>Para ti 🌻</title>
 
 <style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -25,18 +33,25 @@ body{
 }
 
 body{
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 }
 
 
-/* =========================
-   ROTAR TELÉFONO
-========================= */
+/* =====================================================
+   PANTALLA GIRAR TELÉFONO
+===================================================== */
 
 #rotate-screen{
+
     position:fixed;
+
     inset:0;
+
     background:#f8f0df;
+
     z-index:1000;
 
     display:none;
@@ -45,29 +60,41 @@ body{
     justify-content:center;
 
     text-align:center;
+
     color:#725d45;
 }
 
 .rotate-content{
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     gap:18px;
 }
 
 .phone-icon{
+
     width:48px;
     height:82px;
 
     border:3px solid #725d45;
+
     border-radius:9px;
 
     position:relative;
 
-    animation:rotatePhone 2.2s ease-in-out infinite;
+    animation:
+        rotatePhone
+        2.2s
+        ease-in-out
+        infinite;
 }
 
 .phone-icon::after{
+
     content:"";
 
     position:absolute;
@@ -80,13 +107,17 @@ body{
     background:#725d45;
 
     bottom:5px;
+
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .rotate-content p{
+
     font-size:20px;
+
     font-style:italic;
 }
 
@@ -111,12 +142,14 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    INTRO
-========================= */
+===================================================== */
 
 #intro{
+
     position:fixed;
+
     inset:0;
 
     background:#f8f0df;
@@ -128,11 +161,16 @@ body{
     align-items:center;
     justify-content:center;
 
-    transition:opacity 1.2s ease;
+    transition:
+        opacity
+        1.2s
+        ease;
 }
 
 .intro-content{
+
     display:flex;
+
     flex-direction:column;
 
     align-items:center;
@@ -142,12 +180,17 @@ body{
 }
 
 .intro-flower{
+
     position:relative;
 
     width:125px;
     height:125px;
 
-    animation:floatFlower 3s ease-in-out infinite;
+    animation:
+        floatFlower
+        3s
+        ease-in-out
+        infinite;
 }
 
 @keyframes floatFlower{
@@ -163,6 +206,7 @@ body{
 }
 
 .petal{
+
     position:absolute;
 
     width:42px;
@@ -179,42 +223,61 @@ body{
     left:50%;
     top:50%;
 
-    transform-origin:50% 100%;
+    transform-origin:
+        50%
+        100%;
 }
 
 .p1{
-    transform:translate(-50%,-100%) rotate(0deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
 }
 
 .p2{
-    transform:translate(-50%,-100%) rotate(45deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(45deg);
 }
 
 .p3{
-    transform:translate(-50%,-100%) rotate(90deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(90deg);
 }
 
 .p4{
-    transform:translate(-50%,-100%) rotate(135deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(135deg);
 }
 
 .p5{
-    transform:translate(-50%,-100%) rotate(180deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
 }
 
 .p6{
-    transform:translate(-50%,-100%) rotate(225deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(225deg);
 }
 
 .p7{
-    transform:translate(-50%,-100%) rotate(270deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(270deg);
 }
 
 .p8{
-    transform:translate(-50%,-100%) rotate(315deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(315deg);
 }
 
 .flower-center{
+
     position:absolute;
 
     width:48px;
@@ -227,13 +290,17 @@ body{
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     box-shadow:
-        inset 0 0 0 5px #5b361b;
+        inset
+        0 0 0 5px
+        #5b361b;
 }
 
 .intro-text{
+
     margin-top:28px;
 
     color:#765f47;
@@ -242,7 +309,11 @@ body{
 
     font-style:italic;
 
-    animation:softPulse 2.5s ease-in-out infinite;
+    animation:
+        softPulse
+        2.5s
+        ease-in-out
+        infinite;
 }
 
 @keyframes softPulse{
@@ -258,12 +329,14 @@ body{
 }
 
 
-/* =========================
-   FRASES
-========================= */
+/* =====================================================
+   FRASES INICIALES
+===================================================== */
 
 #messages{
+
     position:fixed;
+
     inset:0;
 
     z-index:450;
@@ -283,13 +356,19 @@ body{
 }
 
 .message{
+
     position:absolute;
 
     max-width:720px;
 
     color:#6f5a43;
 
-    font-size:clamp(25px,4vw,42px);
+    font-size:
+        clamp(
+            25px,
+            4vw,
+            42px
+        );
 
     line-height:1.45;
 
@@ -297,7 +376,10 @@ body{
 
     opacity:0;
 
-    transition:opacity 1.4s ease;
+    transition:
+        opacity
+        1.4s
+        ease;
 }
 
 .message.show{
@@ -305,12 +387,14 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    JARDÍN
-========================= */
+===================================================== */
 
 #garden{
+
     position:fixed;
+
     inset:0;
 
     overflow:hidden;
@@ -327,7 +411,10 @@ body{
 
     opacity:0;
 
-    transition:opacity 1.5s ease;
+    transition:
+        opacity
+        1.5s
+        ease;
 }
 
 #garden.show{
@@ -335,11 +422,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    SOL
-========================= */
+===================================================== */
 
 .sun{
+
     position:absolute;
 
     width:95px;
@@ -353,16 +441,20 @@ body{
     background:#ffd66b;
 
     box-shadow:
-        0 0 35px rgba(255,214,107,.55),
-        0 0 70px rgba(255,214,107,.25);
+        0 0 35px
+        rgba(255,214,107,.55),
+
+        0 0 70px
+        rgba(255,214,107,.25);
 }
 
 
-/* =========================
+/* =====================================================
    PASTO
-========================= */
+===================================================== */
 
 .grass{
+
     position:absolute;
 
     left:0;
@@ -383,17 +475,21 @@ body{
 }
 
 .grass::before{
+
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
+
         radial-gradient(
             ellipse at 20% 20%,
             rgba(255,255,255,.08),
             transparent 40%
         ),
+
         radial-gradient(
             ellipse at 75% 30%,
             rgba(255,255,255,.06),
@@ -402,11 +498,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    TENDEDERO
-========================= */
+===================================================== */
 
 .clothesline{
+
     position:absolute;
 
     left:4%;
@@ -422,6 +519,7 @@ body{
 }
 
 .post{
+
     position:absolute;
 
     width:8px;
@@ -443,6 +541,7 @@ body{
 }
 
 .rope{
+
     position:absolute;
 
     left:0;
@@ -456,11 +555,12 @@ body{
 }
 
 
-/* =========================
-   CAMPO DE GIRASOLES
-========================= */
+/* =====================================================
+   CAMPO
+===================================================== */
 
 .sunflower-field{
+
     position:absolute;
 
     left:2%;
@@ -476,11 +576,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    GIRASOLES
-========================= */
+===================================================== */
 
 .field-flower{
+
     position:absolute;
 
     width:190px;
@@ -498,15 +599,23 @@ body{
     z-index:var(--z);
 
     transition:
-        transform .35s ease,
-        filter .35s ease;
+        transform
+        .35s
+        ease,
+
+        filter
+        .35s
+        ease;
 }
 
 .field-flower:hover{
-    filter:brightness(1.08);
+
+    filter:
+        brightness(1.08);
 }
 
 .field-flower .petal{
+
     width:38px;
     height:62px;
 
@@ -514,16 +623,18 @@ body{
 }
 
 .field-flower .flower-center{
+
     width:46px;
     height:46px;
 }
 
 
-/* =========================
-   GLOW ESPECIALES
-========================= */
+/* =====================================================
+   GLOW DE ESPECIALES
+===================================================== */
 
 .field-flower.special::after{
+
     content:"";
 
     position:absolute;
@@ -533,9 +644,11 @@ body{
 
     left:50%;
 
-    top:calc(
-        50% + var(--head-offset)
-    );
+    top:
+        calc(
+            50% +
+            var(--head-offset)
+        );
 
     transform:
         translate(-50%,-50%);
@@ -553,7 +666,10 @@ body{
     opacity:.25;
 
     animation:
-        subtleGlow 3.2s ease-in-out infinite;
+        subtleGlow
+        3.2s
+        ease-in-out
+        infinite;
 
     pointer-events:none;
 
@@ -563,6 +679,7 @@ body{
 @keyframes subtleGlow{
 
     0%,100%{
+
         opacity:.12;
 
         transform:
@@ -571,6 +688,7 @@ body{
     }
 
     50%{
+
         opacity:.45;
 
         transform:
@@ -581,11 +699,39 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
+   ZONA INVISIBLE DE CLIC
+   DE LAS FLORES ESPECIALES
+===================================================== */
+
+.special-hit{
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    pointer-events:auto;
+}
+
+
+/* =====================================================
    MENSAJE DE FLOR
-========================= */
+===================================================== */
 
 .flower-message{
+
     position:fixed;
 
     inset:0;
@@ -599,25 +745,45 @@ body{
 
     padding:25px;
 
-    background:rgba(71,55,38,.28);
+    background:
+        rgba(
+            71,
+            55,
+            38,
+            .28
+        );
 
-    backdrop-filter:blur(3px);
+    backdrop-filter:
+        blur(3px);
 
     opacity:0;
+
     visibility:hidden;
 
     transition:
-        opacity .45s ease,
-        visibility .45s ease;
+        opacity
+        .45s
+        ease,
+
+        visibility
+        .45s
+        ease;
 }
 
 .flower-message.show{
+
     opacity:1;
+
     visibility:visible;
 }
 
 .flower-card{
-    width:min(520px,90vw);
+
+    width:
+        min(
+            520px,
+            90vw
+        );
 
     background:#fffaf0;
 
@@ -639,22 +805,28 @@ body{
         scale(.92);
 
     transition:
-        transform .45s ease;
+        transform
+        .45s
+        ease;
 }
 
-.flower-message.show .flower-card{
+.flower-message.show
+.flower-card{
+
     transform:
         translateY(0)
         scale(1);
 }
 
 .card-flower{
+
     font-size:38px;
 
     margin-bottom:15px;
 }
 
 .flower-card p{
+
     color:#6e5b45;
 
     font-family:
@@ -675,6 +847,7 @@ body{
 }
 
 .close-message{
+
     margin-top:25px;
 
     border:none;
@@ -683,7 +856,9 @@ body{
 
     color:white;
 
-    padding:10px 25px;
+    padding:
+        10px
+        25px;
 
     border-radius:20px;
 
@@ -698,11 +873,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    SEMILLA
-========================= */
+===================================================== */
 
 .seed{
+
     position:fixed;
 
     width:9px;
@@ -719,7 +895,8 @@ body{
     left:50%;
     top:45%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     z-index:480;
 
@@ -729,13 +906,18 @@ body{
 }
 
 .seed.fall{
+
     animation:
-        seedFall 1.8s ease-in forwards;
+        seedFall
+        1.8s
+        ease-in
+        forwards;
 }
 
 @keyframes seedFall{
 
     0%{
+
         opacity:0;
 
         transform:
@@ -749,6 +931,7 @@ body{
     }
 
     100%{
+
         opacity:1;
 
         transform:
@@ -760,31 +943,40 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media (max-width:700px) and (orientation:landscape){
+@media
+(max-width:700px)
+and (orientation:landscape){
 
     .intro-flower{
-        transform:scale(.75);
+
+        transform:
+            scale(.75);
     }
 
     .intro-text{
+
         margin-top:5px;
+
         font-size:16px;
     }
 
     .sun{
+
         width:70px;
         height:70px;
     }
 
     .clothesline{
+
         top:12%;
     }
 
     .post{
+
         height:125px;
     }
 
@@ -797,9 +989,9 @@ body{
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      ROTAR
-========================= -->
+===================================================== -->
 
 <div id="rotate-screen">
 
@@ -816,9 +1008,9 @@ body{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      INTRO
-========================= -->
+===================================================== -->
 
 <div id="intro">
 
@@ -843,7 +1035,9 @@ body{
         </div>
 
         <div class="intro-text">
+
             Presiona aquí
+
         </div>
 
     </div>
@@ -851,31 +1045,40 @@ body{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FRASES
-========================= -->
+===================================================== -->
 
 <div id="messages">
 
     <div class="message">
+
         A veces no puedo darte todo lo que quisiera...
+
     </div>
 
-    <div class="message">
-        pero siempre voy a encontrar una manera de recordarte
-        lo mucho que te quiero.
-    </div>
 
     <div class="message">
-        Y esta vez, hice un pequeño lugar solamente para ti. 🌻
+
+        pero siempre voy a encontrar una manera de
+        recordarte lo mucho que te quiero.
+
+    </div>
+
+
+    <div class="message">
+
+        Y esta vez, hice un pequeño lugar
+        solamente para ti. 🌻
+
     </div>
 
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      JARDÍN
-========================= -->
+===================================================== -->
 
 <div id="garden">
 
@@ -897,7 +1100,7 @@ body{
     </div>
 
 
-    <!-- GIRASOLES -->
+    <!-- CAMPO -->
 
     <div
         class="sunflower-field"
@@ -907,9 +1110,9 @@ body{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      SEMILLA
-========================= -->
+===================================================== -->
 
 <div
     class="seed"
@@ -917,9 +1120,9 @@ body{
 ></div>
 
 
-<!-- =========================
+<!-- =====================================================
      MENSAJE
-========================= -->
+===================================================== -->
 
 <div
     class="flower-message"
@@ -929,7 +1132,9 @@ body{
     <div class="flower-card">
 
         <div class="card-flower">
+
             🌻
+
         </div>
 
         <p id="flowerMessageText"></p>
@@ -938,7 +1143,9 @@ body{
             class="close-message"
             id="closeMessage"
         >
+
             Cerrar
+
         </button>
 
     </div>
@@ -948,86 +1155,113 @@ body{
 
 <script>
 
-/* =========================
+
+/* =====================================================
    ELEMENTOS
-========================= */
+===================================================== */
 
 const intro =
-    document.getElementById("intro");
+    document.getElementById(
+        "intro"
+    );
 
 const introFlower =
-    document.getElementById("introFlower");
+    document.getElementById(
+        "introFlower"
+    );
 
 const messages =
-    document.getElementById("messages");
+    document.getElementById(
+        "messages"
+    );
 
 const messageElements =
-    document.querySelectorAll(".message");
+    document.querySelectorAll(
+        ".message"
+    );
 
 const garden =
-    document.getElementById("garden");
+    document.getElementById(
+        "garden"
+    );
 
 const seed =
-    document.getElementById("seed");
+    document.getElementById(
+        "seed"
+    );
 
 const sunflowerField =
-    document.getElementById("sunflowerField");
+    document.getElementById(
+        "sunflowerField"
+    );
 
 const flowerMessage =
-    document.getElementById("flowerMessage");
+    document.getElementById(
+        "flowerMessage"
+    );
 
 const flowerMessageText =
-    document.getElementById("flowerMessageText");
+    document.getElementById(
+        "flowerMessageText"
+    );
 
 const closeMessage =
-    document.getElementById("closeMessage");
+    document.getElementById(
+        "closeMessage"
+    );
 
 
-/* =========================
-   FLORES
-========================= */
+/* =====================================================
+   CONFIGURACIÓN DE FLORES
+===================================================== */
 
 const flowers = [
 
-    /* ===== ZONA SUPERIOR ===== */
+
+    /* =================================================
+       ZONA SUPERIOR
+    ================================================= */
+
 
     {
         left:"3%",
         top:"6%",
         scale:.40,
         rotate:"-4deg",
-        headOffset:"8px",
-        flowerHeight:"150px"
+        headOffset:"8px"
     },
+
 
     {
         left:"15%",
         top:"31%",
         scale:.45,
         rotate:"2deg",
-        headOffset:"-12px",
-        flowerHeight:"150px"
+        headOffset:"-12px"
     },
+
 
     {
         left:"28%",
         top:"13%",
         scale:.39,
         rotate:"-2deg",
-        headOffset:"15px",
-        flowerHeight:"150px"
+        headOffset:"15px"
     },
+
 
     {
         left:"42%",
         top:"40%",
         scale:.46,
         rotate:"3deg",
-        headOffset:"-18px",
-        flowerHeight:"150px"
+        headOffset:"-18px"
     },
 
-    /* ⭐ ESPECIAL 1 */
+
+    /* =================================================
+       🌻 ESPECIAL 1
+    ================================================= */
 
     {
         left:"55%",
@@ -1035,106 +1269,110 @@ const flowers = [
         scale:.42,
         rotate:"-3deg",
         headOffset:"7px",
-        flowerHeight:"150px",
 
         message:
-            "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
+        "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
     },
+
 
     {
         left:"69%",
         top:"27%",
         scale:.45,
         rotate:"2deg",
-        headOffset:"-16px",
-        flowerHeight:"150px"
+        headOffset:"-16px"
     },
+
 
     {
         left:"83%",
         top:"12%",
         scale:.40,
         rotate:"-2deg",
-        headOffset:"12px",
-        flowerHeight:"150px"
+        headOffset:"12px"
     },
+
 
     {
         left:"96%",
         top:"38%",
         scale:.47,
         rotate:"3deg",
-        headOffset:"-20px",
-        flowerHeight:"150px"
+        headOffset:"-20px"
     },
+
 
     {
         left:"21%",
         top:"55%",
         scale:.41,
         rotate:"-3deg",
-        headOffset:"9px",
-        flowerHeight:"150px"
+        headOffset:"9px"
     },
+
 
     {
         left:"91%",
         top:"60%",
         scale:.45,
         rotate:"2deg",
-        headOffset:"-15px",
-        flowerHeight:"150px"
+        headOffset:"-15px"
     },
 
 
-    /* ===== ZONA MEDIA ===== */
+    /* =================================================
+       ZONA MEDIA
+    ================================================= */
+
 
     {
         left:"5%",
         top:"70%",
         scale:.60,
         rotate:"-2deg",
-        headOffset:"-8px",
-        flowerHeight:"170px"
+        headOffset:"-8px"
     },
+
 
     {
         left:"18%",
         top:"84%",
         scale:.66,
         rotate:"2deg",
-        headOffset:"-24px",
-        flowerHeight:"170px"
+        headOffset:"-24px"
     },
+
 
     {
         left:"33%",
         top:"62%",
         scale:.59,
         rotate:"-1deg",
-        headOffset:"7px",
-        flowerHeight:"170px"
+        headOffset:"7px"
     },
+
 
     {
         left:"47%",
         top:"76%",
         scale:.69,
         rotate:"2deg",
-        headOffset:"-28px",
-        flowerHeight:"170px"
+        headOffset:"-28px"
     },
+
 
     {
         left:"61%",
         top:"54%",
         scale:.61,
         rotate:"-2deg",
-        headOffset:"10px",
-        flowerHeight:"170px"
+        headOffset:"10px"
     },
 
-    /* ⭐ ESPECIAL 2 */
+
+    /* =================================================
+       🌻 ESPECIAL 2
+    ================================================= */
 
     {
         left:"75%",
@@ -1142,126 +1380,134 @@ const flowers = [
         scale:.67,
         rotate:"1deg",
         headOffset:"-22px",
-        flowerHeight:"170px",
 
         message:
-            "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado"
+        "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado"
     },
+
 
     {
         left:"87%",
         top:"51%",
         scale:.60,
         rotate:"-1deg",
-        headOffset:"6px",
-        flowerHeight:"170px"
+        headOffset:"6px"
     },
+
 
     {
         left:"98%",
         top:"82%",
         scale:.69,
         rotate:"2deg",
-        headOffset:"-26px",
-        flowerHeight:"170px"
+        headOffset:"-26px"
     },
+
 
     {
         left:"37%",
         top:"91%",
         scale:.61,
         rotate:"-2deg",
-        headOffset:"8px",
-        flowerHeight:"170px"
+        headOffset:"8px"
     },
 
 
-    /* ===== FLORES GRANDES ===== */
+    /* =================================================
+       FLORES DELANTERAS
+    ================================================= */
+
 
     {
         left:"2%",
         top:"47%",
         scale:.84,
         rotate:"-2deg",
-        headOffset:"-20px",
-        flowerHeight:"190px"
+        headOffset:"-20px"
     },
+
 
     {
         left:"12%",
         top:"64%",
         scale:.91,
         rotate:"2deg",
-        headOffset:"-35px",
-        flowerHeight:"190px"
+        headOffset:"-35px"
     },
+
 
     {
         left:"30%",
         top:"78%",
         scale:.82,
         rotate:"-1deg",
-        headOffset:"5px",
-        flowerHeight:"190px"
+        headOffset:"5px"
     },
+
 
     {
         left:"44%",
         top:"58%",
         scale:.92,
         rotate:"1deg",
-        headOffset:"-40px",
-        flowerHeight:"190px"
+        headOffset:"-40px"
     },
+
 
     {
         left:"59%",
         top:"88%",
         scale:.85,
         rotate:"-2deg",
-        headOffset:"-10px",
-        flowerHeight:"190px"
+        headOffset:"-10px"
     },
+
 
     {
         left:"73%",
         top:"59%",
         scale:.92,
         rotate:"2deg",
-        headOffset:"-30px",
-        flowerHeight:"190px"
+        headOffset:"-30px"
     },
+
 
     {
         left:"88%",
         top:"77%",
         scale:.84,
         rotate:"-2deg",
-        headOffset:"8px",
-        flowerHeight:"190px"
+        headOffset:"8px"
     },
+
 
     {
         left:"98%",
         top:"67%",
         scale:.88,
         rotate:"2deg",
-        headOffset:"-25px",
-        flowerHeight:"190px"
+        headOffset:"-25px"
     }
 
 ];
 
 
-/* =========================
-   CREAR FLORES
-========================= */
+/* =====================================================
+   CREAR GIRASOLES
+===================================================== */
 
 flowers.forEach(
     (flower,index)=>{
 
+
+        /* ---------------------------------------------
+           CONTENEDOR
+        --------------------------------------------- */
+
         const flowerElement =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         flowerElement.className =
             "field-flower";
@@ -1289,36 +1535,58 @@ flowers.forEach(
             flower.headOffset
         );
 
-        /*
-           Z-INDEX AUTOMÁTICO
-           PARA CONSERVAR PROFUNDIDAD
-        */
+
+        /* ---------------------------------------------
+           PROFUNDIDAD
+        --------------------------------------------- */
+
+        let depth;
+
+        if(index < 10){
+
+            depth = 7;
+
+        }
+        else if(index < 19){
+
+            depth = 10;
+
+        }
+        else{
+
+            depth = 18;
+
+        }
 
         flowerElement.style.zIndex =
-            index < 10
-            ? 7
-            : index < 19
-            ? 10
-            : 18;
+            depth;
 
 
-        /* =========================
+        /* ---------------------------------------------
            PÉTALOS
-        ========================= */
+        --------------------------------------------- */
 
-        for(let i=0;i<8;i++){
+        for(
+            let i = 0;
+            i < 8;
+            i++
+        ){
 
             const petal =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
             petal.className =
                 "petal";
 
+
             petal.style.transform =
                 `
                 translate(-50%,-100%)
-                rotate(${i*45}deg)
+                rotate(${i * 45}deg)
                 `;
+
 
             flowerElement.appendChild(
                 petal
@@ -1327,82 +1595,126 @@ flowers.forEach(
         }
 
 
-        /* =========================
+        /* ---------------------------------------------
            CENTRO
-        ========================= */
+        --------------------------------------------- */
 
         const center =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         center.className =
             "flower-center";
+
 
         flowerElement.appendChild(
             center
         );
 
 
-        /* =========================
-           ESPECIAL
-        ========================= */
-
-        if(
-            flower.message
-        ){
-
-            flowerElement.classList.add(
-                "special"
-            );
-
-            flowerElement.dataset.message =
-                flower.message;
-
-        }
-
-
-        /* =========================
-           CLICK
-        ========================= */
-
-        flowerElement.addEventListener(
-            "click",
-            (event)=>{
-
-                event.stopPropagation();
-
-                const message =
-                    flowerElement.dataset.message;
-
-                if(!message){
-                    return;
-                }
-
-                flowerMessageText.textContent =
-                    message;
-
-                flowerMessage.classList.add(
-                    "show"
-                );
-
-            }
-        );
-
+        /* ---------------------------------------------
+           AGREGAR AL CAMPO
+        --------------------------------------------- */
 
         sunflowerField.appendChild(
             flowerElement
         );
 
+
+        /* =================================================
+           FLOR ESPECIAL
+        ================================================= */
+
+        if(flower.message){
+
+
+            flowerElement.classList.add(
+                "special"
+            );
+
+
+            /* -----------------------------------------
+               ZONA INVISIBLE DE TOQUE
+            ----------------------------------------- */
+
+            const specialHit =
+                document.createElement(
+                    "div"
+                );
+
+            specialHit.className =
+                "special-hit";
+
+
+            specialHit.style.left =
+                flower.left;
+
+
+            specialHit.style.top =
+                `calc(
+                    ${flower.top}
+                    +
+                    ${flower.headOffset}
+                )`;
+
+
+            /* -----------------------------------------
+               GUARDAMOS MENSAJE
+            ----------------------------------------- */
+
+            specialHit.dataset.message =
+                flower.message;
+
+
+            /* -----------------------------------------
+               CLICK
+            ----------------------------------------- */
+
+            specialHit.addEventListener(
+                "click",
+                function(event){
+
+                    event.stopPropagation();
+
+
+                    const text =
+                        this.dataset.message;
+
+
+                    flowerMessageText.textContent =
+                        text;
+
+
+                    flowerMessage.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+
+            /* -----------------------------------------
+               PONER ZONA SOBRE TODO
+            ----------------------------------------- */
+
+            sunflowerField.appendChild(
+                specialHit
+            );
+
+        }
+
     }
 );
 
 
-/* =========================
+/* =====================================================
    CERRAR MENSAJE
-========================= */
+===================================================== */
 
 closeMessage.addEventListener(
     "click",
-    ()=>{
+    function(){
 
         flowerMessage.classList.remove(
             "show"
@@ -1412,16 +1724,17 @@ closeMessage.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    CERRAR TOCANDO AFUERA
-========================= */
+===================================================== */
 
 flowerMessage.addEventListener(
     "click",
-    (e)=>{
+    function(event){
 
         if(
-            e.target === flowerMessage
+            event.target ===
+            flowerMessage
         ){
 
             flowerMessage.classList.remove(
@@ -1434,20 +1747,22 @@ flowerMessage.addEventListener(
 );
 
 
-/* =========================
-   INTRO
-========================= */
+/* =====================================================
+   INICIAR EXPERIENCIA
+===================================================== */
 
 introFlower.addEventListener(
     "click",
-    ()=>{
+    function(){
+
 
         intro.style.opacity =
             "0";
 
 
         setTimeout(
-            ()=>{
+            function(){
+
 
                 intro.style.display =
                     "none";
@@ -1464,6 +1779,7 @@ introFlower.addEventListener(
 
                 playMessages();
 
+
             },
             1000
         );
@@ -1472,9 +1788,9 @@ introFlower.addEventListener(
 );
 
 
-/* =========================
-   FRASES
-========================= */
+/* =====================================================
+   SECUENCIA DE FRASES
+===================================================== */
 
 function playMessages(){
 
@@ -1482,6 +1798,11 @@ function playMessages(){
 
 
     function showNext(){
+
+
+        /* ---------------------------------------------
+           OCULTAR ANTERIOR
+        --------------------------------------------- */
 
         if(current > 0){
 
@@ -1494,20 +1815,26 @@ function playMessages(){
         }
 
 
+        /* ---------------------------------------------
+           TERMINAR
+        --------------------------------------------- */
+
         if(
             current >=
             messageElements.length
         ){
 
             setTimeout(
-                ()=>{
+                function(){
+
 
                     messages.style.opacity =
                         "0";
 
 
                     setTimeout(
-                        ()=>{
+                        function(){
+
 
                             messages.style.display =
                                 "none";
@@ -1521,18 +1848,24 @@ function playMessages(){
                                 "show"
                             );
 
+
                         },
                         1200
                     );
+
 
                 },
                 1200
             );
 
-            return;
 
+            return;
         }
 
+
+        /* ---------------------------------------------
+           MOSTRAR ACTUAL
+        --------------------------------------------- */
 
         messageElements[
             current
