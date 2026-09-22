@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -31,10 +32,9 @@ body{
     overflow:hidden;
 }
 
-/* Fuente bonita recuperada */
 body{
     font-family:
-        "Georgia",
+        Georgia,
         "Times New Roman",
         serif;
 }
@@ -45,6 +45,7 @@ body{
 ===================================================== */
 
 #intro{
+
     position:fixed;
     inset:0;
 
@@ -60,13 +61,18 @@ body{
 }
 
 .intro-content{
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 }
 
 .tap-text{
+
     margin-top:30px;
 
     color:#705d47;
@@ -100,6 +106,7 @@ body{
 ===================================================== */
 
 .big-sunflower{
+
     position:relative;
 
     width:190px;
@@ -107,7 +114,11 @@ body{
 
     cursor:pointer;
 
-    animation:floatFlower 3s ease-in-out infinite;
+    animation:
+        floatFlower
+        3s
+        ease-in-out
+        infinite;
 }
 
 @keyframes floatFlower{
@@ -122,6 +133,7 @@ body{
 }
 
 .flower-center{
+
     position:absolute;
 
     width:70px;
@@ -130,7 +142,8 @@ body{
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     background:#6d3e08;
 
@@ -143,6 +156,7 @@ body{
 }
 
 .petal{
+
     position:absolute;
 
     width:55px;
@@ -155,39 +169,56 @@ body{
     left:50%;
     top:50%;
 
-    transform-origin:center bottom;
+    transform-origin:
+        center bottom;
 }
 
 .p1{
-    transform:translate(-50%,-100%) rotate(0deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
 }
 
 .p2{
-    transform:translate(-50%,-100%) rotate(45deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(45deg);
 }
 
 .p3{
-    transform:translate(-50%,-100%) rotate(90deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(90deg);
 }
 
 .p4{
-    transform:translate(-50%,-100%) rotate(135deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(135deg);
 }
 
 .p5{
-    transform:translate(-50%,-100%) rotate(180deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
 }
 
 .p6{
-    transform:translate(-50%,-100%) rotate(225deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(225deg);
 }
 
 .p7{
-    transform:translate(-50%,-100%) rotate(270deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(270deg);
 }
 
 .p8{
-    transform:translate(-50%,-100%) rotate(315deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(315deg);
 }
 
 
@@ -196,33 +227,45 @@ body{
 ===================================================== */
 
 .ripple{
+
     position:absolute;
 
     width:30px;
     height:30px;
 
-    border:2px solid rgba(214,170,55,.7);
+    border:
+        2px solid
+        rgba(214,170,55,.7);
 
     border-radius:50%;
 
     pointer-events:none;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
-    animation:rippleAnimation 1s ease-out forwards;
+    animation:
+        rippleAnimation
+        1s
+        ease-out
+        forwards;
 }
 
 @keyframes rippleAnimation{
 
     from{
+
         width:30px;
         height:30px;
+
         opacity:1;
     }
 
     to{
+
         width:500px;
         height:500px;
+
         opacity:0;
     }
 }
@@ -233,6 +276,7 @@ body{
 ===================================================== */
 
 .seed{
+
     position:fixed;
 
     width:14px;
@@ -240,7 +284,8 @@ body{
 
     background:#6c4317;
 
-    border-radius:60% 40% 60% 40%;
+    border-radius:
+        60% 40% 60% 40%;
 
     left:50%;
     top:35%;
@@ -253,14 +298,23 @@ body{
 }
 
 .seed.fall{
-    animation:seedFall 2.5s ease-in forwards;
+
+    animation:
+        seedFall
+        2.5s
+        ease-in
+        forwards;
 }
 
 @keyframes seedFall{
 
     0%{
+
         opacity:0;
-        transform:translate(-50%,0) rotate(25deg);
+
+        transform:
+            translate(-50%,0)
+            rotate(25deg);
     }
 
     10%{
@@ -268,8 +322,12 @@ body{
     }
 
     100%{
+
         opacity:1;
-        transform:translate(-50%,420px) rotate(220deg);
+
+        transform:
+            translate(-50%,420px)
+            rotate(220deg);
     }
 }
 
@@ -279,13 +337,17 @@ body{
 ===================================================== */
 
 #messages{
+
     position:fixed;
+
     inset:0;
 
     background:#f8f0df;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     z-index:90;
@@ -294,7 +356,8 @@ body{
 
     pointer-events:none;
 
-    transition:opacity 1s ease;
+    transition:
+        opacity 1.2s ease;
 }
 
 .message{
@@ -306,10 +369,6 @@ body{
     text-align:center;
 
     color:#65523b;
-
-    /*
-       Fuente elegante anterior
-    */
 
     font-family:
         Georgia,
@@ -326,25 +385,30 @@ body{
 
     opacity:0;
 
-    transform:translateY(12px);
+    transform:
+        translateY(12px);
 
     transition:
-        opacity 1s ease,
-        transform 1s ease;
+
+        opacity 1.3s ease,
+
+        transform 1.3s ease;
 }
 
 .message.show{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
 }
 
 .message.hide{
 
     opacity:0;
 
-    transform:translateY(-12px);
+    transform:
+        translateY(-12px);
 }
 
 
@@ -362,7 +426,8 @@ body{
 
     opacity:0;
 
-    transition:opacity 1.5s ease;
+    transition:
+        opacity 1.5s ease;
 
     z-index:1;
 
@@ -370,10 +435,15 @@ body{
 
         linear-gradient(
             to bottom,
+
             #a9ddea 0%,
+
             #bce4e2 37%,
+
             #dce7d1 49%,
+
             #8fbd58 50%,
+
             #65a844 100%
         );
 }
@@ -399,9 +469,15 @@ body{
 
         radial-gradient(
             circle,
-            rgba(255,225,103,.7) 0%,
-            rgba(255,225,103,.3) 38%,
-            rgba(255,225,103,0) 72%
+
+            rgba(255,225,103,.7)
+            0%,
+
+            rgba(255,225,103,.3)
+            38%,
+
+            rgba(255,225,103,0)
+            72%
         );
 
     z-index:1;
@@ -418,6 +494,7 @@ body{
 
     left:0;
     right:0;
+
     bottom:0;
 
     height:52%;
@@ -426,9 +503,13 @@ body{
 
         linear-gradient(
             to bottom,
+
             #76ae48 0%,
+
             #5b9e3d 35%,
+
             #438b34 70%,
+
             #33772c 100%
         );
 
@@ -447,10 +528,18 @@ body{
 
         repeating-linear-gradient(
             78deg,
-            rgba(255,255,255,.055) 0px,
-            rgba(255,255,255,.055) 2px,
-            transparent 2px,
-            transparent 17px
+
+            rgba(255,255,255,.055)
+            0px,
+
+            rgba(255,255,255,.055)
+            2px,
+
+            transparent
+            2px,
+
+            transparent
+            17px
         );
 
     opacity:.8;
@@ -460,10 +549,6 @@ body{
 /* =====================================================
    CAMPO
 ===================================================== */
-
-/*
-   Ahora el campo ocupa todo el césped.
-*/
 
 .sunflower-field{
 
@@ -482,23 +567,28 @@ body{
 
     opacity:0;
 
-    transform:translateY(35px);
+    transform:
+        translateY(35px);
 
     transition:
+
         opacity 1.6s ease,
+
         transform 1.6s ease;
 }
 
-#garden.ready .sunflower-field{
+#garden.ready
+.sunflower-field{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
 }
 
 
 /* =====================================================
-   GIRASOL
+   GIRASOL INDIVIDUAL
 ===================================================== */
 
 .field-flower{
@@ -506,16 +596,20 @@ body{
     position:absolute;
 
     width:60px;
-    height:180px;
-
-    left:var(--left);
 
     /*
-       AQUÍ está el cambio importante:
-       cada flor tiene una altura distinta.
+       Altura total diferente
+       para cada flor.
     */
 
-    top:var(--top);
+    height:
+        var(--flower-height);
+
+    left:
+        var(--left);
+
+    top:
+        var(--top);
 
     transform:
 
@@ -523,9 +617,11 @@ body{
 
         rotate(var(--rotate));
 
-    transform-origin:bottom center;
+    transform-origin:
+        bottom center;
 
-    z-index:var(--z);
+    z-index:
+        var(--z);
 
     cursor:pointer;
 
@@ -537,9 +633,43 @@ body{
 
     transform:
 
-        scale(calc(var(--scale) * 1.06))
+        scale(
+            calc(
+                var(--scale) * 1.06
+            )
+        )
 
         rotate(var(--rotate));
+}
+
+
+/* =====================================================
+   CABEZA
+===================================================== */
+
+.field-head{
+
+    position:absolute;
+
+    width:60px;
+    height:60px;
+
+    /*
+       ESTE ES EL CAMBIO IMPORTANTE.
+
+       La cabeza puede subir
+       o bajar independientemente.
+    */
+
+    left:50%;
+
+    top:
+        var(--head-offset);
+
+    transform:
+        translateX(-50%);
+
+    z-index:5;
 }
 
 
@@ -553,20 +683,25 @@ body{
 
     width:7px;
 
-    height:130px;
+    height:
+        var(--stem-height);
 
     bottom:0;
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     background:
 
         linear-gradient(
             to right,
+
             #2c6d2c,
+
             #4c9639,
+
             #2d702d
         );
 
@@ -591,7 +726,9 @@ body{
 
         linear-gradient(
             135deg,
+
             #4f9639,
+
             #2f7330
         );
 
@@ -607,7 +744,8 @@ body{
 
     bottom:48px;
 
-    transform:rotate(-30deg);
+    transform:
+        rotate(-30deg);
 }
 
 .leaf.right{
@@ -617,29 +755,16 @@ body{
     bottom:72px;
 
     transform:
+
         rotate(25deg)
+
         scaleX(-1);
 }
 
 
 /* =====================================================
-   CABEZA
+   PÉTALOS
 ===================================================== */
-
-.field-head{
-
-    position:absolute;
-
-    width:60px;
-    height:60px;
-
-    left:50%;
-    top:0;
-
-    transform:translateX(-50%);
-
-    z-index:5;
-}
 
 .field-petal{
 
@@ -655,46 +780,70 @@ body{
 
         linear-gradient(
             to bottom,
+
             #ffe36a,
+
             #ffd047
         );
 
     border-radius:50%;
 
-    transform-origin:center bottom;
+    transform-origin:
+        center bottom;
 }
 
 .fp1{
-    transform:translate(-50%,-100%) rotate(0deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
 }
 
 .fp2{
-    transform:translate(-50%,-100%) rotate(45deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(45deg);
 }
 
 .fp3{
-    transform:translate(-50%,-100%) rotate(90deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(90deg);
 }
 
 .fp4{
-    transform:translate(-50%,-100%) rotate(135deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(135deg);
 }
 
 .fp5{
-    transform:translate(-50%,-100%) rotate(180deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
 }
 
 .fp6{
-    transform:translate(-50%,-100%) rotate(225deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(225deg);
 }
 
 .fp7{
-    transform:translate(-50%,-100%) rotate(270deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(270deg);
 }
 
 .fp8{
-    transform:translate(-50%,-100%) rotate(315deg);
+    transform:
+        translate(-50%,-100%)
+        rotate(315deg);
 }
+
+
+/* =====================================================
+   CENTRO
+===================================================== */
 
 .field-center{
 
@@ -706,14 +855,18 @@ body{
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     background:
 
         radial-gradient(
             circle,
+
             #5b3205 0%,
+
             #70420a 65%,
+
             #8b5b15 100%
         );
 
@@ -740,26 +893,30 @@ body{
     height:190px;
 
     /*
-       IMPORTANTE:
-       queda detrás de las flores.
+       Detrás de las flores.
     */
 
     z-index:5;
 
     opacity:0;
 
-    transform:translateY(-20px);
+    transform:
+        translateY(-20px);
 
     transition:
+
         opacity 1s ease,
+
         transform 1s ease;
 }
 
-#garden.ready .clothesline{
+#garden.ready
+.clothesline{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
 }
 
 .clothesline-rope{
@@ -795,8 +952,11 @@ body{
 
         linear-gradient(
             to right,
+
             #603b1d,
+
             #795025,
+
             #603b1d
         );
 
@@ -815,7 +975,7 @@ body{
 
 
 /* =====================================================
-   TELÉFONO GIRANDO
+   TELÉFONO
 ===================================================== */
 
 .rotate-screen{
@@ -842,17 +1002,21 @@ body{
 .phone-animation{
 
     width:55px;
-
     height:95px;
 
-    border:3px solid #6e5b45;
+    border:
+        3px solid
+        #6e5b45;
 
     border-radius:12px;
 
     position:relative;
 
     animation:
-        phoneRotate 2.5s ease-in-out infinite;
+        phoneRotate
+        2.5s
+        ease-in-out
+        infinite;
 }
 
 .phone-animation::before{
@@ -862,7 +1026,6 @@ body{
     position:absolute;
 
     width:20px;
-
     height:3px;
 
     border-radius:5px;
@@ -873,7 +1036,8 @@ body{
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .phone-animation::after{
@@ -883,7 +1047,6 @@ body{
     position:absolute;
 
     width:7px;
-
     height:7px;
 
     border-radius:50%;
@@ -894,7 +1057,8 @@ body{
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .rotate-text{
@@ -976,8 +1140,6 @@ and (max-height:500px){
     .field-flower{
 
         width:52px;
-
-        height:155px;
     }
 
     .field-head{
@@ -996,13 +1158,6 @@ and (max-height:500px){
 
         width:22px;
         height:22px;
-    }
-
-    .field-stem{
-
-        height:110px;
-
-        width:6px;
     }
 
     .leaf{
@@ -1062,7 +1217,7 @@ and (max-width:900px){
 
 
 <!-- =====================================================
-     PANTALLA PARA GIRAR TELÉFONO
+     GIRAR TELÉFONO
 ===================================================== -->
 
 <div class="rotate-screen">
@@ -1169,9 +1324,6 @@ and (max-width:900px){
         id="sunflowerField">
     </div>
 
-
-    <!-- TENDEDero -->
-
     <div class="clothesline">
 
         <div class="clothesline-post left"></div>
@@ -1192,22 +1344,34 @@ and (max-width:900px){
 ===================================================== */
 
 const startFlower =
-document.getElementById("startFlower");
+document.getElementById(
+    "startFlower"
+);
 
 const intro =
-document.getElementById("intro");
+document.getElementById(
+    "intro"
+);
 
 const seed =
-document.getElementById("seed");
+document.getElementById(
+    "seed"
+);
 
 const messages =
-document.getElementById("messages");
+document.getElementById(
+    "messages"
+);
 
 const garden =
-document.getElementById("garden");
+document.getElementById(
+    "garden"
+);
 
 const field =
-document.getElementById("sunflowerField");
+document.getElementById(
+    "sunflowerField"
+);
 
 
 /* =====================================================
@@ -1217,10 +1381,10 @@ document.getElementById("sunflowerField");
 function createFlower(){
 
     const flower =
-    document.createElement("div");
+        document.createElement("div");
 
     flower.className =
-    "field-flower";
+        "field-flower";
 
     flower.innerHTML = `
 
@@ -1251,217 +1415,264 @@ function createFlower(){
 
 
 /* =====================================================
-   DISTRIBUCIÓN
+   POSICIONES
 ===================================================== */
 
 /*
-   AHORA usamos TOP.
+   Cada flor tiene:
 
-   Esto es diferente a las versiones anteriores.
+   top          = posición vertical
+   scale        = tamaño
+   head-offset  = altura independiente de la cabeza
+   stem-height  = longitud del tallo
 
-   Algunas flores tienen la cabeza muy arriba,
-   otras en medio y otras muy abajo.
-
-   Esto crea profundidad visual REAL.
+   Esto nos permite que las cabezas
+   NO queden alineadas.
 */
 
 const flowers = [
 
-    /* =====================================
-       FLORES MUY ATRÁS
-    ===================================== */
+    /* ------------------------------
+       MUY ATRÁS
+    ------------------------------ */
 
     {
-        left:"2%",
-        top:"2%",
-        scale:.50,
+        left:"1%",
+        top:"0%",
+        scale:.52,
         rotate:"-3deg",
+        headOffset:"5px",
+        stemHeight:"125px",
         z:7
     },
 
     {
-        left:"13%",
-        top:"15%",
-        scale:.56,
+        left:"12%",
+        top:"12%",
+        scale:.58,
         rotate:"2deg",
+        headOffset:"-15px",
+        stemHeight:"150px",
         z:7
     },
 
     {
-        left:"25%",
-        top:"5%",
+        left:"24%",
+        top:"3%",
         scale:.48,
         rotate:"-1deg",
+        headOffset:"18px",
+        stemHeight:"115px",
         z:7
     },
 
     {
-        left:"38%",
-        top:"19%",
-        scale:.55,
+        left:"37%",
+        top:"17%",
+        scale:.56,
         rotate:"2deg",
+        headOffset:"-20px",
+        stemHeight:"160px",
         z:7
     },
 
     {
-        left:"51%",
-        top:"4%",
+        left:"50%",
+        top:"5%",
         scale:.50,
         rotate:"-2deg",
+        headOffset:"10px",
+        stemHeight:"135px",
         z:7
     },
 
     {
-        left:"64%",
-        top:"16%",
-        scale:.55,
+        left:"63%",
+        top:"15%",
+        scale:.57,
         rotate:"1deg",
+        headOffset:"-12px",
+        stemHeight:"145px",
         z:7
     },
 
     {
-        left:"77%",
-        top:"6%",
+        left:"76%",
+        top:"2%",
         scale:.49,
         rotate:"-2deg",
+        headOffset:"15px",
+        stemHeight:"120px",
         z:7
     },
 
     {
-        left:"90%",
+        left:"89%",
         top:"18%",
-        scale:.54,
+        scale:.55,
         rotate:"2deg",
+        headOffset:"-18px",
+        stemHeight:"155px",
         z:7
     },
 
 
-    /* =====================================
-       FLORES DEL MEDIO
-    ===================================== */
+    /* ------------------------------
+       NIVEL MEDIO
+    ------------------------------ */
 
     {
-        left:"7%",
-        top:"30%",
+        left:"5%",
+        top:"29%",
         scale:.72,
         rotate:"-2deg",
+        headOffset:"-8px",
+        stemHeight:"135px",
         z:10
     },
 
     {
-        left:"19%",
-        top:"39%",
-        scale:.80,
+        left:"17%",
+        top:"37%",
+        scale:.82,
         rotate:"2deg",
+        headOffset:"-25px",
+        stemHeight:"155px",
         z:11
     },
 
     {
-        left:"31%",
-        top:"27%",
-        scale:.74,
-        rotate:"-1deg",
-        z:10
-    },
-
-    {
-        left:"44%",
-        top:"43%",
-        scale:.84,
-        rotate:"2deg",
-        z:11
-    },
-
-    {
-        left:"57%",
-        top:"31%",
+        left:"29%",
+        top:"25%",
         scale:.73,
-        rotate:"-2deg",
+        rotate:"-1deg",
+        headOffset:"8px",
+        stemHeight:"125px",
         z:10
     },
 
     {
-        left:"69%",
-        top:"42%",
-        scale:.83,
+        left:"42%",
+        top:"41%",
+        scale:.85,
+        rotate:"2deg",
+        headOffset:"-30px",
+        stemHeight:"165px",
+        z:11
+    },
+
+    {
+        left:"55%",
+        top:"28%",
+        scale:.75,
+        rotate:"-2deg",
+        headOffset:"12px",
+        stemHeight:"120px",
+        z:10
+    },
+
+    {
+        left:"68%",
+        top:"40%",
+        scale:.84,
         rotate:"1deg",
+        headOffset:"-22px",
+        stemHeight:"160px",
         z:11
     },
 
     {
         left:"81%",
-        top:"29%",
+        top:"27%",
         scale:.72,
         rotate:"-1deg",
+        headOffset:"5px",
+        stemHeight:"130px",
         z:10
     },
 
     {
         left:"92%",
-        top:"40%",
+        top:"39%",
         scale:.80,
         rotate:"2deg",
+        headOffset:"-28px",
+        stemHeight:"160px",
         z:11
     },
 
 
-    /* =====================================
-       FLORES DELANTERAS
-    ===================================== */
+    /* ------------------------------
+       PRIMER PLANO
+    ------------------------------ */
 
     {
-        left:"3%",
-        top:"53%",
+        left:"2%",
+        top:"52%",
         scale:1.00,
         rotate:"-2deg",
+        headOffset:"-20px",
+        stemHeight:"145px",
         z:18
     },
 
     {
         left:"17%",
-        top:"66%",
+        top:"64%",
         scale:1.08,
         rotate:"2deg",
+        headOffset:"-35px",
+        stemHeight:"175px",
         z:18
     },
 
     {
         left:"32%",
-        top:"56%",
+        top:"55%",
         scale:.98,
         rotate:"-1deg",
+        headOffset:"5px",
+        stemHeight:"135px",
         z:18
     },
 
     {
         left:"47%",
-        top:"70%",
+        top:"69%",
         scale:1.10,
         rotate:"1deg",
+        headOffset:"-40px",
+        stemHeight:"180px",
         z:19
     },
 
     {
         left:"63%",
-        top:"54%",
+        top:"53%",
         scale:1.02,
         rotate:"-2deg",
+        headOffset:"-10px",
+        stemHeight:"150px",
         z:18
     },
 
     {
         left:"78%",
-        top:"68%",
+        top:"67%",
         scale:1.10,
         rotate:"2deg",
+        headOffset:"-30px",
+        stemHeight:"170px",
         z:19
     },
 
     {
         left:"93%",
-        top:"55%",
+        top:"54%",
         scale:1.00,
         rotate:"-2deg",
+        headOffset:"8px",
+        stemHeight:"140px",
         z:18
     }
 
@@ -1477,45 +1688,57 @@ function createFieldFlowers(){
     field.innerHTML="";
 
     flowers.forEach(
-    (data,index)=>{
+        data => {
 
-        const flower =
-        createFlower();
+            const flower =
+                createFlower();
 
-        flower.style.setProperty(
-            "--left",
-            data.left
-        );
+            flower.style.setProperty(
+                "--left",
+                data.left
+            );
 
-        flower.style.setProperty(
-            "--top",
-            data.top
-        );
+            flower.style.setProperty(
+                "--top",
+                data.top
+            );
 
-        flower.style.setProperty(
-            "--scale",
-            data.scale
-        );
+            flower.style.setProperty(
+                "--scale",
+                data.scale
+            );
 
-        flower.style.setProperty(
-            "--rotate",
-            data.rotate
-        );
+            flower.style.setProperty(
+                "--rotate",
+                data.rotate
+            );
 
-        flower.style.setProperty(
-            "--z",
-            data.z
-        );
+            flower.style.setProperty(
+                "--head-offset",
+                data.headOffset
+            );
 
-        field.appendChild(flower);
+            flower.style.setProperty(
+                "--stem-height",
+                data.stemHeight
+            );
 
-    });
+            flower.style.setProperty(
+                "--z",
+                data.z
+            );
 
+            field.appendChild(
+                flower
+            );
+
+        }
+    );
 }
 
 
 /* =====================================================
-   INICIAR
+   EXPERIENCIA
 ===================================================== */
 
 let started=false;
@@ -1528,14 +1751,16 @@ startFlower.addEventListener(
 startFlower.addEventListener(
     "touchstart",
     startExperience,
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
 function startExperience(){
 
     if(started)
-    return;
+        return;
 
     started=true;
 
@@ -1543,7 +1768,9 @@ function startExperience(){
     /* RIPPLE */
 
     const ripple =
-    document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     ripple.className="ripple";
 
@@ -1551,7 +1778,9 @@ function startExperience(){
 
     ripple.style.top="50%";
 
-    startFlower.appendChild(ripple);
+    startFlower.appendChild(
+        ripple
+    );
 
 
     /* GIRASOL */
@@ -1559,12 +1788,12 @@ function startExperience(){
     setTimeout(()=>{
 
         startFlower.style.transition=
-        "opacity .8s ease, transform .8s ease";
+            "opacity .8s ease, transform .8s ease";
 
         startFlower.style.opacity="0";
 
         startFlower.style.transform=
-        "scale(.7)";
+            "scale(.7)";
 
     },450);
 
@@ -1573,7 +1802,9 @@ function startExperience(){
 
     setTimeout(()=>{
 
-        seed.classList.add("fall");
+        seed.classList.add(
+            "fall"
+        );
 
     },800);
 
@@ -1584,7 +1815,7 @@ function startExperience(){
 
         intro.style.opacity="0";
 
-    },3300);
+    },3500);
 
 
     /* MENSAJES */
@@ -1593,82 +1824,127 @@ function startExperience(){
 
         messages.style.opacity="1";
 
-    },4200);
+    },4300);
 
 
-    /* MENSAJE 1 */
-
-    setTimeout(()=>{
-
-        document
-        .getElementById("message1")
-        .classList.add("show");
-
-    },4600);
-
+    /* =================================
+       FRASE 1
+       Más tiempo para leer
+    ================================= */
 
     setTimeout(()=>{
 
         document
-        .getElementById("message1")
-        .classList.remove("show");
+            .getElementById(
+                "message1"
+            )
+            .classList.add(
+                "show"
+            );
 
-        document
-        .getElementById("message1")
-        .classList.add("hide");
-
-    },6800);
-
-
-    /* MENSAJE 2 */
-
-    setTimeout(()=>{
-
-        document
-        .getElementById("message2")
-        .classList.add("show");
-
-    },7600);
+    },4700);
 
 
     setTimeout(()=>{
 
         document
-        .getElementById("message2")
-        .classList.remove("show");
+            .getElementById(
+                "message1"
+            )
+            .classList.remove(
+                "show"
+            );
 
         document
-        .getElementById("message2")
-        .classList.add("hide");
+            .getElementById(
+                "message1"
+            )
+            .classList.add(
+                "hide"
+            );
 
-    },9800);
+    },8500);
 
 
-    /* MENSAJE 3 */
+    /* =================================
+       FRASE 2
+    ================================= */
 
     setTimeout(()=>{
 
         document
-        .getElementById("message3")
-        .classList.add("show");
+            .getElementById(
+                "message2"
+            )
+            .classList.add(
+                "show"
+            );
 
-    },10600);
+    },9300);
 
 
     setTimeout(()=>{
 
         document
-        .getElementById("message3")
-        .classList.remove("show");
+            .getElementById(
+                "message2"
+            )
+            .classList.remove(
+                "show"
+            );
 
         document
-        .getElementById("message3")
-        .classList.add("hide");
+            .getElementById(
+                "message2"
+            )
+            .classList.add(
+                "hide"
+            );
 
-    },13200);
+    },12800);
 
 
-    /* PREPARAR JARDÍN */
+    /* =================================
+       FRASE 3
+    ================================= */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById(
+                "message3"
+            )
+            .classList.add(
+                "show"
+            );
+
+    },13600);
+
+
+    setTimeout(()=>{
+
+        document
+            .getElementById(
+                "message3"
+            )
+            .classList.remove(
+                "show"
+            );
+
+        document
+            .getElementById(
+                "message3"
+            )
+            .classList.add(
+                "hide"
+            );
+
+    },18100);
+
+
+    /* =================================
+       PREPARAR JARDÍN
+    ================================= */
 
     setTimeout(()=>{
 
@@ -1676,18 +1952,22 @@ function startExperience(){
 
         messages.style.opacity="0";
 
-    },13600);
+    },18500);
 
 
-    /* JARDÍN */
+    /* =================================
+       MOSTRAR JARDÍN
+    ================================= */
 
     setTimeout(()=>{
 
         garden.style.opacity="1";
 
-        garden.classList.add("ready");
+        garden.classList.add(
+            "ready"
+        );
 
-    },13800);
+    },18800);
 
 }
 
