@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
->
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>Para ti 🌻</title>
 
@@ -291,12 +289,7 @@ body{
 
     color:#6f5a43;
 
-    font-size:
-        clamp(
-            25px,
-            4vw,
-            42px
-        );
+    font-size:clamp(25px,4vw,42px);
 
     line-height:1.45;
 
@@ -493,11 +486,6 @@ body{
     width:190px;
     height:190px;
 
-    /*
-       AHORA EL CENTRO DE LA FLOR
-       ES EXACTAMENTE SU POSICIÓN TOP
-    */
-
     transform:
         translate(-50%,-50%)
         scale(var(--scale))
@@ -532,7 +520,7 @@ body{
 
 
 /* =========================
-   GLOW FLORES ESPECIALES
+   GLOW ESPECIALES
 ========================= */
 
 .field-flower.special::after{
@@ -545,10 +533,9 @@ body{
 
     left:50%;
 
-    top:
-        calc(
-            50% + var(--head-offset)
-        );
+    top:calc(
+        50% + var(--head-offset)
+    );
 
     transform:
         translate(-50%,-50%);
@@ -811,7 +798,7 @@ body{
 
 
 <!-- =========================
-     ROTAR TELÉFONO
+     ROTAR
 ========================= -->
 
 <div id="rotate-screen">
@@ -910,7 +897,7 @@ body{
     </div>
 
 
-    <!-- FLORES -->
+    <!-- GIRASOLES -->
 
     <div
         class="sunflower-field"
@@ -931,7 +918,7 @@ body{
 
 
 <!-- =========================
-     MENSAJE DE FLOR
+     MENSAJE
 ========================= -->
 
 <div
@@ -998,7 +985,6 @@ const closeMessage =
 
 /* =========================
    FLORES
-   POSICIÓN = CABEZA
 ========================= */
 
 const flowers = [
@@ -1008,103 +994,96 @@ const flowers = [
     {
         left:"3%",
         top:"6%",
-        scale:.48,
+        scale:.40,
         rotate:"-4deg",
         headOffset:"8px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"15%",
         top:"31%",
-        scale:.54,
+        scale:.45,
         rotate:"2deg",
         headOffset:"-12px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"28%",
         top:"13%",
-        scale:.46,
+        scale:.39,
         rotate:"-2deg",
         headOffset:"15px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"42%",
         top:"40%",
-        scale:.55,
+        scale:.46,
         rotate:"3deg",
         headOffset:"-18px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
-    /* ⭐ FLOR ESPECIAL 1 */
+    /* ⭐ ESPECIAL 1 */
 
     {
         left:"55%",
         top:"7%",
-        scale:.49,
+        scale:.42,
         rotate:"-3deg",
         headOffset:"7px",
         flowerHeight:"150px",
-        z:7
+
+        message:
+            "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
     },
 
     {
         left:"69%",
         top:"27%",
-        scale:.53,
+        scale:.45,
         rotate:"2deg",
         headOffset:"-16px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"83%",
         top:"12%",
-        scale:.47,
+        scale:.40,
         rotate:"-2deg",
         headOffset:"12px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"96%",
         top:"38%",
-        scale:.56,
+        scale:.47,
         rotate:"3deg",
         headOffset:"-20px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"21%",
         top:"55%",
-        scale:.48,
+        scale:.41,
         rotate:"-3deg",
         headOffset:"9px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
     {
         left:"91%",
         top:"60%",
-        scale:.54,
+        scale:.45,
         rotate:"2deg",
         headOffset:"-15px",
-        flowerHeight:"150px",
-        z:7
+        flowerHeight:"150px"
     },
 
 
@@ -1113,93 +1092,87 @@ const flowers = [
     {
         left:"5%",
         top:"70%",
-        scale:.70,
+        scale:.60,
         rotate:"-2deg",
         headOffset:"-8px",
-        flowerHeight:"170px",
-        z:10
+        flowerHeight:"170px"
     },
 
     {
         left:"18%",
         top:"84%",
-        scale:.78,
+        scale:.66,
         rotate:"2deg",
         headOffset:"-24px",
-        flowerHeight:"170px",
-        z:11
+        flowerHeight:"170px"
     },
 
     {
         left:"33%",
         top:"62%",
-        scale:.69,
+        scale:.59,
         rotate:"-1deg",
         headOffset:"7px",
-        flowerHeight:"170px",
-        z:10
+        flowerHeight:"170px"
     },
 
     {
         left:"47%",
         top:"76%",
-        scale:.82,
+        scale:.69,
         rotate:"2deg",
         headOffset:"-28px",
-        flowerHeight:"170px",
-        z:11
+        flowerHeight:"170px"
     },
 
     {
         left:"61%",
         top:"54%",
-        scale:.72,
+        scale:.61,
         rotate:"-2deg",
         headOffset:"10px",
-        flowerHeight:"170px",
-        z:10
+        flowerHeight:"170px"
     },
 
-    /* ⭐ FLOR ESPECIAL 2 */
+    /* ⭐ ESPECIAL 2 */
 
     {
         left:"75%",
         top:"72%",
-        scale:.80,
+        scale:.67,
         rotate:"1deg",
         headOffset:"-22px",
         flowerHeight:"170px",
-        z:11
+
+        message:
+            "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado"
     },
 
     {
         left:"87%",
         top:"51%",
-        scale:.70,
+        scale:.60,
         rotate:"-1deg",
         headOffset:"6px",
-        flowerHeight:"170px",
-        z:10
+        flowerHeight:"170px"
     },
 
     {
         left:"98%",
         top:"82%",
-        scale:.82,
+        scale:.69,
         rotate:"2deg",
         headOffset:"-26px",
-        flowerHeight:"170px",
-        z:11
+        flowerHeight:"170px"
     },
 
     {
         left:"37%",
         top:"91%",
-        scale:.71,
+        scale:.61,
         rotate:"-2deg",
         headOffset:"8px",
-        flowerHeight:"170px",
-        z:10
+        flowerHeight:"170px"
     },
 
 
@@ -1208,81 +1181,73 @@ const flowers = [
     {
         left:"2%",
         top:"47%",
-        scale:1.00,
+        scale:.84,
         rotate:"-2deg",
         headOffset:"-20px",
-        flowerHeight:"190px",
-        z:18
+        flowerHeight:"190px"
     },
 
     {
         left:"12%",
         top:"64%",
-        scale:1.08,
+        scale:.91,
         rotate:"2deg",
         headOffset:"-35px",
-        flowerHeight:"190px",
-        z:18
+        flowerHeight:"190px"
     },
 
     {
         left:"30%",
         top:"78%",
-        scale:.98,
+        scale:.82,
         rotate:"-1deg",
         headOffset:"5px",
-        flowerHeight:"190px",
-        z:18
+        flowerHeight:"190px"
     },
 
     {
         left:"44%",
         top:"58%",
-        scale:1.10,
+        scale:.92,
         rotate:"1deg",
         headOffset:"-40px",
-        flowerHeight:"190px",
-        z:19
+        flowerHeight:"190px"
     },
 
     {
         left:"59%",
         top:"88%",
-        scale:1.02,
+        scale:.85,
         rotate:"-2deg",
         headOffset:"-10px",
-        flowerHeight:"190px",
-        z:18
+        flowerHeight:"190px"
     },
 
     {
         left:"73%",
         top:"59%",
-        scale:1.10,
+        scale:.92,
         rotate:"2deg",
         headOffset:"-30px",
-        flowerHeight:"190px",
-        z:19
+        flowerHeight:"190px"
     },
 
     {
         left:"88%",
         top:"77%",
-        scale:1.00,
+        scale:.84,
         rotate:"-2deg",
         headOffset:"8px",
-        flowerHeight:"190px",
-        z:18
+        flowerHeight:"190px"
     },
 
     {
         left:"98%",
         top:"67%",
-        scale:1.05,
+        scale:.88,
         rotate:"2deg",
         headOffset:"-25px",
-        flowerHeight:"190px",
-        z:19
+        flowerHeight:"190px"
     }
 
 ];
@@ -1324,8 +1289,17 @@ flowers.forEach(
             flower.headOffset
         );
 
+        /*
+           Z-INDEX AUTOMÁTICO
+           PARA CONSERVAR PROFUNDIDAD
+        */
+
         flowerElement.style.zIndex =
-            flower.z;
+            index < 10
+            ? 7
+            : index < 19
+            ? 10
+            : 18;
 
 
         /* =========================
@@ -1369,12 +1343,11 @@ flowers.forEach(
 
 
         /* =========================
-           FLORES ESPECIALES
+           ESPECIAL
         ========================= */
 
         if(
-            index === 4 ||
-            index === 15
+            flower.message
         ){
 
             flowerElement.classList.add(
@@ -1382,11 +1355,7 @@ flowers.forEach(
             );
 
             flowerElement.dataset.message =
-                index === 4
-                ?
-                "Eres mi vida y por ello quiero estar a tu lado mil y un vidas"
-                :
-                "Esta aventura que estamos emprendiendo me alegra de que sea a tu lado";
+                flower.message;
 
         }
 
@@ -1397,20 +1366,23 @@ flowers.forEach(
 
         flowerElement.addEventListener(
             "click",
-            ()=>{
+            (event)=>{
 
-                if(
-                    flowerElement.dataset.message
-                ){
+                event.stopPropagation();
 
-                    flowerMessageText.textContent =
-                        flowerElement.dataset.message;
+                const message =
+                    flowerElement.dataset.message;
 
-                    flowerMessage.classList.add(
-                        "show"
-                    );
-
+                if(!message){
+                    return;
                 }
+
+                flowerMessageText.textContent =
+                    message;
+
+                flowerMessage.classList.add(
+                    "show"
+                );
 
             }
         );
@@ -1463,7 +1435,7 @@ flowerMessage.addEventListener(
 
 
 /* =========================
-   INICIO
+   INTRO
 ========================= */
 
 introFlower.addEventListener(
