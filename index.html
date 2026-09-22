@@ -1,1084 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no">
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>Para ti 🌻</title>
 
 <style>
-
-/* =====================================================
-   GENERAL
-===================================================== */
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    -webkit-tap-highlight-color:transparent;
 }
 
-html,
-body{
+html,body{
     width:100%;
     height:100%;
     overflow:hidden;
 }
 
 body{
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-}
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-#intro{
-
-    position:fixed;
-    inset:0;
-
     background:#f8f0df;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    z-index:100;
-
-    transition:opacity 1.2s ease;
 }
 
-.intro-content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-}
-
-.tap-text{
-
-    margin-top:30px;
-
-    color:#705d47;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:17px;
-
-    letter-spacing:1.5px;
-
-    animation:pulseText 2s infinite;
-}
-
-@keyframes pulseText{
-
-    0%,100%{
-        opacity:.45;
-    }
-
-    50%{
-        opacity:1;
-    }
-}
-
-
-/* =====================================================
-   GIRASOL INICIAL
-===================================================== */
-
-.big-sunflower{
-
-    position:relative;
-
-    width:190px;
-    height:190px;
-
-    cursor:pointer;
-
-    animation:
-        floatFlower
-        3s
-        ease-in-out
-        infinite;
-}
-
-@keyframes floatFlower{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-.flower-center{
-
-    position:absolute;
-
-    width:70px;
-    height:70px;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:#6d3e08;
-
-    border-radius:50%;
-
-    z-index:5;
-
-    box-shadow:
-        inset 0 0 0 8px #81500d;
-}
-
-.petal{
-
-    position:absolute;
-
-    width:55px;
-    height:85px;
-
-    background:#ffd84f;
-
-    border-radius:50%;
-
-    left:50%;
-    top:50%;
-
-    transform-origin:
-        center bottom;
-}
-
-.p1{
-    transform:
-        translate(-50%,-100%)
-        rotate(0deg);
-}
-
-.p2{
-    transform:
-        translate(-50%,-100%)
-        rotate(45deg);
-}
-
-.p3{
-    transform:
-        translate(-50%,-100%)
-        rotate(90deg);
-}
-
-.p4{
-    transform:
-        translate(-50%,-100%)
-        rotate(135deg);
-}
-
-.p5{
-    transform:
-        translate(-50%,-100%)
-        rotate(180deg);
-}
-
-.p6{
-    transform:
-        translate(-50%,-100%)
-        rotate(225deg);
-}
-
-.p7{
-    transform:
-        translate(-50%,-100%)
-        rotate(270deg);
-}
-
-.p8{
-    transform:
-        translate(-50%,-100%)
-        rotate(315deg);
-}
-
-
-/* =====================================================
-   RIPPLE
-===================================================== */
-
-.ripple{
-
-    position:absolute;
-
-    width:30px;
-    height:30px;
-
-    border:
-        2px solid
-        rgba(214,170,55,.7);
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    transform:
-        translate(-50%,-50%);
-
-    animation:
-        rippleAnimation
-        1s
-        ease-out
-        forwards;
-}
-
-@keyframes rippleAnimation{
-
-    from{
-
-        width:30px;
-        height:30px;
-
-        opacity:1;
-    }
-
-    to{
-
-        width:500px;
-        height:500px;
-
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   SEMILLA
-===================================================== */
-
-.seed{
-
-    position:fixed;
-
-    width:14px;
-    height:22px;
-
-    background:#6c4317;
-
-    border-radius:
-        60% 40% 60% 40%;
-
-    left:50%;
-    top:35%;
-
-    opacity:0;
-
-    z-index:95;
-
-    transform:rotate(25deg);
-}
-
-.seed.fall{
-
-    animation:
-        seedFall
-        2.5s
-        ease-in
-        forwards;
-}
-
-@keyframes seedFall{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-            translate(-50%,0)
-            rotate(25deg);
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-
-        opacity:1;
-
-        transform:
-            translate(-50%,420px)
-            rotate(220deg);
-    }
-}
-
-
-/* =====================================================
-   MENSAJES
-===================================================== */
-
-#messages{
-
-    position:fixed;
-
-    inset:0;
-
-    background:#f8f0df;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:90;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:
-        opacity 1.2s ease;
-}
-
-.message{
-
-    position:absolute;
-
-    width:82%;
-
-    text-align:center;
-
-    color:#65523b;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:25px;
-
-    line-height:1.55;
-
-    font-weight:400;
-
-    font-style:italic;
-
-    opacity:0;
-
-    transform:
-        translateY(12px);
-
-    transition:
-
-        opacity 1.3s ease,
-
-        transform 1.3s ease;
-}
-
-.message.show{
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-}
-
-.message.hide{
-
-    opacity:0;
-
-    transform:
-        translateY(-12px);
-}
-
-
-/* =====================================================
-   JARDÍN
-===================================================== */
-
-#garden{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    opacity:0;
-
-    transition:
-        opacity 1.5s ease;
-
-    z-index:1;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-
-            #a9ddea 0%,
-
-            #bce4e2 37%,
-
-            #dce7d1 49%,
-
-            #8fbd58 50%,
-
-            #65a844 100%
-        );
-}
-
-
-/* =====================================================
-   SOL
-===================================================== */
-
-.sun-glow{
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    right:8%;
-    top:7%;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-
-            rgba(255,225,103,.7)
-            0%,
-
-            rgba(255,225,103,.3)
-            38%,
-
-            rgba(255,225,103,0)
-            72%
-        );
-
-    z-index:1;
-}
-
-
-/* =====================================================
-   CÉSPED
-===================================================== */
-
-.grass{
-
-    position:absolute;
-
-    left:0;
-    right:0;
-
-    bottom:0;
-
-    height:52%;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-
-            #76ae48 0%,
-
-            #5b9e3d 35%,
-
-            #438b34 70%,
-
-            #33772c 100%
-        );
-
-    z-index:2;
-}
-
-.grass::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        repeating-linear-gradient(
-            78deg,
-
-            rgba(255,255,255,.055)
-            0px,
-
-            rgba(255,255,255,.055)
-            2px,
-
-            transparent
-            2px,
-
-            transparent
-            17px
-        );
-
-    opacity:.8;
-}
-
-
-/* =====================================================
-   CAMPO
-===================================================== */
-
-.sunflower-field{
-
-    position:absolute;
-
-    left:2%;
-    right:2%;
-
-    top:49%;
-
-    height:51%;
-
-    overflow:visible;
-
-    z-index:10;
-
-    opacity:0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-
-        opacity 1.6s ease,
-
-        transform 1.6s ease;
-}
-
-#garden.ready
-.sunflower-field{
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =====================================================
-   GIRASOL INDIVIDUAL
-===================================================== */
-
-.field-flower{
-
-    position:absolute;
-
-    width:60px;
-
-    /*
-       Altura total diferente
-       para cada flor.
-    */
-
-    height:
-        var(--flower-height);
-
-    left:
-        var(--left);
-
-    top:
-        var(--top);
-
-    transform:
-
-        scale(var(--scale))
-
-        rotate(var(--rotate));
-
-    transform-origin:
-        bottom center;
-
-    z-index:
-        var(--z);
-
-    cursor:pointer;
-
-    transition:
-        transform .25s ease;
-}
-
-.field-flower:hover{
-
-    transform:
-
-        scale(
-            calc(
-                var(--scale) * 1.06
-            )
-        )
-
-        rotate(var(--rotate));
-}
-
-
-/* =====================================================
-   CABEZA
-===================================================== */
-
-.field-head{
-
-    position:absolute;
-
-    width:60px;
-    height:60px;
-
-    /*
-       ESTE ES EL CAMBIO IMPORTANTE.
-
-       La cabeza puede subir
-       o bajar independientemente.
-    */
-
-    left:50%;
-
-    top:
-        var(--head-offset);
-
-    transform:
-        translateX(-50%);
-
-    z-index:5;
-}
-
-
-/* =====================================================
-   TALLO
-===================================================== */
-
-.field-stem{
-
-    position:absolute;
-
-    width:7px;
-
-    height:
-        var(--stem-height);
-
-    bottom:0;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    background:
-
-        linear-gradient(
-            to right,
-
-            #2c6d2c,
-
-            #4c9639,
-
-            #2d702d
-        );
-
-    border-radius:8px;
-
-    z-index:1;
-}
-
-
-/* =====================================================
-   HOJAS
-===================================================== */
-
-.leaf{
-
-    position:absolute;
-
-    width:55px;
-    height:27px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-
-            #4f9639,
-
-            #2f7330
-        );
-
-    border-radius:
-        100% 0 100% 0;
-
-    z-index:2;
-}
-
-.leaf.left{
-
-    left:-3px;
-
-    bottom:48px;
-
-    transform:
-        rotate(-30deg);
-}
-
-.leaf.right{
-
-    right:-5px;
-
-    bottom:72px;
-
-    transform:
-
-        rotate(25deg)
-
-        scaleX(-1);
-}
-
-
-/* =====================================================
-   PÉTALOS
-===================================================== */
-
-.field-petal{
-
-    position:absolute;
-
-    width:29px;
-    height:43px;
-
-    left:50%;
-    top:50%;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-
-            #ffe36a,
-
-            #ffd047
-        );
-
-    border-radius:50%;
-
-    transform-origin:
-        center bottom;
-}
-
-.fp1{
-    transform:
-        translate(-50%,-100%)
-        rotate(0deg);
-}
-
-.fp2{
-    transform:
-        translate(-50%,-100%)
-        rotate(45deg);
-}
-
-.fp3{
-    transform:
-        translate(-50%,-100%)
-        rotate(90deg);
-}
-
-.fp4{
-    transform:
-        translate(-50%,-100%)
-        rotate(135deg);
-}
-
-.fp5{
-    transform:
-        translate(-50%,-100%)
-        rotate(180deg);
-}
-
-.fp6{
-    transform:
-        translate(-50%,-100%)
-        rotate(225deg);
-}
-
-.fp7{
-    transform:
-        translate(-50%,-100%)
-        rotate(270deg);
-}
-
-.fp8{
-    transform:
-        translate(-50%,-100%)
-        rotate(315deg);
-}
-
-
-/* =====================================================
-   CENTRO
-===================================================== */
-
-.field-center{
-
-    position:absolute;
-
-    width:25px;
-    height:25px;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-
-        radial-gradient(
-            circle,
-
-            #5b3205 0%,
-
-            #70420a 65%,
-
-            #8b5b15 100%
-        );
-
-    border-radius:50%;
-
-    z-index:10;
-}
-
-
-/* =====================================================
-   TENDEDero
-===================================================== */
-
-.clothesline{
-
-    position:absolute;
-
-    top:7%;
-
-    left:7%;
-
-    width:86%;
-
-    height:190px;
-
-    /*
-       Detrás de las flores.
-    */
-
-    z-index:5;
-
-    opacity:0;
-
-    transform:
-        translateY(-20px);
-
-    transition:
-
-        opacity 1s ease,
-
-        transform 1s ease;
-}
-
-#garden.ready
-.clothesline{
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-}
-
-.clothesline-rope{
-
-    position:absolute;
-
-    top:30px;
-
-    left:2%;
-
-    width:96%;
-
-    height:3px;
-
-    background:#6b4523;
-
-    border-radius:5px;
-
-    z-index:6;
-}
-
-.clothesline-post{
-
-    position:absolute;
-
-    top:0;
-
-    width:15px;
-
-    height:185px;
-
-    background:
-
-        linear-gradient(
-            to right,
-
-            #603b1d,
-
-            #795025,
-
-            #603b1d
-        );
-
-    border-radius:10px;
-
-    z-index:6;
-}
-
-.clothesline-post.left{
-    left:0;
-}
-
-.clothesline-post.right{
-    right:0;
-}
-
-
-/* =====================================================
-   TELÉFONO
-===================================================== */
+/* =========================
+   PANTALLA GIRAR TELÉFONO
+========================= */
 
 .rotate-screen{
-
     position:fixed;
-
     inset:0;
-
     background:#f8f0df;
-
     z-index:200;
-
     display:none;
-
     align-items:center;
-
     justify-content:center;
-
     flex-direction:column;
-
     text-align:center;
 }
 
 .phone-animation{
-
     width:55px;
     height:95px;
-
-    border:
-        3px solid
-        #6e5b45;
-
+    border:3px solid #6e5b45;
     border-radius:12px;
-
     position:relative;
-
-    animation:
-        phoneRotate
-        2.5s
-        ease-in-out
-        infinite;
+    animation:phoneRotate 2.5s ease-in-out infinite;
 }
 
 .phone-animation::before{
-
     content:"";
-
     position:absolute;
-
     width:20px;
     height:3px;
-
     border-radius:5px;
-
     background:#6e5b45;
-
     top:7px;
-
     left:50%;
-
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 }
 
 .phone-animation::after{
-
     content:"";
-
     position:absolute;
-
-    width:7px;
-    height:7px;
-
+    width:6px;
+    height:6px;
     border-radius:50%;
-
     background:#6e5b45;
-
     bottom:7px;
-
     left:50%;
-
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 }
 
 .rotate-text{
-
     margin-top:22px;
-
     color:#6e5b45;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family:Georgia,"Times New Roman",serif;
     font-size:18px;
-
     font-style:italic;
 }
 
 @keyframes phoneRotate{
-
     0%{
         transform:rotate(0deg);
     }
@@ -1097,114 +100,664 @@ body{
 }
 
 
-/* =====================================================
-   IPHONE HORIZONTAL
-===================================================== */
+/* =========================
+   INTRO
+========================= */
 
-@media
-(orientation:landscape)
-and (max-height:500px){
+#intro{
+    position:fixed;
+    inset:0;
+    background:#f8f0df;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    transition:opacity 1.5s ease;
+}
 
-    .big-sunflower{
+.intro-flower{
+    position:relative;
+    width:170px;
+    height:170px;
+    cursor:pointer;
+    animation:floatFlower 3s ease-in-out infinite;
+}
 
-        width:175px;
-        height:175px;
+@keyframes floatFlower{
+    0%,100%{
+        transform:translateY(0);
     }
 
-    .petal{
-
-        width:50px;
-        height:78px;
+    50%{
+        transform:translateY(-8px);
     }
+}
 
-    .flower-center{
+.petal{
+    position:absolute;
+    width:58px;
+    height:82px;
+    background:#f5b72e;
+    border-radius:50% 50% 45% 45%;
+    left:50%;
+    top:50%;
+    transform-origin:50% 100%;
+}
 
-        width:65px;
-        height:65px;
-    }
+.petal:nth-child(1){
+    transform:translate(-50%,-100%) rotate(0deg);
+}
 
-    .tap-text{
+.petal:nth-child(2){
+    transform:translate(-50%,-100%) rotate(45deg);
+}
 
-        margin-top:22px;
+.petal:nth-child(3){
+    transform:translate(-50%,-100%) rotate(90deg);
+}
 
-        font-size:14px;
-    }
+.petal:nth-child(4){
+    transform:translate(-50%,-100%) rotate(135deg);
+}
 
-    .message{
+.petal:nth-child(5){
+    transform:translate(-50%,-100%) rotate(180deg);
+}
 
-        font-size:20px;
+.petal:nth-child(6){
+    transform:translate(-50%,-100%) rotate(225deg);
+}
 
-        width:80%;
-    }
+.petal:nth-child(7){
+    transform:translate(-50%,-100%) rotate(270deg);
+}
 
-    .field-flower{
+.petal:nth-child(8){
+    transform:translate(-50%,-100%) rotate(315deg);
+}
 
-        width:52px;
-    }
+.flower-center{
+    position:absolute;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#65401f;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:5;
+}
 
-    .field-head{
+.flower-center::after{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,#2f1b0d 1.5px,transparent 2px);
+    background-size:8px 8px;
+}
 
-        width:52px;
-        height:52px;
-    }
+.press-text{
+    margin-top:30px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:19px;
+    color:#6e5b45;
+    font-style:italic;
+}
 
-    .field-petal{
 
-        width:25px;
-        height:38px;
-    }
+/* =========================
+   MENSAJES
+========================= */
 
-    .field-center{
+#messages{
+    position:fixed;
+    inset:0;
+    background:#f8f0df;
+    z-index:90;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    opacity:0;
+    transition:opacity 1.2s ease;
+}
 
-        width:22px;
-        height:22px;
-    }
+.message{
+    position:absolute;
+    width:85%;
+    color:#6e5b45;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(24px,4vw,42px);
+    font-style:italic;
+    line-height:1.5;
+    opacity:0;
+    transition:opacity 1.3s ease;
+}
 
-    .leaf{
 
-        width:47px;
+/* =========================
+   JARDÍN
+========================= */
 
-        height:23px;
-    }
+#garden{
+    position:fixed;
+    inset:0;
+    opacity:0;
+    z-index:10;
+    overflow:hidden;
 
-    .clothesline{
+    background:
+        linear-gradient(
+            to bottom,
+            #a9ddea 0%,
+            #bce4e2 37%,
+            #dce7d1 49%,
+            #8fbd58 50%,
+            #65a844 100%
+        );
 
-        top:7%;
+    transition:opacity 2s ease;
+}
 
-        height:150px;
-    }
 
-    .clothesline-post{
+/* =========================
+   SOL
+========================= */
 
-        height:160px;
+.sun{
+    position:absolute;
+    width:115px;
+    height:115px;
+    border-radius:50%;
+    background:#ffd75b;
+    right:8%;
+    top:9%;
+    box-shadow:
+        0 0 45px rgba(255,215,91,.45);
+    z-index:1;
+}
 
-        width:14px;
-    }
 
-    .clothesline-rope{
+/* =========================
+   NUBES
+========================= */
 
-        top:28px;
+.cloud{
+    position:absolute;
+    width:130px;
+    height:35px;
+    background:rgba(255,255,255,.55);
+    border-radius:30px;
+    z-index:2;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:rgba(255,255,255,.55);
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:55px;
+    height:55px;
+    left:20px;
+    bottom:8px;
+}
+
+.cloud::after{
+    width:70px;
+    height:70px;
+    right:15px;
+    bottom:4px;
+}
+
+.cloud.one{
+    left:9%;
+    top:15%;
+    transform:scale(.75);
+}
+
+.cloud.two{
+    left:43%;
+    top:10%;
+    transform:scale(.55);
+}
+
+
+/* =========================
+   PASTO
+========================= */
+
+.grass{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:52%;
+    background:
+        linear-gradient(
+            to bottom,
+            #8fbd58 0%,
+            #76ad4a 30%,
+            #65a844 65%,
+            #57913a 100%
+        );
+    z-index:2;
+}
+
+
+/* =========================
+   PEQUEÑOS DETALLES DEL PASTO
+========================= */
+
+.grass-blade{
+    position:absolute;
+    width:3px;
+    height:18px;
+    background:#477d32;
+    border-radius:5px;
+    bottom:0;
+    transform-origin:bottom center;
+    opacity:.65;
+}
+
+.grass-blade:nth-child(1){
+    left:4%;
+    transform:rotate(-12deg);
+}
+
+.grass-blade:nth-child(2){
+    left:11%;
+    height:25px;
+    transform:rotate(15deg);
+}
+
+.grass-blade:nth-child(3){
+    left:19%;
+    height:16px;
+    transform:rotate(-8deg);
+}
+
+.grass-blade:nth-child(4){
+    left:27%;
+    height:24px;
+    transform:rotate(13deg);
+}
+
+.grass-blade:nth-child(5){
+    left:36%;
+    height:19px;
+    transform:rotate(-15deg);
+}
+
+.grass-blade:nth-child(6){
+    left:45%;
+    height:26px;
+    transform:rotate(10deg);
+}
+
+.grass-blade:nth-child(7){
+    left:54%;
+    height:18px;
+    transform:rotate(-12deg);
+}
+
+.grass-blade:nth-child(8){
+    left:64%;
+    height:25px;
+    transform:rotate(14deg);
+}
+
+.grass-blade:nth-child(9){
+    left:73%;
+    height:17px;
+    transform:rotate(-10deg);
+}
+
+.grass-blade:nth-child(10){
+    left:83%;
+    height:24px;
+    transform:rotate(12deg);
+}
+
+.grass-blade:nth-child(11){
+    left:92%;
+    height:19px;
+    transform:rotate(-14deg);
+}
+
+
+/* =========================
+   TENDEDERO
+========================= */
+
+.clothesline{
+    position:absolute;
+    top:7%;
+    left:7%;
+    width:86%;
+    height:190px;
+    z-index:5;
+}
+
+.clothesline-post{
+    position:absolute;
+    width:8px;
+    height:185px;
+    background:#806346;
+    border-radius:8px;
+    top:0;
+    z-index:6;
+}
+
+.clothesline-post.left{
+    left:0;
+}
+
+.clothesline-post.right{
+    right:0;
+}
+
+.clothesline-rope{
+    position:absolute;
+    left:0;
+    right:0;
+    top:30px;
+    height:4px;
+    background:#806346;
+    border-radius:5px;
+    z-index:6;
+}
+
+.clothesline-rope::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:18px;
+    height:2px;
+    background:rgba(128,99,70,.4);
+    transform:rotate(1deg);
+}
+
+
+/* =========================
+   CAMPO DE GIRASOLES
+========================= */
+
+.sunflower-field{
+    position:absolute;
+    left:2%;
+    right:2%;
+    top:49%;
+    height:51%;
+    overflow:visible;
+    z-index:10;
+}
+
+
+/* =========================
+   GIRASOLES
+   SIN TALLO
+========================= */
+
+.field-flower{
+    position:absolute;
+    width:60px;
+    height:var(--flower-height);
+    left:var(--left);
+    top:var(--top);
+
+    transform:
+        scale(var(--scale))
+        rotate(var(--rotate));
+
+    transform-origin:bottom center;
+
+    z-index:var(--z);
+
+    cursor:pointer;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+.field-flower:hover{
+    filter:brightness(1.08);
+}
+
+
+/* =========================
+   CABEZA DEL GIRASOL
+========================= */
+
+.field-head{
+    position:absolute;
+    width:60px;
+    height:60px;
+    left:50%;
+    top:var(--head-offset);
+    transform:translateX(-50%);
+    z-index:5;
+}
+
+.field-petal{
+    position:absolute;
+    width:22px;
+    height:34px;
+    background:#f4b72c;
+    border-radius:50% 50% 45% 45%;
+    left:50%;
+    top:50%;
+    transform-origin:50% 100%;
+}
+
+.field-petal:nth-child(1){
+    transform:translate(-50%,-100%) rotate(0deg);
+}
+
+.field-petal:nth-child(2){
+    transform:translate(-50%,-100%) rotate(45deg);
+}
+
+.field-petal:nth-child(3){
+    transform:translate(-50%,-100%) rotate(90deg);
+}
+
+.field-petal:nth-child(4){
+    transform:translate(-50%,-100%) rotate(135deg);
+}
+
+.field-petal:nth-child(5){
+    transform:translate(-50%,-100%) rotate(180deg);
+}
+
+.field-petal:nth-child(6){
+    transform:translate(-50%,-100%) rotate(225deg);
+}
+
+.field-petal:nth-child(7){
+    transform:translate(-50%,-100%) rotate(270deg);
+}
+
+.field-petal:nth-child(8){
+    transform:translate(-50%,-100%) rotate(315deg);
+}
+
+.field-center{
+    position:absolute;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#65401f;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:4;
+}
+
+.field-center::after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,#2f1b0d 1px,transparent 1.5px);
+    background-size:5px 5px;
+}
+
+
+/* =========================
+   FLORES TRASERAS
+========================= */
+
+.back{
+    --flower-height:150px;
+}
+
+
+/* =========================
+   FLORES MEDIAS
+========================= */
+
+.middle{
+    --flower-height:170px;
+}
+
+
+/* =========================
+   FLORES DELANTERAS
+========================= */
+
+.front{
+    --flower-height:190px;
+}
+
+
+/* =========================
+   EFECTO AL TOCAR
+========================= */
+
+.ripple{
+    position:fixed;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    border:2px solid rgba(255,190,40,.8);
+    pointer-events:none;
+    transform:translate(-50%,-50%) scale(0);
+    animation:rippleEffect 1s ease-out forwards;
+    z-index:500;
+}
+
+@keyframes rippleEffect{
+    to{
+        transform:translate(-50%,-50%) scale(12);
+        opacity:0;
     }
 }
 
 
-/* =====================================================
-   VERTICAL
-===================================================== */
+/* =========================
+   SEMILLA
+========================= */
 
-@media
-(orientation:portrait)
-and (max-width:900px){
+.seed{
+    position:fixed;
+    width:10px;
+    height:15px;
+    border-radius:50%;
+    background:#6c431d;
+    left:50%;
+    top:50%;
+    z-index:300;
+    opacity:0;
+    transform:translate(-50%,-50%);
+}
+
+.seed.fall{
+    animation:seedFall 2.5s ease-in forwards;
+}
+
+@keyframes seedFall{
+    0%{
+        opacity:1;
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+    100%{
+        opacity:0;
+        transform:translate(-50%,300px) rotate(180deg);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:700px){
+
+    .intro-flower{
+        transform:scale(.85);
+    }
+
+    .press-text{
+        font-size:17px;
+    }
+
+    .message{
+        font-size:25px;
+        width:88%;
+    }
+
+    .sun{
+        width:80px;
+        height:80px;
+        right:7%;
+    }
+
+    .clothesline{
+        left:5%;
+        width:90%;
+    }
+
+    .field-head{
+        width:54px;
+        height:54px;
+    }
+
+    .field-petal{
+        width:20px;
+        height:31px;
+    }
+
+    .field-center{
+        width:25px;
+        height:25px;
+    }
+}
+
+
+/* =========================
+   SOLO VERTICAL
+========================= */
+
+@media (orientation:portrait){
 
     #intro,
     #messages,
     #garden{
-
         display:none;
     }
 
     .rotate-screen{
-
         display:flex;
     }
 }
@@ -1216,225 +769,161 @@ and (max-width:900px){
 <body>
 
 
-<!-- =====================================================
-     GIRAR TELÉFONO
-===================================================== -->
+<!-- =========================
+     PANTALLA GIRAR
+========================= -->
 
 <div class="rotate-screen">
 
     <div class="phone-animation"></div>
 
     <div class="rotate-text">
-        Gira tu teléfono horizontalmente 🌻
+        Gira tu teléfono 🌻
     </div>
 
 </div>
 
 
-<!-- =====================================================
+
+<!-- =========================
      INTRO
-===================================================== -->
+========================= -->
 
 <section id="intro">
 
-    <div class="intro-content">
+    <div class="intro-flower" id="introFlower">
 
-        <div
-            class="big-sunflower"
-            id="startFlower"
-        >
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
 
-            <div class="petal p1"></div>
-            <div class="petal p2"></div>
-            <div class="petal p3"></div>
-            <div class="petal p4"></div>
-            <div class="petal p5"></div>
-            <div class="petal p6"></div>
-            <div class="petal p7"></div>
-            <div class="petal p8"></div>
+        <div class="flower-center"></div>
 
-            <div class="flower-center"></div>
+    </div>
 
-        </div>
-
-        <div class="tap-text">
-            Presiona aquí
-        </div>
-
+    <div class="press-text">
+        Presiona aquí
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     SEMILLA
-===================================================== -->
 
-<div
-    class="seed"
-    id="seed">
-</div>
-
-
-<!-- =====================================================
+<!-- =========================
      MENSAJES
-===================================================== -->
+========================= -->
 
 <section id="messages">
 
-    <div
-        class="message"
-        id="message1">
-
-        A veces no hace falta tener mucho para demostrar cuánto quieres a alguien. 💛
-
+    <div class="message" id="message1">
+        A veces no puedo darte todo lo que quisiera...
     </div>
 
-    <div
-        class="message"
-        id="message2">
-
-        Y aunque esta vez no pude regalarte flores...
-
+    <div class="message" id="message2">
+        pero siempre voy a encontrar una manera de recordarte lo mucho que te quiero.
     </div>
 
-    <div
-        class="message"
-        id="message3">
-
-        Quise crear un pequeño lugar donde pudieras encontrar un pedacito de nosotros. 🌻
-
+    <div class="message" id="message3">
+        Y esta vez, hice un pequeño lugar solamente para ti. 🌻
     </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================
      JARDÍN
-===================================================== -->
+========================= -->
 
 <section id="garden">
 
-    <div class="sun-glow"></div>
+    <div class="sun"></div>
 
-    <div class="grass"></div>
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
 
-    <div
-        class="sunflower-field"
-        id="sunflowerField">
+    <div class="grass">
+
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+        <div class="grass-blade"></div>
+
     </div>
+
+
+
+    <!-- =========================
+         TENDEDERO
+    ========================= -->
 
     <div class="clothesline">
 
         <div class="clothesline-post left"></div>
+        <div class="clothesline-post right"></div>
 
         <div class="clothesline-rope"></div>
 
-        <div class="clothesline-post right"></div>
-
     </div>
+
+
+
+    <!-- =========================
+         GIRASOLES
+    ========================= -->
+
+    <div class="sunflower-field" id="sunflowerField"></div>
 
 </section>
 
 
+
+<div class="seed" id="seed"></div>
+
+
+
 <script>
 
-/* =====================================================
+/* =========================
    ELEMENTOS
-===================================================== */
+========================= */
 
-const startFlower =
-document.getElementById(
-    "startFlower"
-);
+const intro = document.getElementById("intro");
+const introFlower = document.getElementById("introFlower");
 
-const intro =
-document.getElementById(
-    "intro"
-);
+const messages = document.getElementById("messages");
 
-const seed =
-document.getElementById(
-    "seed"
-);
+const message1 = document.getElementById("message1");
+const message2 = document.getElementById("message2");
+const message3 = document.getElementById("message3");
 
-const messages =
-document.getElementById(
-    "messages"
-);
+const garden = document.getElementById("garden");
 
-const garden =
-document.getElementById(
-    "garden"
-);
+const seed = document.getElementById("seed");
 
-const field =
-document.getElementById(
-    "sunflowerField"
-);
+const sunflowerField =
+    document.getElementById("sunflowerField");
 
 
-/* =====================================================
-   CREAR GIRASOL
-===================================================== */
-
-function createFlower(){
-
-    const flower =
-        document.createElement("div");
-
-    flower.className =
-        "field-flower";
-
-    flower.innerHTML = `
-
-        <div class="field-head">
-
-            <div class="field-petal fp1"></div>
-            <div class="field-petal fp2"></div>
-            <div class="field-petal fp3"></div>
-            <div class="field-petal fp4"></div>
-            <div class="field-petal fp5"></div>
-            <div class="field-petal fp6"></div>
-            <div class="field-petal fp7"></div>
-            <div class="field-petal fp8"></div>
-
-            <div class="field-center"></div>
-
-        </div>
-
-        <div class="field-stem"></div>
-
-        <div class="leaf left"></div>
-
-        <div class="leaf right"></div>
-    `;
-
-    return flower;
-}
-
-
-/* =====================================================
-   POSICIONES
-===================================================== */
-
-/*
-   Cada flor tiene:
-
-   top          = posición vertical
-   scale        = tamaño
-   head-offset  = altura independiente de la cabeza
-   stem-height  = longitud del tallo
-
-   Esto nos permite que las cabezas
-   NO queden alineadas.
-*/
+/* =========================
+   GIRASOLES
+========================= */
 
 const flowers = [
 
-    /* ------------------------------
-       MUY ATRÁS
-    ------------------------------ */
+    /* ---------- ATRÁS ---------- */
 
     {
         left:"1%",
@@ -1442,7 +931,7 @@ const flowers = [
         scale:.52,
         rotate:"-3deg",
         headOffset:"5px",
-        stemHeight:"125px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1452,7 +941,7 @@ const flowers = [
         scale:.58,
         rotate:"2deg",
         headOffset:"-15px",
-        stemHeight:"150px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1462,7 +951,7 @@ const flowers = [
         scale:.48,
         rotate:"-1deg",
         headOffset:"18px",
-        stemHeight:"115px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1472,7 +961,7 @@ const flowers = [
         scale:.56,
         rotate:"2deg",
         headOffset:"-20px",
-        stemHeight:"160px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1482,7 +971,7 @@ const flowers = [
         scale:.50,
         rotate:"-2deg",
         headOffset:"10px",
-        stemHeight:"135px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1492,7 +981,7 @@ const flowers = [
         scale:.57,
         rotate:"1deg",
         headOffset:"-12px",
-        stemHeight:"145px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1502,7 +991,7 @@ const flowers = [
         scale:.49,
         rotate:"-2deg",
         headOffset:"15px",
-        stemHeight:"120px",
+        flowerHeight:"150px",
         z:7
     },
 
@@ -1512,14 +1001,12 @@ const flowers = [
         scale:.55,
         rotate:"2deg",
         headOffset:"-18px",
-        stemHeight:"155px",
+        flowerHeight:"150px",
         z:7
     },
 
 
-    /* ------------------------------
-       NIVEL MEDIO
-    ------------------------------ */
+    /* ---------- MEDIAS ---------- */
 
     {
         left:"5%",
@@ -1527,7 +1014,7 @@ const flowers = [
         scale:.72,
         rotate:"-2deg",
         headOffset:"-8px",
-        stemHeight:"135px",
+        flowerHeight:"170px",
         z:10
     },
 
@@ -1537,7 +1024,7 @@ const flowers = [
         scale:.82,
         rotate:"2deg",
         headOffset:"-25px",
-        stemHeight:"155px",
+        flowerHeight:"170px",
         z:11
     },
 
@@ -1547,7 +1034,7 @@ const flowers = [
         scale:.73,
         rotate:"-1deg",
         headOffset:"8px",
-        stemHeight:"125px",
+        flowerHeight:"170px",
         z:10
     },
 
@@ -1557,7 +1044,7 @@ const flowers = [
         scale:.85,
         rotate:"2deg",
         headOffset:"-30px",
-        stemHeight:"165px",
+        flowerHeight:"170px",
         z:11
     },
 
@@ -1567,7 +1054,7 @@ const flowers = [
         scale:.75,
         rotate:"-2deg",
         headOffset:"12px",
-        stemHeight:"120px",
+        flowerHeight:"170px",
         z:10
     },
 
@@ -1577,7 +1064,7 @@ const flowers = [
         scale:.84,
         rotate:"1deg",
         headOffset:"-22px",
-        stemHeight:"160px",
+        flowerHeight:"170px",
         z:11
     },
 
@@ -1587,7 +1074,7 @@ const flowers = [
         scale:.72,
         rotate:"-1deg",
         headOffset:"5px",
-        stemHeight:"130px",
+        flowerHeight:"170px",
         z:10
     },
 
@@ -1597,14 +1084,12 @@ const flowers = [
         scale:.80,
         rotate:"2deg",
         headOffset:"-28px",
-        stemHeight:"160px",
+        flowerHeight:"170px",
         z:11
     },
 
 
-    /* ------------------------------
-       PRIMER PLANO
-    ------------------------------ */
+    /* ---------- DELANTE ---------- */
 
     {
         left:"2%",
@@ -1612,7 +1097,7 @@ const flowers = [
         scale:1.00,
         rotate:"-2deg",
         headOffset:"-20px",
-        stemHeight:"145px",
+        flowerHeight:"190px",
         z:18
     },
 
@@ -1622,7 +1107,7 @@ const flowers = [
         scale:1.08,
         rotate:"2deg",
         headOffset:"-35px",
-        stemHeight:"175px",
+        flowerHeight:"190px",
         z:18
     },
 
@@ -1632,7 +1117,7 @@ const flowers = [
         scale:.98,
         rotate:"-1deg",
         headOffset:"5px",
-        stemHeight:"135px",
+        flowerHeight:"190px",
         z:18
     },
 
@@ -1642,7 +1127,7 @@ const flowers = [
         scale:1.10,
         rotate:"1deg",
         headOffset:"-40px",
-        stemHeight:"180px",
+        flowerHeight:"190px",
         z:19
     },
 
@@ -1652,7 +1137,7 @@ const flowers = [
         scale:1.02,
         rotate:"-2deg",
         headOffset:"-10px",
-        stemHeight:"150px",
+        flowerHeight:"190px",
         z:18
     },
 
@@ -1662,7 +1147,7 @@ const flowers = [
         scale:1.10,
         rotate:"2deg",
         headOffset:"-30px",
-        stemHeight:"170px",
+        flowerHeight:"190px",
         z:19
     },
 
@@ -1672,311 +1157,182 @@ const flowers = [
         scale:1.00,
         rotate:"-2deg",
         headOffset:"8px",
-        stemHeight:"140px",
+        flowerHeight:"190px",
         z:18
     }
 
 ];
 
 
-/* =====================================================
-   CREAR FLORES
-===================================================== */
+/* =========================
+   CREAR GIRASOLES
+========================= */
 
-function createFieldFlowers(){
+flowers.forEach((flower,index)=>{
 
-    field.innerHTML="";
+    const flowerElement =
+        document.createElement("div");
 
-    flowers.forEach(
-        data => {
+    flowerElement.className =
+        "field-flower";
 
-            const flower =
-                createFlower();
-
-            flower.style.setProperty(
-                "--left",
-                data.left
-            );
-
-            flower.style.setProperty(
-                "--top",
-                data.top
-            );
-
-            flower.style.setProperty(
-                "--scale",
-                data.scale
-            );
-
-            flower.style.setProperty(
-                "--rotate",
-                data.rotate
-            );
-
-            flower.style.setProperty(
-                "--head-offset",
-                data.headOffset
-            );
-
-            flower.style.setProperty(
-                "--stem-height",
-                data.stemHeight
-            );
-
-            flower.style.setProperty(
-                "--z",
-                data.z
-            );
-
-            field.appendChild(
-                flower
-            );
-
-        }
+    flowerElement.style.setProperty(
+        "--left",
+        flower.left
     );
-}
+
+    flowerElement.style.setProperty(
+        "--top",
+        flower.top
+    );
+
+    flowerElement.style.setProperty(
+        "--scale",
+        flower.scale
+    );
+
+    flowerElement.style.setProperty(
+        "--rotate",
+        flower.rotate
+    );
+
+    flowerElement.style.setProperty(
+        "--head-offset",
+        flower.headOffset
+    );
+
+    flowerElement.style.setProperty(
+        "--flower-height",
+        flower.flowerHeight
+    );
+
+    flowerElement.style.setProperty(
+        "--z",
+        flower.z
+    );
 
 
-/* =====================================================
-   EXPERIENCIA
-===================================================== */
+    flowerElement.innerHTML = `
 
-let started=false;
+        <div class="field-head">
 
-startFlower.addEventListener(
-    "click",
-    startExperience
-);
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
+            <div class="field-petal"></div>
 
-startFlower.addEventListener(
-    "touchstart",
-    startExperience,
-    {
-        passive:true
-    }
-);
+            <div class="field-center"></div>
 
+        </div>
 
-function startExperience(){
-
-    if(started)
-        return;
-
-    started=true;
+    `;
 
 
-    /* RIPPLE */
+    sunflowerField.appendChild(
+        flowerElement
+    );
+
+});
+
+
+
+/* =========================
+   TOCAR EL GIRASOL INICIAL
+========================= */
+
+introFlower.addEventListener("click",(event)=>{
+
+    /* Ripple */
 
     const ripple =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
     ripple.className="ripple";
 
-    ripple.style.left="50%";
+    ripple.style.left =
+        event.clientX+"px";
 
-    ripple.style.top="50%";
+    ripple.style.top =
+        event.clientY+"px";
 
-    startFlower.appendChild(
-        ripple
-    );
+    document.body.appendChild(ripple);
 
 
-    /* GIRASOL */
+    setTimeout(()=>{
+        ripple.remove();
+    },1000);
+
+
+    /* Semilla */
+
+    seed.classList.add("fall");
+
+
+    /* Desaparece intro */
+
+    intro.style.opacity="0";
+
 
     setTimeout(()=>{
 
-        startFlower.style.transition=
-            "opacity .8s ease, transform .8s ease";
-
-        startFlower.style.opacity="0";
-
-        startFlower.style.transform=
-            "scale(.7)";
-
-    },450);
-
-
-    /* SEMILLA */
-
-    setTimeout(()=>{
-
-        seed.classList.add(
-            "fall"
-        );
-
-    },800);
-
-
-    /* INTRO */
-
-    setTimeout(()=>{
-
-        intro.style.opacity="0";
-
-    },3500);
-
-
-    /* MENSAJES */
-
-    setTimeout(()=>{
+        intro.style.display="none";
 
         messages.style.opacity="1";
 
-    },4300);
+    },1500);
 
 
-    /* =================================
-       FRASE 1
-       Más tiempo para leer
-    ================================= */
+    /* =========================
+       FRASES
+    ========================= */
 
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message1"
-            )
-            .classList.add(
-                "show"
-            );
-
+        message1.style.opacity="1";
     },4700);
 
 
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message1"
-            )
-            .classList.remove(
-                "show"
-            );
-
-        document
-            .getElementById(
-                "message1"
-            )
-            .classList.add(
-                "hide"
-            );
-
+        message1.style.opacity="0";
     },8500);
 
 
-    /* =================================
-       FRASE 2
-    ================================= */
-
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message2"
-            )
-            .classList.add(
-                "show"
-            );
-
+        message2.style.opacity="1";
     },9300);
 
 
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message2"
-            )
-            .classList.remove(
-                "show"
-            );
-
-        document
-            .getElementById(
-                "message2"
-            )
-            .classList.add(
-                "hide"
-            );
-
+        message2.style.opacity="0";
     },12800);
 
 
-    /* =================================
-       FRASE 3
-    ================================= */
-
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message3"
-            )
-            .classList.add(
-                "show"
-            );
-
+        message3.style.opacity="1";
     },13600);
 
 
     setTimeout(()=>{
-
-        document
-            .getElementById(
-                "message3"
-            )
-            .classList.remove(
-                "show"
-            );
-
-        document
-            .getElementById(
-                "message3"
-            )
-            .classList.add(
-                "hide"
-            );
-
+        message3.style.opacity="0";
     },18100);
 
 
-    /* =================================
-       PREPARAR JARDÍN
-    ================================= */
+    /* =========================
+       APARECE EL JARDÍN
+    ========================= */
 
     setTimeout(()=>{
-
-        createFieldFlowers();
 
         messages.style.opacity="0";
 
-    },18500);
-
-
-    /* =================================
-       MOSTRAR JARDÍN
-    ================================= */
-
-    setTimeout(()=>{
-
         garden.style.opacity="1";
-
-        garden.classList.add(
-            "ready"
-        );
 
     },18800);
 
-}
-
-
-/* =====================================================
-   CREAR FLORES
-===================================================== */
-
-createFieldFlowers();
+});
 
 </script>
 
