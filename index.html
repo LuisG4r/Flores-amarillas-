@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -15,11 +17,12 @@
 
 <title>Para ti 🌻</title>
 
+
 <style>
 
-/* ==================================================
+/* =====================================================
    CONFIGURACIÓN GENERAL
-================================================== */
+===================================================== */
 
 * {
     box-sizing: border-box;
@@ -44,9 +47,9 @@ body {
 }
 
 
-/* ==================================================
-   PANTALLA PRINCIPAL
-================================================== */
+/* =====================================================
+   ESCENA 1 — GIRASOL
+===================================================== */
 
 #intro {
 
@@ -75,9 +78,7 @@ body {
 }
 
 
-/* ==================================================
-   TEXTURA DE PAPEL
-================================================== */
+/* Textura de papel */
 
 #intro::before {
 
@@ -89,21 +90,17 @@ body {
 
     pointer-events: none;
 
-    opacity: 0.18;
+    opacity: .18;
 
     background-image:
         radial-gradient(
-            rgba(100, 75, 35, 0.18) 0.7px,
-            transparent 0.7px
+            rgba(100,75,35,.18) .7px,
+            transparent .7px
         );
 
     background-size: 5px 5px;
 }
 
-
-/* ==================================================
-   CONTENIDO CENTRAL
-================================================== */
 
 .intro-content {
 
@@ -117,15 +114,13 @@ body {
 
     align-items: center;
 
-    justify-content: center;
-
     transform: translateY(-3%);
 }
 
 
-/* ==================================================
-   GIRASOL
-================================================== */
+/* =====================================================
+   GIRASOL INICIAL
+===================================================== */
 
 .sunflower-button {
 
@@ -145,20 +140,18 @@ body {
     -webkit-tap-highlight-color: transparent;
 
     transition:
-        transform 0.8s ease,
-        opacity 0.8s ease;
+        transform .8s ease,
+        opacity .8s ease;
 }
+
 
 .sunflower-button:active {
 
-    transform:
-        scale(0.94);
+    transform: scale(.94);
 }
 
 
-/* ==================================================
-   PÉTALOS
-================================================== */
+/* Pétalos */
 
 .petal {
 
@@ -166,12 +159,6 @@ body {
 
     width: 60px;
     height: 96px;
-
-    /*
-       El centro de cada pétalo
-       queda exactamente en el centro
-       del girasol.
-    */
 
     left: 50%;
     top: 50%;
@@ -182,8 +169,7 @@ body {
     border-radius:
         55% 55% 48% 48%;
 
-    transform-origin:
-        50% 50%;
+    transform-origin: 50% 50%;
 
     background:
         linear-gradient(
@@ -195,70 +181,24 @@ body {
 
     box-shadow:
         inset -4px -5px 8px
-        rgba(150, 105, 10, 0.18);
+        rgba(150,105,10,.18);
 
     animation:
         flowerBreath 4s ease-in-out infinite;
 }
 
 
-/*
-   Los pétalos salen radialmente
-   desde el mismo centro.
-*/
-
-.p1 {
-    transform:
-        rotate(0deg)
-        translateY(-48px);
-}
-
-.p2 {
-    transform:
-        rotate(45deg)
-        translateY(-48px);
-}
-
-.p3 {
-    transform:
-        rotate(90deg)
-        translateY(-48px);
-}
-
-.p4 {
-    transform:
-        rotate(135deg)
-        translateY(-48px);
-}
-
-.p5 {
-    transform:
-        rotate(180deg)
-        translateY(-48px);
-}
-
-.p6 {
-    transform:
-        rotate(225deg)
-        translateY(-48px);
-}
-
-.p7 {
-    transform:
-        rotate(270deg)
-        translateY(-48px);
-}
-
-.p8 {
-    transform:
-        rotate(315deg)
-        translateY(-48px);
-}
+.p1 { transform: rotate(0deg) translateY(-48px); }
+.p2 { transform: rotate(45deg) translateY(-48px); }
+.p3 { transform: rotate(90deg) translateY(-48px); }
+.p4 { transform: rotate(135deg) translateY(-48px); }
+.p5 { transform: rotate(180deg) translateY(-48px); }
+.p6 { transform: rotate(225deg) translateY(-48px); }
+.p7 { transform: rotate(270deg) translateY(-48px); }
+.p8 { transform: rotate(315deg) translateY(-48px); }
 
 
-/* ==================================================
-   CENTRO DEL GIRASOL
-================================================== */
+/* Centro */
 
 .flower-center {
 
@@ -266,10 +206,6 @@ body {
 
     width: 78px;
     height: 78px;
-
-    /*
-       CENTRADO PERFECTO
-    */
 
     left: 50%;
     top: 50%;
@@ -288,21 +224,15 @@ body {
         );
 
     box-shadow:
-
-        inset
-        0 0 0 6px
-        rgba(75, 45, 8, 0.4),
+        inset 0 0 0 6px
+        rgba(75,45,8,.4),
 
         0 8px 20px
-        rgba(90, 60, 15, 0.16);
+        rgba(90,60,15,.16);
 
     z-index: 3;
 }
 
-
-/* ==================================================
-   DETALLES DEL CENTRO
-================================================== */
 
 .flower-center::before {
 
@@ -317,39 +247,29 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(255, 220, 100, 0.28) 1px,
+            rgba(255,220,100,.28) 1px,
             transparent 1.5px
         );
 
-    background-size:
-        7px 7px;
+    background-size: 7px 7px;
 }
 
-
-/* ==================================================
-   ANIMACIÓN SUAVE DEL GIRASOL
-================================================== */
 
 @keyframes flowerBreath {
 
-    0%,
-    100% {
-
-        filter:
-            brightness(1);
+    0%,100% {
+        filter: brightness(1);
     }
 
     50% {
-
-        filter:
-            brightness(1.05);
+        filter: brightness(1.05);
     }
 }
 
 
-/* ==================================================
-   TEXTO "PRESIONA AQUÍ"
-================================================== */
+/* =====================================================
+   TEXTO
+===================================================== */
 
 .instruction {
 
@@ -364,8 +284,7 @@ body {
     text-align: center;
 
     animation:
-        textPulse 2.2s
-        ease-in-out infinite;
+        textPulse 2.2s ease-in-out infinite;
 }
 
 
@@ -379,137 +298,27 @@ body {
 
     height: 30px;
 
-    background:
-        #806b42;
+    background: #806b42;
 
-    margin:
-        9px auto 0;
+    margin: 9px auto 0;
 }
 
 
 @keyframes textPulse {
 
-    0%,
-    100% {
-
-        opacity:
-            0.5;
+    0%,100% {
+        opacity: .5;
     }
 
     50% {
-
-        opacity:
-            1;
-    }
-}
-
-
-/* ==================================================
-   SEMILLA
-================================================== */
-
-.seed {
-
-    position: absolute;
-
-    z-index: 20;
-
-    width: 15px;
-    height: 23px;
-
-    border-radius:
-        60% 60% 50% 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #704a17,
-            #321e08
-        );
-
-    left: 50%;
-    top: 40%;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(25deg);
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-
-/* ==================================================
-   ANIMACIÓN DE LA SEMILLA
-================================================== */
-
-.seed.falling {
-
-    animation:
-        seedFall 2.5s
-        cubic-bezier(.55, .05, .45, .95)
-        forwards;
-}
-
-
-@keyframes seedFall {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -250px)
-            rotate(0deg)
-            scale(0.7);
-    }
-
-    15% {
-
         opacity: 1;
     }
-
-    45% {
-
-        transform:
-            translate(
-                calc(-50% + 12px),
-                30px
-            )
-            rotate(150deg)
-            scale(1);
-    }
-
-    70% {
-
-        transform:
-            translate(
-                calc(-50% - 8px),
-                140px
-            )
-            rotate(260deg)
-            scale(1);
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translate(
-                -50%,
-                250px
-            )
-            rotate(360deg)
-            scale(0.9);
-    }
 }
 
 
-/* ==================================================
-   EFECTO AL TOCAR
-================================================== */
+/* =====================================================
+   EFECTO DE ONDA
+===================================================== */
 
 .ripple {
 
@@ -525,10 +334,10 @@ body {
 
     border:
         2px solid
-        rgba(190, 145, 37, 0.55);
+        rgba(190,145,37,.55);
 
     transform:
-        translate(-50%, -50%)
+        translate(-50%,-50%)
         scale(0);
 
     pointer-events: none;
@@ -538,8 +347,7 @@ body {
 .ripple.active {
 
     animation:
-        rippleEffect 1s
-        ease-out
+        rippleEffect 1s ease-out
         forwards;
 }
 
@@ -547,28 +355,659 @@ body {
 @keyframes rippleEffect {
 
     0% {
-
-        opacity: 0.8;
+        opacity: .8;
 
         transform:
-            translate(-50%, -50%)
+            translate(-50%,-50%)
             scale(0);
     }
 
     100% {
-
         opacity: 0;
 
         transform:
-            translate(-50%, -50%)
+            translate(-50%,-50%)
             scale(14);
     }
 }
 
 
-/* ==================================================
-   MENSAJE PARA PANTALLA VERTICAL
-================================================== */
+/* =====================================================
+   ESCENA 2 — JARDÍN
+===================================================== */
+
+#garden {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #dcebdc 0%,
+            #c9dfce 48%,
+            #a7c79e 49%,
+            #6d984b 100%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+}
+
+
+/* =====================================================
+   CIELO
+===================================================== */
+
+.sky {
+
+    position: absolute;
+
+    inset: 0 0 45% 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c9e1e4,
+            #e9e1c9
+        );
+}
+
+
+/* Luz del sol */
+
+.sun-glow {
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 10%;
+    top: 7%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,240,170,.75),
+            rgba(255,240,170,0) 70%
+        );
+}
+
+
+/* =====================================================
+   SUELO
+===================================================== */
+
+.soil {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 53%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #6f522d,
+            #4a351f
+        );
+
+    transform:
+        scaleY(0);
+
+    transform-origin:
+        bottom;
+
+    transition:
+        transform 1.4s ease;
+}
+
+
+#garden.grow-soil .soil {
+
+    transform:
+        scaleY(1);
+}
+
+
+/* =====================================================
+   VERDE
+===================================================== */
+
+.grass {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 42%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #4d7e35,
+            #315b25
+        );
+
+    transform:
+        scaleY(0);
+
+    transform-origin:
+        bottom;
+
+    transition:
+        transform 2.2s ease;
+}
+
+
+#garden.grow-grass .grass {
+
+    transform:
+        scaleY(1);
+}
+
+
+/* Textura de pasto */
+
+.grass::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .4;
+
+    background:
+        repeating-linear-gradient(
+            75deg,
+            transparent 0 7px,
+            rgba(120,170,70,.35) 8px 10px
+        );
+}
+
+
+/* =====================================================
+   BROTE
+===================================================== */
+
+.sprout {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 23%;
+
+    width: 8px;
+    height: 100px;
+
+    background:
+        linear-gradient(
+            to top,
+            #315f27,
+            #57963c
+        );
+
+    border-radius: 10px;
+
+    transform:
+        translateX(-50%)
+        scaleY(0);
+
+    transform-origin:
+        bottom;
+
+    z-index: 8;
+
+    transition:
+        transform 1.7s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+#garden.grow-sprout .sprout {
+
+    transform:
+        translateX(-50%)
+        scaleY(1);
+}
+
+
+/* Hojas */
+
+.sprout::before,
+.sprout::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 23px;
+
+    background: #4c8b36;
+
+    border-radius:
+        100% 0 100% 0;
+}
+
+
+.sprout::before {
+
+    left: -38px;
+    top: 45px;
+
+    transform:
+        rotate(-18deg);
+}
+
+
+.sprout::after {
+
+    right: -38px;
+    top: 25px;
+
+    transform:
+        scaleX(-1)
+        rotate(-18deg);
+}
+
+
+/* =====================================================
+   CAMPO DE GIRASOLES
+===================================================== */
+
+.sunflower-field {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+}
+
+
+#garden.show-field .sunflower-field {
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   GIRASOLES DEL CAMPO
+===================================================== */
+
+.field-flower {
+
+    position: absolute;
+
+    width: 75px;
+    height: 135px;
+
+    transform:
+        scale(0);
+
+    animation:
+        none;
+
+    cursor: pointer;
+}
+
+
+#garden.show-field .field-flower {
+
+    animation:
+        flowerGrow .8s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+@keyframes flowerGrow {
+
+    0% {
+        transform:
+            scale(0)
+            translateY(30px);
+    }
+
+    70% {
+        transform:
+            scale(1.08)
+            translateY(-3px);
+    }
+
+    100% {
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* Tallo */
+
+.field-stem {
+
+    position: absolute;
+
+    width: 6px;
+
+    height: 90px;
+
+    left: 35px;
+
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            #315c26,
+            #57913a
+        );
+
+    border-radius: 10px;
+}
+
+
+/* Hoja */
+
+.field-leaf {
+
+    position: absolute;
+
+    width: 35px;
+    height: 18px;
+
+    background: #4d8735;
+
+    border-radius:
+        100% 0;
+}
+
+
+.field-leaf.left {
+
+    left: 1px;
+
+    bottom: 35px;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.field-leaf.right {
+
+    right: 0;
+
+    bottom: 52px;
+
+    transform:
+        scaleX(-1)
+        rotate(20deg);
+}
+
+
+/* Cabeza */
+
+.field-head {
+
+    position: absolute;
+
+    width: 54px;
+    height: 54px;
+
+    left: 10px;
+
+    top: 0;
+}
+
+
+/* Pétalos */
+
+.field-petal {
+
+    position: absolute;
+
+    width: 19px;
+    height: 30px;
+
+    left: 18px;
+    top: 12px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffe77a,
+            #eebc21
+        );
+
+    transform-origin:
+        50% 50%;
+}
+
+
+.fp1 { transform: rotate(0deg) translateY(-17px); }
+.fp2 { transform: rotate(45deg) translateY(-17px); }
+.fp3 { transform: rotate(90deg) translateY(-17px); }
+.fp4 { transform: rotate(135deg) translateY(-17px); }
+.fp5 { transform: rotate(180deg) translateY(-17px); }
+.fp6 { transform: rotate(225deg) translateY(-17px); }
+.fp7 { transform: rotate(270deg) translateY(-17px); }
+.fp8 { transform: rotate(315deg) translateY(-17px); }
+
+
+.field-center {
+
+    position: absolute;
+
+    width: 27px;
+    height: 27px;
+
+    left: 13px;
+    top: 13px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #80551b,
+            #382008
+        );
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   TENDEDERO
+===================================================== */
+
+.clothesline {
+
+    position: absolute;
+
+    z-index: 30;
+
+    top: 5%;
+
+    left: 5%;
+
+    width: 90%;
+
+    height: 90px;
+
+    opacity: 0;
+
+    transform:
+        translateY(-20px);
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+
+#garden.show-line .clothesline {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Cuerda */
+
+.rope {
+
+    position: absolute;
+
+    left: 3%;
+    right: 3%;
+
+    top: 28px;
+
+    height: 3px;
+
+    background:
+        #604628;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 3px
+        rgba(0,0,0,.15);
+}
+
+
+/* Postes */
+
+.line-post {
+
+    position: absolute;
+
+    width: 9px;
+    height: 100px;
+
+    top: 8px;
+
+    background:
+        #664728;
+
+    border-radius: 5px;
+}
+
+
+.line-post.left {
+    left: 0;
+}
+
+
+.line-post.right {
+    right: 0;
+}
+
+
+/* =====================================================
+   MENSAJE DEL JARDÍN
+===================================================== */
+
+.garden-message {
+
+    position: absolute;
+
+    z-index: 40;
+
+    left: 50%;
+
+    bottom: 8%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    width: 90%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    color:
+        #fff9df;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0,0,0,.35);
+
+    opacity: 0;
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+
+#garden.show-message .garden-message {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.garden-message h1 {
+
+    font-size:
+        clamp(20px, 4vw, 34px);
+
+    margin-bottom:
+        8px;
+}
+
+
+.garden-message p {
+
+    font-size:
+        clamp(13px, 2vw, 18px);
+
+    line-height:
+        1.5;
+}
+
+
+/* =====================================================
+   AVISO VERTICAL
+===================================================== */
 
 #rotate-message {
 
@@ -598,18 +1037,15 @@ body {
 
 .rotate-content {
 
-    max-width:
-        320px;
+    max-width: 320px;
 }
 
 
 .rotate-icon {
 
-    font-size:
-        55px;
+    font-size: 55px;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
     animation:
         rotatePhone 2s
@@ -619,47 +1055,37 @@ body {
 
 .rotate-content h2 {
 
-    font-size:
-        25px;
+    font-size: 25px;
 
-    margin-bottom:
-        12px;
+    margin-bottom: 12px;
 }
 
 
 .rotate-content p {
 
-    font-size:
-        16px;
+    font-size: 16px;
 
-    line-height:
-        1.6;
+    line-height: 1.6;
 
-    color:
-        #756342;
+    color: #756342;
 }
 
 
 @keyframes rotatePhone {
 
-    0%,
-    100% {
-
-        transform:
-            rotate(0deg);
+    0%,100% {
+        transform: rotate(0deg);
     }
 
     50% {
-
-        transform:
-            rotate(90deg);
+        transform: rotate(90deg);
     }
 }
 
 
-/* ==================================================
-   MODO VERTICAL
-================================================== */
+/* =====================================================
+   IPHONE VERTICAL
+===================================================== */
 
 @media
 (orientation: portrait)
@@ -676,12 +1102,18 @@ and (max-width: 900px) {
         display:
             none;
     }
+
+    #garden {
+
+        display:
+            none !important;
+    }
 }
 
 
-/* ==================================================
-   IPHONE EN HORIZONTAL
-================================================== */
+/* =====================================================
+   HORIZONTAL — IPHONE 13
+===================================================== */
 
 @media
 (orientation: landscape)
@@ -689,92 +1121,38 @@ and (max-height: 500px) {
 
     .sunflower-button {
 
-        width:
-            175px;
-
-        height:
-            175px;
+        width: 175px;
+        height: 175px;
     }
 
 
     .petal {
 
-        width:
-            50px;
+        width: 50px;
+        height: 80px;
 
-        height:
-            80px;
-
-        margin-left:
-            -25px;
-
-        margin-top:
-            -40px;
+        margin-left: -25px;
+        margin-top: -40px;
     }
 
 
-    .p1 {
-        transform:
-            rotate(0deg)
-            translateY(-40px);
-    }
-
-    .p2 {
-        transform:
-            rotate(45deg)
-            translateY(-40px);
-    }
-
-    .p3 {
-        transform:
-            rotate(90deg)
-            translateY(-40px);
-    }
-
-    .p4 {
-        transform:
-            rotate(135deg)
-            translateY(-40px);
-    }
-
-    .p5 {
-        transform:
-            rotate(180deg)
-            translateY(-40px);
-    }
-
-    .p6 {
-        transform:
-            rotate(225deg)
-            translateY(-40px);
-    }
-
-    .p7 {
-        transform:
-            rotate(270deg)
-            translateY(-40px);
-    }
-
-    .p8 {
-        transform:
-            rotate(315deg)
-            translateY(-40px);
-    }
+    .p1 { transform: rotate(0deg) translateY(-40px); }
+    .p2 { transform: rotate(45deg) translateY(-40px); }
+    .p3 { transform: rotate(90deg) translateY(-40px); }
+    .p4 { transform: rotate(135deg) translateY(-40px); }
+    .p5 { transform: rotate(180deg) translateY(-40px); }
+    .p6 { transform: rotate(225deg) translateY(-40px); }
+    .p7 { transform: rotate(270deg) translateY(-40px); }
+    .p8 { transform: rotate(315deg) translateY(-40px); }
 
 
     .flower-center {
 
-        width:
-            65px;
+        width: 65px;
+        height: 65px;
 
-        height:
-            65px;
-
-        left:
-            50%;
-
-        top:
-            50%;
+        left: 50%;
+        top: 50%;
 
         transform:
             translate(-50%, -50%);
@@ -783,30 +1161,7 @@ and (max-height: 500px) {
 
     .instruction {
 
-        font-size:
-            16px;
-    }
-}
-
-
-/* ==================================================
-   PANTALLAS MUY BAJAS
-================================================== */
-
-@media
-(orientation: landscape)
-and (max-height: 380px) {
-
-    .sunflower-button {
-
-        transform:
-            scale(0.85);
-    }
-
-    .instruction {
-
-        margin-top:
-            -10px;
+        font-size: 16px;
     }
 }
 
@@ -817,9 +1172,9 @@ and (max-height: 380px) {
 <body>
 
 
-<!-- ==================================================
-     AVISO DE GIRAR EL TELÉFONO
-================================================== -->
+<!-- =====================================================
+     AVISO PARA GIRAR EL TELÉFONO
+===================================================== -->
 
 <section id="rotate-message">
 
@@ -843,16 +1198,15 @@ and (max-height: 380px) {
 </section>
 
 
-<!-- ==================================================
-     ESCENA PRINCIPAL
-================================================== -->
+
+<!-- =====================================================
+     ESCENA 1
+===================================================== -->
 
 <main id="intro">
 
     <div class="intro-content">
 
-
-        <!-- GIRASOL -->
 
         <button
             id="sunflowerButton"
@@ -861,19 +1215,12 @@ and (max-height: 380px) {
 
 
             <span class="petal p1"></span>
-
             <span class="petal p2"></span>
-
             <span class="petal p3"></span>
-
             <span class="petal p4"></span>
-
             <span class="petal p5"></span>
-
             <span class="petal p6"></span>
-
             <span class="petal p7"></span>
-
             <span class="petal p8"></span>
 
 
@@ -881,8 +1228,6 @@ and (max-height: 380px) {
                 class="flower-center">
             </span>
 
-
-            <!-- EFECTO DE ONDA -->
 
             <span
                 id="ripple"
@@ -892,66 +1237,118 @@ and (max-height: 380px) {
         </button>
 
 
-        <!-- TEXTO -->
-
         <div class="instruction">
             Presiona aquí
         </div>
 
     </div>
 
+</main>
 
-    <!-- ==================================================
-         SEMILLA
-    ================================================== -->
+
+
+<!-- =====================================================
+     ESCENA 2 — JARDÍN
+===================================================== -->
+
+<section id="garden">
+
+
+    <!-- Cielo -->
+
+    <div class="sky"></div>
+
+
+    <!-- Luz -->
+
+    <div class="sun-glow"></div>
+
+
+    <!-- Tierra -->
+
+    <div class="soil"></div>
+
+
+    <!-- Pasto -->
+
+    <div class="grass"></div>
+
+
+    <!-- Brote -->
+
+    <div class="sprout"></div>
+
+
+    <!-- Campo de flores -->
 
     <div
-        id="seed"
-        class="seed">
+        id="sunflowerField"
+        class="sunflower-field">
     </div>
 
 
-</main>
+    <!-- Tendedero -->
+
+    <div class="clothesline">
+
+        <div
+            class="line-post left">
+        </div>
+
+        <div
+            class="line-post right">
+        </div>
+
+        <div class="rope"></div>
+
+    </div>
+
+
+    <!-- Mensaje -->
+
+    <div class="garden-message">
+
+        <h1>
+            Un pequeño jardín para ti 🌻
+        </h1>
+
+        <p>
+            Hay algunos recuerdos escondidos
+            entre estas flores...
+        </p>
+
+    </div>
+
+
+</section>
+
 
 
 <script>
 
-/* ==================================================
+/* =====================================================
    ELEMENTOS
-================================================== */
-
-const sunflowerButton =
-    document.getElementById(
-        "sunflowerButton"
-    );
+===================================================== */
 
 const intro =
-    document.getElementById(
-        "intro"
-    );
+    document.getElementById("intro");
 
-const seed =
-    document.getElementById(
-        "seed"
-    );
+const garden =
+    document.getElementById("garden");
+
+const sunflowerButton =
+    document.getElementById("sunflowerButton");
 
 const ripple =
-    document.getElementById(
-        "ripple"
-    );
+    document.getElementById("ripple");
 
 
-/* ==================================================
-   ESTADO
-================================================== */
-
-let started =
-    false;
+let started = false;
 
 
-/* ==================================================
-   CUANDO TOCA EL GIRASOL
-================================================== */
+/* =====================================================
+   GIRASOL PRINCIPAL
+===================================================== */
 
 sunflowerButton.addEventListener(
     "click",
@@ -959,39 +1356,28 @@ sunflowerButton.addEventListener(
 );
 
 
-/* ==================================================
-   COMENZAR EXPERIENCIA
-================================================== */
+/* =====================================================
+   COMENZAR
+===================================================== */
 
 function startExperience() {
 
 
-    /*
-       Evitamos que se pueda
-       presionar varias veces.
-    */
-
     if (started) {
-
         return;
     }
 
 
-    started =
-        true;
+    started = true;
 
 
-    /* ------------------------------------------
-       1. EFECTO DE ONDA
-    ------------------------------------------ */
+    /* ---------------------------------------------
+       EFECTO DE ONDA
+    --------------------------------------------- */
 
     ripple.classList.remove(
         "active"
     );
-
-    /*
-       Reiniciamos la animación.
-    */
 
     void ripple.offsetWidth;
 
@@ -1000,14 +1386,14 @@ function startExperience() {
     );
 
 
-    /* ------------------------------------------
-       2. DESAPARECE EL GIRASOL
-    ------------------------------------------ */
+    /* ---------------------------------------------
+       EL GIRASOL DESAPARECE
+    --------------------------------------------- */
 
     setTimeout(() => {
 
         sunflowerButton.style.transform =
-            "scale(0.7)";
+            "scale(.7)";
 
         sunflowerButton.style.opacity =
             "0";
@@ -1015,43 +1401,287 @@ function startExperience() {
     }, 450);
 
 
-    /* ------------------------------------------
-       3. CAE LA SEMILLA
-    ------------------------------------------ */
+    /* ---------------------------------------------
+       CAMBIAMOS AL JARDÍN
+    --------------------------------------------- */
 
     setTimeout(() => {
 
-        seed.classList.add(
-            "falling"
+        intro.style.opacity =
+            "0";
+
+
+        setTimeout(() => {
+
+            intro.style.display =
+                "none";
+
+
+            garden.style.display =
+                "block";
+
+
+            /*
+               Forzamos al navegador
+               a reconocer el cambio.
+            */
+
+            requestAnimationFrame(() => {
+
+                garden.style.opacity =
+                    "1";
+
+            });
+
+
+        }, 1000);
+
+
+    }, 1200);
+
+
+    /* ---------------------------------------------
+       TIERRA
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        garden.classList.add(
+            "grow-soil"
         );
 
-    }, 850);
+    }, 1900);
+
+
+    /* ---------------------------------------------
+       BROTE
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        garden.classList.add(
+            "grow-sprout"
+        );
+
+    }, 3300);
+
+
+    /* ---------------------------------------------
+       PASTO
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        garden.classList.add(
+            "grow-grass"
+        );
+
+    }, 4500);
+
+
+    /* ---------------------------------------------
+       GIRASOLES
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        createFieldFlowers();
+
+        garden.classList.add(
+            "show-field"
+        );
+
+    }, 6500);
+
+
+    /* ---------------------------------------------
+       TENDEDERO
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        garden.classList.add(
+            "show-line"
+        );
+
+    }, 7600);
+
+
+    /* ---------------------------------------------
+       MENSAJE
+    --------------------------------------------- */
+
+    setTimeout(() => {
+
+        garden.classList.add(
+            "show-message"
+        );
+
+    }, 8500);
+
+}
+
+
+/* =====================================================
+   CREAR GIRASOLES DEL CAMPO
+===================================================== */
+
+function createFieldFlowers() {
+
+
+    const field =
+        document.getElementById(
+            "sunflowerField"
+        );
 
 
     /*
-       AQUÍ TERMINA TEMPORALMENTE
-       LA PRIMERA ESCENA.
-
-       En la siguiente etapa vamos a conectar:
-
-       SEMILLA
-          ↓
-       TIERRA
-          ↓
-       BROTE
-          ↓
-       PASTO
-          ↓
-       CAMPO
-          ↓
-       GIRASOLES
-          ↓
-       TENDEDERO
+       Posiciones manuales para que
+       el campo se vea natural en horizontal.
     */
+
+    const positions = [
+
+        [7, 8],
+        [17, 18],
+        [28, 6],
+        [39, 20],
+        [50, 8],
+        [61, 19],
+        [72, 7],
+        [84, 20],
+
+        [4, 35],
+        [14, 47],
+        [25, 34],
+        [36, 49],
+        [48, 35],
+        [59, 48],
+        [70, 34],
+        [81, 46],
+        [91, 33],
+
+        [9, 62],
+        [21, 74],
+        [34, 60],
+        [46, 75],
+        [58, 62],
+        [69, 76],
+        [80, 61],
+        [91, 72]
+
+    ];
+
+
+    positions.forEach(
+        (position, index) => {
+
+
+            const flower =
+                document.createElement(
+                    "div"
+                );
+
+
+            flower.className =
+                "field-flower";
+
+
+            /*
+               left
+            */
+
+            flower.style.left =
+                position[0] + "%";
+
+
+            /*
+               bottom
+            */
+
+            flower.style.bottom =
+                position[1] + "%";
+
+
+            /*
+               Cada flor aparece
+               ligeramente después
+               de la anterior.
+            */
+
+            flower.style.animationDelay =
+                (index * 0.08) + "s";
+
+
+            flower.innerHTML = `
+
+                <div class="field-stem"></div>
+
+                <div class="
+                    field-leaf
+                    left">
+                </div>
+
+                <div class="
+                    field-leaf
+                    right">
+                </div>
+
+
+                <div class="field-head">
+
+                    <span class="
+                        field-petal fp1">
+                    </span>
+
+                    <span class="
+                        field-petal fp2">
+                    </span>
+
+                    <span class="
+                        field-petal fp3">
+                    </span>
+
+                    <span class="
+                        field-petal fp4">
+                    </span>
+
+                    <span class="
+                        field-petal fp5">
+                    </span>
+
+                    <span class="
+                        field-petal fp6">
+                    </span>
+
+                    <span class="
+                        field-petal fp7">
+                    </span>
+
+                    <span class="
+                        field-petal fp8">
+                    </span>
+
+                    <span class="
+                        field-center">
+                    </span>
+
+                </div>
+
+            `;
+
+
+            field.appendChild(
+                flower
+            );
+
+        }
+    );
 
 }
 
 </script>
 
 </body>
+
 </html>
