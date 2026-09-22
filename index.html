@@ -2,11 +2,25 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+    initial-scale=1.0,
+    maximum-scale=1.0,
+    user-scalable=no"
+>
+
+<meta name="theme-color" content="#f4eddb">
 
 <title>Para ti 🌻</title>
 
 <style>
+
+/* ==================================================
+   CONFIGURACIÓN GENERAL
+================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,20 +35,28 @@ body {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     background: #f4eddb;
 }
 
-/* =========================
+
+/* ==================================================
    PANTALLA PRINCIPAL
-========================= */
+================================================== */
 
 #intro {
+
     position: relative;
+
     width: 100vw;
     height: 100dvh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -48,14 +70,21 @@ body {
             #eee2c9 100%
         );
 
-    transition: opacity 1.2s ease;
+    transition:
+        opacity 1.2s ease;
 }
 
-/* Textura de papel */
+
+/* ==================================================
+   TEXTURA DE PAPEL
+================================================== */
 
 #intro::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     pointer-events: none;
@@ -71,32 +100,42 @@ body {
     background-size: 5px 5px;
 }
 
-/* =========================
-   CONTENIDO
-========================= */
+
+/* ==================================================
+   CONTENIDO CENTRAL
+================================================== */
 
 .intro-content {
+
     position: relative;
+
     z-index: 5;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
-    transform: translateY(-2%);
+    justify-content: center;
+
+    transform: translateY(-3%);
 }
 
-/* =========================
+
+/* ==================================================
    GIRASOL
-========================= */
+================================================== */
 
 .sunflower-button {
+
     position: relative;
 
     width: 210px;
     height: 210px;
 
     border: none;
+
     outline: none;
 
     background: transparent;
@@ -111,23 +150,40 @@ body {
 }
 
 .sunflower-button:active {
-    transform: scale(0.94);
+
+    transform:
+        scale(0.94);
 }
 
-/* Pétalos */
+
+/* ==================================================
+   PÉTALOS
+================================================== */
 
 .petal {
+
     position: absolute;
 
     width: 60px;
     height: 96px;
 
-    left: 75px;
-    top: 55px;
+    /*
+       El centro de cada pétalo
+       queda exactamente en el centro
+       del girasol.
+    */
 
-    border-radius: 55% 55% 48% 48%;
+    left: 50%;
+    top: 50%;
 
-    transform-origin: 50% 100%;
+    margin-left: -30px;
+    margin-top: -48px;
+
+    border-radius:
+        55% 55% 48% 48%;
+
+    transform-origin:
+        50% 50%;
 
     background:
         linear-gradient(
@@ -145,48 +201,81 @@ body {
         flowerBreath 4s ease-in-out infinite;
 }
 
+
+/*
+   Los pétalos salen radialmente
+   desde el mismo centro.
+*/
+
 .p1 {
-    transform: rotate(0deg) translateY(-28px);
+    transform:
+        rotate(0deg)
+        translateY(-48px);
 }
 
 .p2 {
-    transform: rotate(45deg) translateY(-28px);
+    transform:
+        rotate(45deg)
+        translateY(-48px);
 }
 
 .p3 {
-    transform: rotate(90deg) translateY(-28px);
+    transform:
+        rotate(90deg)
+        translateY(-48px);
 }
 
 .p4 {
-    transform: rotate(135deg) translateY(-28px);
+    transform:
+        rotate(135deg)
+        translateY(-48px);
 }
 
 .p5 {
-    transform: rotate(180deg) translateY(-28px);
+    transform:
+        rotate(180deg)
+        translateY(-48px);
 }
 
 .p6 {
-    transform: rotate(225deg) translateY(-28px);
+    transform:
+        rotate(225deg)
+        translateY(-48px);
 }
 
 .p7 {
-    transform: rotate(270deg) translateY(-28px);
+    transform:
+        rotate(270deg)
+        translateY(-48px);
 }
 
 .p8 {
-    transform: rotate(315deg) translateY(-28px);
+    transform:
+        rotate(315deg)
+        translateY(-48px);
 }
 
-/* Centro del girasol */
+
+/* ==================================================
+   CENTRO DEL GIRASOL
+================================================== */
 
 .flower-center {
+
     position: absolute;
 
     width: 78px;
     height: 78px;
 
-    left: 66px;
-    top: 66px;
+    /*
+       CENTRADO PERFECTO
+    */
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
@@ -199,16 +288,28 @@ body {
         );
 
     box-shadow:
-        inset 0 0 0 6px rgba(75, 45, 8, 0.4),
-        0 8px 20px rgba(90, 60, 15, 0.16);
+
+        inset
+        0 0 0 6px
+        rgba(75, 45, 8, 0.4),
+
+        0 8px 20px
+        rgba(90, 60, 15, 0.16);
 
     z-index: 3;
 }
 
+
+/* ==================================================
+   DETALLES DEL CENTRO
+================================================== */
+
 .flower-center::before {
+
     content: "";
 
     position: absolute;
+
     inset: 12px;
 
     border-radius: 50%;
@@ -220,24 +321,38 @@ body {
             transparent 1.5px
         );
 
-    background-size: 7px 7px;
+    background-size:
+        7px 7px;
 }
 
+
+/* ==================================================
+   ANIMACIÓN SUAVE DEL GIRASOL
+================================================== */
+
 @keyframes flowerBreath {
-    0%, 100% {
-        filter: brightness(1);
+
+    0%,
+    100% {
+
+        filter:
+            brightness(1);
     }
 
     50% {
-        filter: brightness(1.05);
+
+        filter:
+            brightness(1.05);
     }
 }
 
-/* =========================
-   TEXTO
-========================= */
+
+/* ==================================================
+   TEXTO "PRESIONA AQUÍ"
+================================================== */
 
 .instruction {
+
     margin-top: 4px;
 
     color: #655436;
@@ -249,37 +364,52 @@ body {
     text-align: center;
 
     animation:
-        textPulse 2.2s ease-in-out infinite;
+        textPulse 2.2s
+        ease-in-out infinite;
 }
 
+
 .instruction::after {
+
     content: "";
 
     display: block;
 
     width: 1px;
+
     height: 30px;
 
-    background: #806b42;
+    background:
+        #806b42;
 
-    margin: 9px auto 0;
+    margin:
+        9px auto 0;
 }
 
+
 @keyframes textPulse {
-    0%, 100% {
-        opacity: 0.5;
+
+    0%,
+    100% {
+
+        opacity:
+            0.5;
     }
 
     50% {
-        opacity: 1;
+
+        opacity:
+            1;
     }
 }
 
-/* =========================
+
+/* ==================================================
    SEMILLA
-========================= */
+================================================== */
 
 .seed {
+
     position: absolute;
 
     z-index: 20;
@@ -287,7 +417,8 @@ body {
     width: 15px;
     height: 23px;
 
-    border-radius: 60% 60% 50% 50%;
+    border-radius:
+        60% 60% 50% 50%;
 
     background:
         linear-gradient(
@@ -308,16 +439,24 @@ body {
     pointer-events: none;
 }
 
+
+/* ==================================================
+   ANIMACIÓN DE LA SEMILLA
+================================================== */
+
 .seed.falling {
+
     animation:
         seedFall 2.5s
         cubic-bezier(.55, .05, .45, .95)
         forwards;
 }
 
+
 @keyframes seedFall {
 
     0% {
+
         opacity: 0;
 
         transform:
@@ -327,10 +466,12 @@ body {
     }
 
     15% {
+
         opacity: 1;
     }
 
     45% {
+
         transform:
             translate(
                 calc(-50% + 12px),
@@ -341,6 +482,7 @@ body {
     }
 
     70% {
+
         transform:
             translate(
                 calc(-50% - 8px),
@@ -351,6 +493,7 @@ body {
     }
 
     100% {
+
         opacity: 1;
 
         transform:
@@ -363,11 +506,13 @@ body {
     }
 }
 
-/* =========================
+
+/* ==================================================
    EFECTO AL TOCAR
-========================= */
+================================================== */
 
 .ripple {
+
     position: absolute;
 
     width: 20px;
@@ -378,7 +523,8 @@ body {
 
     border-radius: 50%;
 
-    border: 2px solid
+    border:
+        2px solid
         rgba(190, 145, 37, 0.55);
 
     transform:
@@ -388,15 +534,20 @@ body {
     pointer-events: none;
 }
 
+
 .ripple.active {
+
     animation:
-        rippleEffect 1s ease-out
+        rippleEffect 1s
+        ease-out
         forwards;
 }
+
 
 @keyframes rippleEffect {
 
     0% {
+
         opacity: 0.8;
 
         transform:
@@ -405,6 +556,7 @@ body {
     }
 
     100% {
+
         opacity: 0;
 
         transform:
@@ -413,11 +565,13 @@ body {
     }
 }
 
-/* =========================
-   MENSAJE VERTICAL
-========================= */
+
+/* ==================================================
+   MENSAJE PARA PANTALLA VERTICAL
+================================================== */
 
 #rotate-message {
+
     position: fixed;
 
     inset: 0;
@@ -427,110 +581,245 @@ body {
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding: 30px;
 
-    background: #f4eddb;
+    background:
+        #f4eddb;
 
-    color: #554527;
+    color:
+        #554527;
 }
+
 
 .rotate-content {
-    max-width: 320px;
+
+    max-width:
+        320px;
 }
+
 
 .rotate-icon {
-    font-size: 55px;
-    margin-bottom: 20px;
+
+    font-size:
+        55px;
+
+    margin-bottom:
+        20px;
 
     animation:
-        rotatePhone 2s ease-in-out infinite;
+        rotatePhone 2s
+        ease-in-out infinite;
 }
+
 
 .rotate-content h2 {
-    font-size: 25px;
-    margin-bottom: 12px;
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        12px;
 }
+
 
 .rotate-content p {
-    font-size: 16px;
-    line-height: 1.6;
 
-    color: #756342;
+    font-size:
+        16px;
+
+    line-height:
+        1.6;
+
+    color:
+        #756342;
 }
+
 
 @keyframes rotatePhone {
 
-    0%, 100% {
-        transform: rotate(0deg);
+    0%,
+    100% {
+
+        transform:
+            rotate(0deg);
     }
 
     50% {
-        transform: rotate(90deg);
+
+        transform:
+            rotate(90deg);
     }
 }
 
-/* =========================
-   SI ESTÁ EN VERTICAL
-========================= */
+
+/* ==================================================
+   MODO VERTICAL
+================================================== */
 
 @media
 (orientation: portrait)
 and (max-width: 900px) {
 
     #rotate-message {
-        display: flex;
+
+        display:
+            flex;
     }
 
     #intro {
-        display: none;
+
+        display:
+            none;
     }
 }
 
-/* =========================
-   IPHONE HORIZONTAL
-========================= */
+
+/* ==================================================
+   IPHONE EN HORIZONTAL
+================================================== */
 
 @media
 (orientation: landscape)
 and (max-height: 500px) {
 
     .sunflower-button {
-        width: 175px;
-        height: 175px;
+
+        width:
+            175px;
+
+        height:
+            175px;
     }
+
 
     .petal {
-        width: 50px;
-        height: 80px;
 
-        left: 63px;
-        top: 47px;
+        width:
+            50px;
+
+        height:
+            80px;
+
+        margin-left:
+            -25px;
+
+        margin-top:
+            -40px;
     }
 
-    .flower-center {
-        width: 65px;
-        height: 65px;
 
-        left: 55px;
-        top: 55px;
+    .p1 {
+        transform:
+            rotate(0deg)
+            translateY(-40px);
+    }
+
+    .p2 {
+        transform:
+            rotate(45deg)
+            translateY(-40px);
+    }
+
+    .p3 {
+        transform:
+            rotate(90deg)
+            translateY(-40px);
+    }
+
+    .p4 {
+        transform:
+            rotate(135deg)
+            translateY(-40px);
+    }
+
+    .p5 {
+        transform:
+            rotate(180deg)
+            translateY(-40px);
+    }
+
+    .p6 {
+        transform:
+            rotate(225deg)
+            translateY(-40px);
+    }
+
+    .p7 {
+        transform:
+            rotate(270deg)
+            translateY(-40px);
+    }
+
+    .p8 {
+        transform:
+            rotate(315deg)
+            translateY(-40px);
+    }
+
+
+    .flower-center {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+        left:
+            50%;
+
+        top:
+            50%;
+
+        transform:
+            translate(-50%, -50%);
+    }
+
+
+    .instruction {
+
+        font-size:
+            16px;
+    }
+}
+
+
+/* ==================================================
+   PANTALLAS MUY BAJAS
+================================================== */
+
+@media
+(orientation: landscape)
+and (max-height: 380px) {
+
+    .sunflower-button {
+
+        transform:
+            scale(0.85);
     }
 
     .instruction {
-        font-size: 16px;
+
+        margin-top:
+            -10px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     MENSAJE PARA VERTICAL
-========================= -->
+
+<!-- ==================================================
+     AVISO DE GIRAR EL TELÉFONO
+================================================== -->
 
 <section id="rotate-message">
 
@@ -554,29 +843,46 @@ and (max-height: 500px) {
 </section>
 
 
-<!-- =========================
-     PANTALLA PRINCIPAL
-========================= -->
+<!-- ==================================================
+     ESCENA PRINCIPAL
+================================================== -->
 
 <main id="intro">
 
     <div class="intro-content">
+
+
+        <!-- GIRASOL -->
 
         <button
             id="sunflowerButton"
             class="sunflower-button"
             aria-label="Presiona el girasol">
 
+
             <span class="petal p1"></span>
+
             <span class="petal p2"></span>
+
             <span class="petal p3"></span>
+
             <span class="petal p4"></span>
+
             <span class="petal p5"></span>
+
             <span class="petal p6"></span>
+
             <span class="petal p7"></span>
+
             <span class="petal p8"></span>
 
-            <span class="flower-center"></span>
+
+            <span
+                class="flower-center">
+            </span>
+
+
+            <!-- EFECTO DE ONDA -->
 
             <span
                 id="ripple"
@@ -585,6 +891,9 @@ and (max-height: 500px) {
 
         </button>
 
+
+        <!-- TEXTO -->
+
         <div class="instruction">
             Presiona aquí
         </div>
@@ -592,17 +901,24 @@ and (max-height: 500px) {
     </div>
 
 
-    <!-- Semilla -->
+    <!-- ==================================================
+         SEMILLA
+    ================================================== -->
 
     <div
         id="seed"
         class="seed">
     </div>
 
+
 </main>
 
 
 <script>
+
+/* ==================================================
+   ELEMENTOS
+================================================== */
 
 const sunflowerButton =
     document.getElementById(
@@ -624,8 +940,18 @@ const ripple =
         "ripple"
     );
 
-let started = false;
 
+/* ==================================================
+   ESTADO
+================================================== */
+
+let started =
+    false;
+
+
+/* ==================================================
+   CUANDO TOCA EL GIRASOL
+================================================== */
 
 sunflowerButton.addEventListener(
     "click",
@@ -633,20 +959,39 @@ sunflowerButton.addEventListener(
 );
 
 
+/* ==================================================
+   COMENZAR EXPERIENCIA
+================================================== */
+
 function startExperience() {
 
+
+    /*
+       Evitamos que se pueda
+       presionar varias veces.
+    */
+
     if (started) {
+
         return;
     }
 
-    started = true;
+
+    started =
+        true;
 
 
-    /* Efecto al tocar el girasol */
+    /* ------------------------------------------
+       1. EFECTO DE ONDA
+    ------------------------------------------ */
 
     ripple.classList.remove(
         "active"
     );
+
+    /*
+       Reiniciamos la animación.
+    */
 
     void ripple.offsetWidth;
 
@@ -655,7 +1000,9 @@ function startExperience() {
     );
 
 
-    /* El girasol comienza a desaparecer */
+    /* ------------------------------------------
+       2. DESAPARECE EL GIRASOL
+    ------------------------------------------ */
 
     setTimeout(() => {
 
@@ -668,7 +1015,9 @@ function startExperience() {
     }, 450);
 
 
-    /* Cae la semilla */
+    /* ------------------------------------------
+       3. CAE LA SEMILLA
+    ------------------------------------------ */
 
     setTimeout(() => {
 
@@ -680,23 +1029,24 @@ function startExperience() {
 
 
     /*
-       AQUÍ TERMINARÁ ESTA PRIMERA ESCENA.
+       AQUÍ TERMINA TEMPORALMENTE
+       LA PRIMERA ESCENA.
 
-       En la siguiente versión conectaremos:
+       En la siguiente etapa vamos a conectar:
 
-       semilla
-       ↓
-       tierra
-       ↓
-       brote
-       ↓
-       pasto
-       ↓
-       campo
-       ↓
-       girasoles
-       ↓
-       tendedero
+       SEMILLA
+          ↓
+       TIERRA
+          ↓
+       BROTE
+          ↓
+       PASTO
+          ↓
+       CAMPO
+          ↓
+       GIRASOLES
+          ↓
+       TENDEDERO
     */
 
 }
