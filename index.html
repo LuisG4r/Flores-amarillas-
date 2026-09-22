@@ -82,21 +82,10 @@ body{
 }
 
 @keyframes phoneRotate{
-    0%{
-        transform:rotate(0deg);
-    }
-
-    35%{
-        transform:rotate(90deg);
-    }
-
-    65%{
-        transform:rotate(90deg);
-    }
-
-    100%{
-        transform:rotate(0deg);
-    }
+    0%{transform:rotate(0deg);}
+    35%{transform:rotate(90deg);}
+    65%{transform:rotate(90deg);}
+    100%{transform:rotate(0deg);}
 }
 
 
@@ -125,13 +114,8 @@ body{
 }
 
 @keyframes floatFlower{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
 }
 
 .petal{
@@ -145,37 +129,14 @@ body{
     transform-origin:50% 100%;
 }
 
-.petal:nth-child(1){
-    transform:translate(-50%,-100%) rotate(0deg);
-}
-
-.petal:nth-child(2){
-    transform:translate(-50%,-100%) rotate(45deg);
-}
-
-.petal:nth-child(3){
-    transform:translate(-50%,-100%) rotate(90deg);
-}
-
-.petal:nth-child(4){
-    transform:translate(-50%,-100%) rotate(135deg);
-}
-
-.petal:nth-child(5){
-    transform:translate(-50%,-100%) rotate(180deg);
-}
-
-.petal:nth-child(6){
-    transform:translate(-50%,-100%) rotate(225deg);
-}
-
-.petal:nth-child(7){
-    transform:translate(-50%,-100%) rotate(270deg);
-}
-
-.petal:nth-child(8){
-    transform:translate(-50%,-100%) rotate(315deg);
-}
+.petal:nth-child(1){transform:translate(-50%,-100%) rotate(0deg);}
+.petal:nth-child(2){transform:translate(-50%,-100%) rotate(45deg);}
+.petal:nth-child(3){transform:translate(-50%,-100%) rotate(90deg);}
+.petal:nth-child(4){transform:translate(-50%,-100%) rotate(135deg);}
+.petal:nth-child(5){transform:translate(-50%,-100%) rotate(180deg);}
+.petal:nth-child(6){transform:translate(-50%,-100%) rotate(225deg);}
+.petal:nth-child(7){transform:translate(-50%,-100%) rotate(270deg);}
+.petal:nth-child(8){transform:translate(-50%,-100%) rotate(315deg);}
 
 .flower-center{
     position:absolute;
@@ -352,7 +313,7 @@ body{
 
 
 /* =========================
-   PEQUEÑOS DETALLES DEL PASTO
+   DETALLES DEL PASTO
 ========================= */
 
 .grass-blade{
@@ -366,70 +327,17 @@ body{
     opacity:.65;
 }
 
-.grass-blade:nth-child(1){
-    left:4%;
-    transform:rotate(-12deg);
-}
-
-.grass-blade:nth-child(2){
-    left:11%;
-    height:25px;
-    transform:rotate(15deg);
-}
-
-.grass-blade:nth-child(3){
-    left:19%;
-    height:16px;
-    transform:rotate(-8deg);
-}
-
-.grass-blade:nth-child(4){
-    left:27%;
-    height:24px;
-    transform:rotate(13deg);
-}
-
-.grass-blade:nth-child(5){
-    left:36%;
-    height:19px;
-    transform:rotate(-15deg);
-}
-
-.grass-blade:nth-child(6){
-    left:45%;
-    height:26px;
-    transform:rotate(10deg);
-}
-
-.grass-blade:nth-child(7){
-    left:54%;
-    height:18px;
-    transform:rotate(-12deg);
-}
-
-.grass-blade:nth-child(8){
-    left:64%;
-    height:25px;
-    transform:rotate(14deg);
-}
-
-.grass-blade:nth-child(9){
-    left:73%;
-    height:17px;
-    transform:rotate(-10deg);
-}
-
-.grass-blade:nth-child(10){
-    left:83%;
-    height:24px;
-    transform:rotate(12deg);
-}
-
-.grass-blade:nth-child(11){
-    left:92%;
-    height:19px;
-    transform:rotate(-14deg);
-}
+.grass-blade:nth-child(1){left:4%;transform:rotate(-12deg);}
+.grass-blade:nth-child(2){left:11%;height:25px;transform:rotate(15deg);}
+.grass-blade:nth-child(3){left:19%;height:16px;transform:rotate(-8deg);}
+.grass-blade:nth-child(4){left:27%;height:24px;transform:rotate(13deg);}
+.grass-blade:nth-child(5){left:36%;height:19px;transform:rotate(-15deg);}
+.grass-blade:nth-child(6){left:45%;height:26px;transform:rotate(10deg);}
+.grass-blade:nth-child(7){left:54%;height:18px;transform:rotate(-12deg);}
+.grass-blade:nth-child(8){left:64%;height:25px;transform:rotate(14deg);}
+.grass-blade:nth-child(9){left:73%;height:17px;transform:rotate(-10deg);}
+.grass-blade:nth-child(10){left:83%;height:24px;transform:rotate(12deg);}
+.grass-blade:nth-child(11){left:92%;height:19px;transform:rotate(-14deg);}
 
 
 /* =========================
@@ -455,13 +363,8 @@ body{
     z-index:6;
 }
 
-.clothesline-post.left{
-    left:0;
-}
-
-.clothesline-post.right{
-    right:0;
-}
+.clothesline-post.left{left:0;}
+.clothesline-post.right{right:0;}
 
 .clothesline-rope{
     position:absolute;
@@ -487,7 +390,7 @@ body{
 
 
 /* =========================
-   CAMPO DE GIRASOLES
+   CAMPO
 ========================= */
 
 .sunflower-field{
@@ -520,7 +423,6 @@ body{
     transform-origin:bottom center;
 
     z-index:var(--z);
-
     cursor:pointer;
 
     transition:
@@ -534,7 +436,7 @@ body{
 
 
 /* =========================
-   CABEZA DEL GIRASOL
+   CABEZA
 ========================= */
 
 .field-head{
@@ -558,37 +460,14 @@ body{
     transform-origin:50% 100%;
 }
 
-.field-petal:nth-child(1){
-    transform:translate(-50%,-100%) rotate(0deg);
-}
-
-.field-petal:nth-child(2){
-    transform:translate(-50%,-100%) rotate(45deg);
-}
-
-.field-petal:nth-child(3){
-    transform:translate(-50%,-100%) rotate(90deg);
-}
-
-.field-petal:nth-child(4){
-    transform:translate(-50%,-100%) rotate(135deg);
-}
-
-.field-petal:nth-child(5){
-    transform:translate(-50%,-100%) rotate(180deg);
-}
-
-.field-petal:nth-child(6){
-    transform:translate(-50%,-100%) rotate(225deg);
-}
-
-.field-petal:nth-child(7){
-    transform:translate(-50%,-100%) rotate(270deg);
-}
-
-.field-petal:nth-child(8){
-    transform:translate(-50%,-100%) rotate(315deg);
-}
+.field-petal:nth-child(1){transform:translate(-50%,-100%) rotate(0deg);}
+.field-petal:nth-child(2){transform:translate(-50%,-100%) rotate(45deg);}
+.field-petal:nth-child(3){transform:translate(-50%,-100%) rotate(90deg);}
+.field-petal:nth-child(4){transform:translate(-50%,-100%) rotate(135deg);}
+.field-petal:nth-child(5){transform:translate(-50%,-100%) rotate(180deg);}
+.field-petal:nth-child(6){transform:translate(-50%,-100%) rotate(225deg);}
+.field-petal:nth-child(7){transform:translate(-50%,-100%) rotate(270deg);}
+.field-petal:nth-child(8){transform:translate(-50%,-100%) rotate(315deg);}
 
 .field-center{
     position:absolute;
@@ -610,33 +489,6 @@ body{
     background:
         radial-gradient(circle,#2f1b0d 1px,transparent 1.5px);
     background-size:5px 5px;
-}
-
-
-/* =========================
-   FLORES TRASERAS
-========================= */
-
-.back{
-    --flower-height:150px;
-}
-
-
-/* =========================
-   FLORES MEDIAS
-========================= */
-
-.middle{
-    --flower-height:170px;
-}
-
-
-/* =========================
-   FLORES DELANTERAS
-========================= */
-
-.front{
-    --flower-height:190px;
 }
 
 
@@ -746,7 +598,7 @@ body{
 
 
 /* =========================
-   SOLO VERTICAL
+   VERTICAL
 ========================= */
 
 @media (orientation:portrait){
@@ -765,13 +617,10 @@ body{
 </style>
 </head>
 
-
 <body>
 
 
-<!-- =========================
-     PANTALLA GIRAR
-========================= -->
+<!-- GIRAR TELÉFONO -->
 
 <div class="rotate-screen">
 
@@ -784,10 +633,7 @@ body{
 </div>
 
 
-
-<!-- =========================
-     INTRO
-========================= -->
+<!-- INTRO -->
 
 <section id="intro">
 
@@ -813,10 +659,7 @@ body{
 </section>
 
 
-
-<!-- =========================
-     MENSAJES
-========================= -->
+<!-- MENSAJES -->
 
 <section id="messages">
 
@@ -835,10 +678,7 @@ body{
 </section>
 
 
-
-<!-- =========================
-     JARDÍN
-========================= -->
+<!-- JARDÍN -->
 
 <section id="garden">
 
@@ -864,10 +704,7 @@ body{
     </div>
 
 
-
-    <!-- =========================
-         TENDEDERO
-    ========================= -->
+    <!-- TENDEDERO -->
 
     <div class="clothesline">
 
@@ -879,26 +716,17 @@ body{
     </div>
 
 
-
-    <!-- =========================
-         GIRASOLES
-    ========================= -->
+    <!-- GIRASOLES -->
 
     <div class="sunflower-field" id="sunflowerField"></div>
 
 </section>
 
 
-
 <div class="seed" id="seed"></div>
 
 
-
 <script>
-
-/* =========================
-   ELEMENTOS
-========================= */
 
 const intro = document.getElementById("intro");
 const introFlower = document.getElementById("introFlower");
@@ -923,72 +751,35 @@ const sunflowerField =
 
 const flowers = [
 
-    /* ---------- ATRÁS ---------- */
+    /* =====================
+       FILA SUPERIOR
+       MÁS SEPARADA
+    ===================== */
 
     {
-        left:"1%",
-        top:"0%",
-        scale:.52,
-        rotate:"-3deg",
-        headOffset:"5px",
-        flowerHeight:"150px",
-        z:7
-    },
-
-    {
-        left:"12%",
-        top:"12%",
-        scale:.58,
-        rotate:"2deg",
-        headOffset:"-15px",
-        flowerHeight:"150px",
-        z:7
-    },
-
-    {
-        left:"24%",
+        left:"0%",
         top:"3%",
         scale:.48,
-        rotate:"-1deg",
-        headOffset:"18px",
+        rotate:"-4deg",
+        headOffset:"8px",
         flowerHeight:"150px",
         z:7
     },
 
     {
-        left:"37%",
-        top:"17%",
-        scale:.56,
+        left:"9%",
+        top:"18%",
+        scale:.54,
         rotate:"2deg",
-        headOffset:"-20px",
-        flowerHeight:"150px",
-        z:7
-    },
-
-    {
-        left:"50%",
-        top:"5%",
-        scale:.50,
-        rotate:"-2deg",
-        headOffset:"10px",
-        flowerHeight:"150px",
-        z:7
-    },
-
-    {
-        left:"63%",
-        top:"15%",
-        scale:.57,
-        rotate:"1deg",
         headOffset:"-12px",
         flowerHeight:"150px",
         z:7
     },
 
     {
-        left:"76%",
-        top:"2%",
-        scale:.49,
+        left:"19%",
+        top:"6%",
+        scale:.46,
         rotate:"-2deg",
         headOffset:"15px",
         flowerHeight:"150px",
@@ -996,22 +787,84 @@ const flowers = [
     },
 
     {
-        left:"89%",
-        top:"18%",
-        scale:.55,
-        rotate:"2deg",
+        left:"30%",
+        top:"21%",
+        scale:.56,
+        rotate:"3deg",
         headOffset:"-18px",
         flowerHeight:"150px",
         z:7
     },
 
-
-    /* ---------- MEDIAS ---------- */
+    {
+        left:"41%",
+        top:"8%",
+        scale:.50,
+        rotate:"-3deg",
+        headOffset:"7px",
+        flowerHeight:"150px",
+        z:7
+    },
 
     {
-        left:"5%",
-        top:"29%",
-        scale:.72,
+        left:"52%",
+        top:"23%",
+        scale:.55,
+        rotate:"2deg",
+        headOffset:"-16px",
+        flowerHeight:"150px",
+        z:7
+    },
+
+    {
+        left:"64%",
+        top:"5%",
+        scale:.47,
+        rotate:"-2deg",
+        headOffset:"12px",
+        flowerHeight:"150px",
+        z:7
+    },
+
+    {
+        left:"75%",
+        top:"20%",
+        scale:.57,
+        rotate:"3deg",
+        headOffset:"-20px",
+        flowerHeight:"150px",
+        z:7
+    },
+
+    {
+        left:"87%",
+        top:"7%",
+        scale:.49,
+        rotate:"-3deg",
+        headOffset:"9px",
+        flowerHeight:"150px",
+        z:7
+    },
+
+    {
+        left:"95%",
+        top:"25%",
+        scale:.54,
+        rotate:"2deg",
+        headOffset:"-15px",
+        flowerHeight:"150px",
+        z:7
+    },
+
+
+    /* =====================
+       ZONA MEDIA
+    ===================== */
+
+    {
+        left:"4%",
+        top:"34%",
+        scale:.70,
         rotate:"-2deg",
         headOffset:"-8px",
         flowerHeight:"170px",
@@ -1019,49 +872,49 @@ const flowers = [
     },
 
     {
-        left:"17%",
-        top:"37%",
-        scale:.82,
+        left:"14%",
+        top:"45%",
+        scale:.80,
         rotate:"2deg",
-        headOffset:"-25px",
+        headOffset:"-24px",
         flowerHeight:"170px",
         z:11
     },
 
     {
-        left:"29%",
-        top:"25%",
-        scale:.73,
+        left:"26%",
+        top:"31%",
+        scale:.72,
         rotate:"-1deg",
-        headOffset:"8px",
+        headOffset:"7px",
         flowerHeight:"170px",
         z:10
     },
 
     {
-        left:"42%",
-        top:"41%",
-        scale:.85,
+        left:"38%",
+        top:"48%",
+        scale:.84,
         rotate:"2deg",
-        headOffset:"-30px",
+        headOffset:"-28px",
         flowerHeight:"170px",
         z:11
     },
 
     {
-        left:"55%",
-        top:"28%",
-        scale:.75,
+        left:"51%",
+        top:"34%",
+        scale:.74,
         rotate:"-2deg",
-        headOffset:"12px",
+        headOffset:"10px",
         flowerHeight:"170px",
         z:10
     },
 
     {
-        left:"68%",
-        top:"40%",
-        scale:.84,
+        left:"64%",
+        top:"47%",
+        scale:.83,
         rotate:"1deg",
         headOffset:"-22px",
         flowerHeight:"170px",
@@ -1069,31 +922,33 @@ const flowers = [
     },
 
     {
-        left:"81%",
-        top:"27%",
-        scale:.72,
+        left:"77%",
+        top:"33%",
+        scale:.71,
         rotate:"-1deg",
-        headOffset:"5px",
+        headOffset:"6px",
         flowerHeight:"170px",
         z:10
     },
 
     {
-        left:"92%",
-        top:"39%",
-        scale:.80,
+        left:"90%",
+        top:"46%",
+        scale:.81,
         rotate:"2deg",
-        headOffset:"-28px",
+        headOffset:"-26px",
         flowerHeight:"170px",
         z:11
     },
 
 
-    /* ---------- DELANTE ---------- */
+    /* =====================
+       DELANTE
+    ===================== */
 
     {
-        left:"2%",
-        top:"52%",
+        left:"1%",
+        top:"57%",
         scale:1.00,
         rotate:"-2deg",
         headOffset:"-20px",
@@ -1102,8 +957,8 @@ const flowers = [
     },
 
     {
-        left:"17%",
-        top:"64%",
+        left:"16%",
+        top:"70%",
         scale:1.08,
         rotate:"2deg",
         headOffset:"-35px",
@@ -1112,8 +967,8 @@ const flowers = [
     },
 
     {
-        left:"32%",
-        top:"55%",
+        left:"31%",
+        top:"59%",
         scale:.98,
         rotate:"-1deg",
         headOffset:"5px",
@@ -1123,7 +978,7 @@ const flowers = [
 
     {
         left:"47%",
-        top:"69%",
+        top:"74%",
         scale:1.10,
         rotate:"1deg",
         headOffset:"-40px",
@@ -1133,7 +988,7 @@ const flowers = [
 
     {
         left:"63%",
-        top:"53%",
+        top:"57%",
         scale:1.02,
         rotate:"-2deg",
         headOffset:"-10px",
@@ -1143,7 +998,7 @@ const flowers = [
 
     {
         left:"78%",
-        top:"67%",
+        top:"71%",
         scale:1.10,
         rotate:"2deg",
         headOffset:"-30px",
@@ -1152,8 +1007,8 @@ const flowers = [
     },
 
     {
-        left:"93%",
-        top:"54%",
+        left:"94%",
+        top:"58%",
         scale:1.00,
         rotate:"-2deg",
         headOffset:"8px",
@@ -1168,7 +1023,7 @@ const flowers = [
    CREAR GIRASOLES
 ========================= */
 
-flowers.forEach((flower,index)=>{
+flowers.forEach((flower)=>{
 
     const flowerElement =
         document.createElement("div");
@@ -1239,14 +1094,11 @@ flowers.forEach((flower,index)=>{
 });
 
 
-
 /* =========================
-   TOCAR EL GIRASOL INICIAL
+   TOCAR GIRASOL INICIAL
 ========================= */
 
 introFlower.addEventListener("click",(event)=>{
-
-    /* Ripple */
 
     const ripple =
         document.createElement("div");
@@ -1261,18 +1113,12 @@ introFlower.addEventListener("click",(event)=>{
 
     document.body.appendChild(ripple);
 
-
     setTimeout(()=>{
         ripple.remove();
     },1000);
 
 
-    /* Semilla */
-
     seed.classList.add("fall");
-
-
-    /* Desaparece intro */
 
     intro.style.opacity="0";
 
@@ -1294,26 +1140,21 @@ introFlower.addEventListener("click",(event)=>{
         message1.style.opacity="1";
     },4700);
 
-
     setTimeout(()=>{
         message1.style.opacity="0";
     },8500);
-
 
     setTimeout(()=>{
         message2.style.opacity="1";
     },9300);
 
-
     setTimeout(()=>{
         message2.style.opacity="0";
     },12800);
 
-
     setTimeout(()=>{
         message3.style.opacity="1";
     },13600);
-
 
     setTimeout(()=>{
         message3.style.opacity="0";
@@ -1321,7 +1162,7 @@ introFlower.addEventListener("click",(event)=>{
 
 
     /* =========================
-       APARECE EL JARDÍN
+       JARDÍN
     ========================= */
 
     setTimeout(()=>{
