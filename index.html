@@ -493,12 +493,17 @@ body{
     width:190px;
     height:190px;
 
+    /*
+       AHORA EL CENTRO DE LA FLOR
+       ES EXACTAMENTE SU POSICIÓN TOP
+    */
+
     transform:
-        translateX(-50%)
+        translate(-50%,-50%)
         scale(var(--scale))
         rotate(var(--rotate));
 
-    transform-origin:center bottom;
+    transform-origin:center center;
 
     cursor:pointer;
 
@@ -539,9 +544,14 @@ body{
     height:72px;
 
     left:50%;
-    top:var(--head-offset);
 
-    transform:translate(-50%,-8%);
+    top:
+        calc(
+            50% + var(--head-offset)
+        );
+
+    transform:
+        translate(-50%,-50%);
 
     border-radius:50%;
 
@@ -569,7 +579,7 @@ body{
         opacity:.12;
 
         transform:
-            translate(-50%,-8%)
+            translate(-50%,-50%)
             scale(.88);
     }
 
@@ -577,7 +587,7 @@ body{
         opacity:.45;
 
         transform:
-            translate(-50%,-8%)
+            translate(-50%,-50%)
             scale(1.08);
     }
 
@@ -988,17 +998,16 @@ const closeMessage =
 
 /* =========================
    FLORES
-   INDIVIDUALES
-   MÁS ARRIBA
+   POSICIÓN = CABEZA
 ========================= */
 
 const flowers = [
 
-    /* ===== FLORES ALTAS ===== */
+    /* ===== ZONA SUPERIOR ===== */
 
     {
-        left:"2%",
-        top:"2%",
+        left:"3%",
+        top:"6%",
         scale:.48,
         rotate:"-4deg",
         headOffset:"8px",
@@ -1008,7 +1017,7 @@ const flowers = [
 
     {
         left:"15%",
-        top:"15%",
+        top:"31%",
         scale:.54,
         rotate:"2deg",
         headOffset:"-12px",
@@ -1018,7 +1027,7 @@ const flowers = [
 
     {
         left:"28%",
-        top:"4%",
+        top:"13%",
         scale:.46,
         rotate:"-2deg",
         headOffset:"15px",
@@ -1027,8 +1036,8 @@ const flowers = [
     },
 
     {
-        left:"41%",
-        top:"18%",
+        left:"42%",
+        top:"40%",
         scale:.55,
         rotate:"3deg",
         headOffset:"-18px",
@@ -1039,8 +1048,8 @@ const flowers = [
     /* ⭐ FLOR ESPECIAL 1 */
 
     {
-        left:"53%",
-        top:"3%",
+        left:"55%",
+        top:"7%",
         scale:.49,
         rotate:"-3deg",
         headOffset:"7px",
@@ -1049,8 +1058,8 @@ const flowers = [
     },
 
     {
-        left:"66%",
-        top:"16%",
+        left:"69%",
+        top:"27%",
         scale:.53,
         rotate:"2deg",
         headOffset:"-16px",
@@ -1059,8 +1068,8 @@ const flowers = [
     },
 
     {
-        left:"79%",
-        top:"5%",
+        left:"83%",
+        top:"12%",
         scale:.47,
         rotate:"-2deg",
         headOffset:"12px",
@@ -1069,8 +1078,8 @@ const flowers = [
     },
 
     {
-        left:"92%",
-        top:"19%",
+        left:"96%",
+        top:"38%",
         scale:.56,
         rotate:"3deg",
         headOffset:"-20px",
@@ -1079,8 +1088,8 @@ const flowers = [
     },
 
     {
-        left:"22%",
-        top:"27%",
+        left:"21%",
+        top:"55%",
         scale:.48,
         rotate:"-3deg",
         headOffset:"9px",
@@ -1089,8 +1098,8 @@ const flowers = [
     },
 
     {
-        left:"98%",
-        top:"8%",
+        left:"91%",
+        top:"60%",
         scale:.54,
         rotate:"2deg",
         headOffset:"-15px",
@@ -1099,11 +1108,11 @@ const flowers = [
     },
 
 
-    /* ===== FLORES MEDIAS ===== */
+    /* ===== ZONA MEDIA ===== */
 
     {
         left:"5%",
-        top:"27%",
+        top:"70%",
         scale:.70,
         rotate:"-2deg",
         headOffset:"-8px",
@@ -1113,7 +1122,7 @@ const flowers = [
 
     {
         left:"18%",
-        top:"38%",
+        top:"84%",
         scale:.78,
         rotate:"2deg",
         headOffset:"-24px",
@@ -1122,8 +1131,8 @@ const flowers = [
     },
 
     {
-        left:"32%",
-        top:"25%",
+        left:"33%",
+        top:"62%",
         scale:.69,
         rotate:"-1deg",
         headOffset:"7px",
@@ -1132,8 +1141,8 @@ const flowers = [
     },
 
     {
-        left:"46%",
-        top:"42%",
+        left:"47%",
+        top:"76%",
         scale:.82,
         rotate:"2deg",
         headOffset:"-28px",
@@ -1142,8 +1151,8 @@ const flowers = [
     },
 
     {
-        left:"60%",
-        top:"28%",
+        left:"61%",
+        top:"54%",
         scale:.72,
         rotate:"-2deg",
         headOffset:"10px",
@@ -1154,8 +1163,8 @@ const flowers = [
     /* ⭐ FLOR ESPECIAL 2 */
 
     {
-        left:"74%",
-        top:"40%",
+        left:"75%",
+        top:"72%",
         scale:.80,
         rotate:"1deg",
         headOffset:"-22px",
@@ -1165,7 +1174,7 @@ const flowers = [
 
     {
         left:"87%",
-        top:"26%",
+        top:"51%",
         scale:.70,
         rotate:"-1deg",
         headOffset:"6px",
@@ -1175,7 +1184,7 @@ const flowers = [
 
     {
         left:"98%",
-        top:"42%",
+        top:"82%",
         scale:.82,
         rotate:"2deg",
         headOffset:"-26px",
@@ -1185,7 +1194,7 @@ const flowers = [
 
     {
         left:"37%",
-        top:"46%",
+        top:"91%",
         scale:.71,
         rotate:"-2deg",
         headOffset:"8px",
@@ -1194,11 +1203,11 @@ const flowers = [
     },
 
 
-    /* ===== FLORES DELANTERAS ===== */
+    /* ===== FLORES GRANDES ===== */
 
     {
         left:"2%",
-        top:"43%",
+        top:"47%",
         scale:1.00,
         rotate:"-2deg",
         headOffset:"-20px",
@@ -1207,8 +1216,8 @@ const flowers = [
     },
 
     {
-        left:"16%",
-        top:"52%",
+        left:"12%",
+        top:"64%",
         scale:1.08,
         rotate:"2deg",
         headOffset:"-35px",
@@ -1218,7 +1227,7 @@ const flowers = [
 
     {
         left:"30%",
-        top:"45%",
+        top:"78%",
         scale:.98,
         rotate:"-1deg",
         headOffset:"5px",
@@ -1227,8 +1236,8 @@ const flowers = [
     },
 
     {
-        left:"45%",
-        top:"57%",
+        left:"44%",
+        top:"58%",
         scale:1.10,
         rotate:"1deg",
         headOffset:"-40px",
@@ -1237,8 +1246,8 @@ const flowers = [
     },
 
     {
-        left:"60%",
-        top:"42%",
+        left:"59%",
+        top:"88%",
         scale:1.02,
         rotate:"-2deg",
         headOffset:"-10px",
@@ -1247,8 +1256,8 @@ const flowers = [
     },
 
     {
-        left:"75%",
-        top:"54%",
+        left:"73%",
+        top:"59%",
         scale:1.10,
         rotate:"2deg",
         headOffset:"-30px",
@@ -1257,8 +1266,8 @@ const flowers = [
     },
 
     {
-        left:"90%",
-        top:"44%",
+        left:"88%",
+        top:"77%",
         scale:1.00,
         rotate:"-2deg",
         headOffset:"8px",
@@ -1268,7 +1277,7 @@ const flowers = [
 
     {
         left:"98%",
-        top:"56%",
+        top:"67%",
         scale:1.05,
         rotate:"2deg",
         headOffset:"-25px",
@@ -1299,6 +1308,7 @@ flowers.forEach(
         flowerElement.style.top =
             flower.top;
 
+
         flowerElement.style.setProperty(
             "--scale",
             flower.scale
@@ -1318,7 +1328,9 @@ flowers.forEach(
             flower.z;
 
 
-        /* PÉTALOS */
+        /* =========================
+           PÉTALOS
+        ========================= */
 
         for(let i=0;i<8;i++){
 
@@ -1341,7 +1353,9 @@ flowers.forEach(
         }
 
 
-        /* CENTRO */
+        /* =========================
+           CENTRO
+        ========================= */
 
         const center =
             document.createElement("div");
@@ -1426,7 +1440,9 @@ closeMessage.addEventListener(
 );
 
 
-/* CERRAR TOCANDO FUERA */
+/* =========================
+   CERRAR TOCANDO AFUERA
+========================= */
 
 flowerMessage.addEventListener(
     "click",
@@ -1457,18 +1473,22 @@ introFlower.addEventListener(
         intro.style.opacity =
             "0";
 
+
         setTimeout(
             ()=>{
 
                 intro.style.display =
                     "none";
 
+
                 seed.classList.add(
                     "fall"
                 );
 
+
                 messages.style.pointerEvents =
                     "auto";
+
 
                 playMessages();
 
@@ -1520,8 +1540,10 @@ function playMessages(){
                             messages.style.display =
                                 "none";
 
+
                             messages.style.pointerEvents =
                                 "none";
+
 
                             garden.classList.add(
                                 "show"
