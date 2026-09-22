@@ -336,11 +336,6 @@ body{
 
     z-index:1;
 
-    /*
-       Cielo arriba.
-       El verde comienza aproximadamente a la mitad.
-    */
-
     background:
         linear-gradient(
             to bottom,
@@ -382,7 +377,7 @@ body{
 
 
 /* =========================================================
-   CÉSPED PRINCIPAL
+   CÉSPED
 ========================================================= */
 
 .grass{
@@ -392,11 +387,6 @@ body{
     left:0;
     right:0;
     bottom:0;
-
-    /*
-       Mucho más alto.
-       Aquí es donde vivirán los girasoles.
-    */
 
     height:51%;
 
@@ -436,30 +426,6 @@ body{
 }
 
 
-/* pequeñas hierbas */
-
-.grass::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-
-    top:0;
-
-    height:20%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(57,117,40,.35),
-            transparent
-        );
-}
-
-
 /* =========================================================
    CAMPO DE GIRASOLES
 ========================================================= */
@@ -472,13 +438,14 @@ body{
     right:2%;
 
     /*
-       Los girasoles ahora están
-       completamente dentro de lo verde.
+       MUY IMPORTANTE:
+       el campo ocupa prácticamente
+       toda la zona verde.
     */
 
-    bottom:2%;
+    bottom:1%;
 
-    height:50%;
+    height:67%;
 
     overflow:visible;
 
@@ -513,6 +480,7 @@ body{
     height:175px;
 
     left:var(--left);
+
     bottom:var(--bottom);
 
     transform:
@@ -808,27 +776,6 @@ body{
 
 
 /* =========================================================
-   PEQUEÑAS FLORES DEL CÉSPED
-========================================================= */
-
-.mini-flower{
-
-    position:absolute;
-
-    width:7px;
-    height:7px;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    z-index:5;
-
-    opacity:.8;
-}
-
-
-/* =========================================================
    RESPONSIVE IPHONE HORIZONTAL
 ========================================================= */
 
@@ -869,7 +816,9 @@ and (max-height:500px){
     }
 
 
-    /* jardín */
+    /* =====================================
+       JARDÍN EN IPHONE
+    ===================================== */
 
     .grass{
 
@@ -878,13 +827,15 @@ and (max-height:500px){
 
     .sunflower-field{
 
-        height:51%;
+        height:67%;
 
         bottom:1%;
     }
 
 
-    /* flores */
+    /* =====================================
+       FLORES
+    ===================================== */
 
     .field-flower{
 
@@ -924,7 +875,9 @@ and (max-height:500px){
     }
 
 
-    /* tendedero */
+    /* =====================================
+       TENDEDero
+    ===================================== */
 
     .clothesline{
 
@@ -1084,13 +1037,7 @@ and (max-width:900px){
 
     <div class="sun-glow"></div>
 
-
-    <!-- CÉSPED -->
-
     <div class="grass"></div>
-
-
-    <!-- GIRASOLES -->
 
     <div
         class="sunflower-field"
@@ -1111,7 +1058,6 @@ and (max-width:900px){
     </div>
 
 </section>
-
 
 
 <script>
@@ -1185,241 +1131,236 @@ function createFlower(){
 
 
 /* =========================================================
-   GIRASOLES
+   DISTRIBUCIÓN DEL JARDÍN
 ========================================================= */
 
 /*
-   La distribución está hecha para que:
+   Tenemos tres niveles:
 
-   - haya flores atrás
-   - flores al centro
-   - flores adelante
-   - haya espacios entre ellas
-   - todas nazcan dentro del césped
-   - tengamos lugares donde esconder recuerdos
+   1. MUY ATRÁS
+      Pequeños y altos.
+
+   2. NIVEL MEDIO
+      Flores medianas.
+
+   3. PRIMER PLANO
+      Grandes y bajas.
+
+   Los espacios entre ellas son intencionales.
 */
-
 
 const flowers = [
 
     /* =========================================
-       FILA TRASERA
+       MUY ATRÁS
     ========================================= */
 
     {
         left:"1%",
-        bottom:"38%",
-        scale:.62,
+        bottom:"55%",
+        scale:.52,
         rotate:"-2deg",
-        z:7
+        z:6
     },
 
     {
-        left:"8%",
-        bottom:"42%",
-        scale:.58,
+        left:"10%",
+        bottom:"62%",
+        scale:.48,
         rotate:"2deg",
-        z:7
+        z:6
     },
 
     {
-        left:"16%",
-        bottom:"35%",
-        scale:.68,
+        left:"20%",
+        bottom:"52%",
+        scale:.55,
         rotate:"-1deg",
-        z:7
+        z:6
     },
 
     {
-        left:"25%",
-        bottom:"43%",
-        scale:.60,
+        left:"31%",
+        bottom:"64%",
+        scale:.48,
         rotate:"2deg",
-        z:7
-    },
-
-    {
-        left:"34%",
-        bottom:"36%",
-        scale:.66,
-        rotate:"-2deg",
-        z:7
-    },
-
-    {
-        left:"44%",
-        bottom:"42%",
-        scale:.60,
-        rotate:"1deg",
-        z:7
-    },
-
-    {
-        left:"54%",
-        bottom:"35%",
-        scale:.66,
-        rotate:"-1deg",
-        z:7
-    },
-
-    {
-        left:"64%",
-        bottom:"42%",
-        scale:.59,
-        rotate:"2deg",
-        z:7
-    },
-
-    {
-        left:"74%",
-        bottom:"36%",
-        scale:.66,
-        rotate:"-2deg",
-        z:7
-    },
-
-    {
-        left:"84%",
-        bottom:"43%",
-        scale:.60,
-        rotate:"1deg",
-        z:7
-    },
-
-    {
-        left:"93%",
-        bottom:"37%",
-        scale:.66,
-        rotate:"-1deg",
-        z:7
-    },
-
-
-    /* =========================================
-       FILA MEDIA
-    ========================================= */
-
-    {
-        left:"4%",
-        bottom:"22%",
-        scale:.80,
-        rotate:"-2deg",
-        z:12
-    },
-
-    {
-        left:"13%",
-        bottom:"18%",
-        scale:.86,
-        rotate:"2deg",
-        z:12
-    },
-
-    {
-        left:"23%",
-        bottom:"24%",
-        scale:.78,
-        rotate:"-1deg",
-        z:12
-    },
-
-    {
-        left:"32%",
-        bottom:"16%",
-        scale:.90,
-        rotate:"2deg",
-        z:12
+        z:6
     },
 
     {
         left:"42%",
-        bottom:"23%",
-        scale:.82,
+        bottom:"54%",
+        scale:.54,
         rotate:"-2deg",
-        z:12
+        z:6
     },
 
     {
-        left:"52%",
-        bottom:"15%",
-        scale:.90,
+        left:"54%",
+        bottom:"63%",
+        scale:.48,
         rotate:"1deg",
-        z:12
+        z:6
     },
 
     {
-        left:"62%",
-        bottom:"22%",
-        scale:.82,
+        left:"65%",
+        bottom:"53%",
+        scale:.55,
         rotate:"-1deg",
-        z:12
+        z:6
     },
 
     {
-        left:"72%",
-        bottom:"16%",
-        scale:.90,
+        left:"76%",
+        bottom:"61%",
+        scale:.49,
         rotate:"2deg",
-        z:12
+        z:6
     },
 
     {
-        left:"82%",
-        bottom:"24%",
-        scale:.80,
-        rotate:"-2deg",
-        z:12
-    },
-
-    {
-        left:"92%",
-        bottom:"18%",
-        scale:.86,
-        rotate:"1deg",
-        z:12
+        left:"88%",
+        bottom:"53%",
+        scale:.55,
+        rotate:"-1deg",
+        z:6
     },
 
 
     /* =========================================
-       FILA DELANTERA
+       NIVEL MEDIO
     ========================================= */
 
     {
-        left:"9%",
-        bottom:"2%",
+        left:"5%",
+        bottom:"34%",
+        scale:.72,
+        rotate:"-2deg",
+        z:10
+    },
+
+    {
+        left:"15%",
+        bottom:"25%",
+        scale:.82,
+        rotate:"2deg",
+        z:11
+    },
+
+    {
+        left:"26%",
+        bottom:"37%",
+        scale:.70,
+        rotate:"-1deg",
+        z:10
+    },
+
+    {
+        left:"37%",
+        bottom:"23%",
+        scale:.84,
+        rotate:"2deg",
+        z:11
+    },
+
+    {
+        left:"48%",
+        bottom:"34%",
+        scale:.74,
+        rotate:"-2deg",
+        z:10
+    },
+
+    {
+        left:"59%",
+        bottom:"22%",
+        scale:.85,
+        rotate:"1deg",
+        z:11
+    },
+
+    {
+        left:"70%",
+        bottom:"36%",
+        scale:.70,
+        rotate:"-1deg",
+        z:10
+    },
+
+    {
+        left:"81%",
+        bottom:"24%",
+        scale:.83,
+        rotate:"2deg",
+        z:11
+    },
+
+    {
+        left:"92%",
+        bottom:"35%",
+        scale:.72,
+        rotate:"-2deg",
+        z:10
+    },
+
+
+    /* =========================================
+       PRIMER PLANO
+    ========================================= */
+
+    {
+        left:"3%",
+        bottom:"4%",
+        scale:1.00,
+        rotate:"-2deg",
+        z:18
+    },
+
+    {
+        left:"19%",
+        bottom:"1%",
+        scale:1.08,
+        rotate:"2deg",
+        z:18
+    },
+
+    {
+        left:"34%",
+        bottom:"7%",
+        scale:.98,
+        rotate:"-1deg",
+        z:18
+    },
+
+    {
+        left:"49%",
+        bottom:"0%",
+        scale:1.12,
+        rotate:"1deg",
+        z:19
+    },
+
+    {
+        left:"65%",
+        bottom:"6%",
         scale:1.02,
         rotate:"-2deg",
         z:18
     },
 
     {
-        left:"27%",
+        left:"80%",
         bottom:"0%",
-        scale:1.08,
-        rotate:"1deg",
-        z:18
-    },
-
-    {
-        left:"46%",
-        bottom:"3%",
         scale:1.10,
-        rotate:"-1deg",
-        z:18
-    },
-
-    {
-        left:"65%",
-        bottom:"0%",
-        scale:1.06,
         rotate:"2deg",
-        z:18
+        z:19
     },
 
     {
-        left:"84%",
-        bottom:"3%",
-        scale:1.04,
+        left:"94%",
+        bottom:"7%",
+        scale:.98,
         rotate:"-2deg",
         z:18
     }
@@ -1428,7 +1369,7 @@ const flowers = [
 
 
 /* =========================================================
-   CREAR CAMPO
+   CREAR TODAS LAS FLORES
 ========================================================= */
 
 function createFieldFlowers(){
@@ -1513,7 +1454,9 @@ function startExperience(){
     started=true;
 
 
-    /* RIPPLE */
+    /* =====================================
+       RIPPLE
+    ===================================== */
 
     const ripple =
     document.createElement("div");
@@ -1527,7 +1470,9 @@ function startExperience(){
     startFlower.appendChild(ripple);
 
 
-    /* DESAPARECER GIRASOL */
+    /* =====================================
+       DESAPARECER GIRASOL
+    ===================================== */
 
     setTimeout(()=>{
 
@@ -1542,7 +1487,9 @@ function startExperience(){
     },450);
 
 
-    /* SEMILLA */
+    /* =====================================
+       SEMILLA
+    ===================================== */
 
     setTimeout(()=>{
 
@@ -1551,7 +1498,9 @@ function startExperience(){
     },800);
 
 
-    /* INTRO */
+    /* =====================================
+       INTRO
+    ===================================== */
 
     setTimeout(()=>{
 
@@ -1560,7 +1509,9 @@ function startExperience(){
     },3300);
 
 
-    /* MENSAJES */
+    /* =====================================
+       MENSAJES
+    ===================================== */
 
     setTimeout(()=>{
 
@@ -1641,7 +1592,9 @@ function startExperience(){
     },13200);
 
 
-    /* PREPARAR JARDÍN */
+    /* =====================================
+       PREPARAR JARDÍN
+    ===================================== */
 
     setTimeout(()=>{
 
@@ -1652,7 +1605,9 @@ function startExperience(){
     },13600);
 
 
-    /* MOSTRAR JARDÍN */
+    /* =====================================
+       MOSTRAR JARDÍN
+    ===================================== */
 
     setTimeout(()=>{
 
